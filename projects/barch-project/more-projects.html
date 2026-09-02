@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachelor of Architecture (B.Arch) - Vinay Dilip J</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/assets/css/project-listing.css">
+    <style>
+        .project-grid-full {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 20px;
+            width: 100%;
+            margin: 30px auto 40px;
+        }
+
+        .gallery-grid-full {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .project-grid-full {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .gallery-grid-full {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid-full {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <a href="../../gallery.html">VINAY DILIP J</a>
+        </div>
+        <nav>
+            <a href="../../gallery.html">Gallery</a>
+            <a href="../../product.html">Product</a>
+            <a href="../../plugin.html">Plugins</a>
+            <a href="../../resume/Vinay_CV_Architect_BIM.pdf">Resume</a>
+            <a href="../../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== NAVIGATION ARROWS ===== -->
+    <a href="../../projects/masters-project/building-energy-management.html" class="arrow left" aria-label="Previous: M.Sc. Projects">❮</a>
+    <a href="../../gallery.html" class="arrow right" aria-label="Back to Gallery">❯</a>
+
+    <!-- ===== MAIN CONTENT CONTAINER ===== -->
+    <main class="slider-container">
+        
+        <!-- Close Button -->
+        <div class="x-button">
+            <a href="../../gallery.html" aria-label="Close to Gallery">
+                <img src="../../assets/icons/x.svg" alt="Go Back">
+            </a>
+        </div>
+
+        <!-- Title -->
+        <div class="category-title">
+            <h1>Bachelor of Architecture (B.Arch)</h1>
+            <h2>Undergraduate Academic Studio Works</h2>
+        </div>
+
+        <!-- Undivided Horizontal Flow Grid -->
+        <div class="project-grid-full">
+            <div class="vertical-title">DESIGN STUDIOS</div>
+            
+            <div style="flex: 1; width: 100%;">
+                <div class="gallery-grid-full">
+                    
+                    <div class="gallery-item-all" data-index="0">
+                        <a href="/projects/barch-project/regional-cancer-care-centre.html">
+                            <img src="/projects/barch-project/assets/regional-cancer-care-centre/img/hero.png" alt="B.Arch Final Thesis Project" loading="lazy">
+                            <div class="overlay"><span class="click-text">CLICK TO VIEW</span></div>
+                        </a>
+                        <h3>B.Arch Final Thesis</h3>
+                        <p>Spring '21</p>
+                    </div>
+
+                    <div class="gallery-item-all" data-index="1">
+                        <a href="/projects/barch-project/faculty-of-design-school.html">
+                            <img src="/projects/barch-project/assets/faculty-of-design-school/img/hero.png" alt="School of Design & Architecture" loading="lazy">
+                            <div class="overlay"><span class="click-text">CLICK TO VIEW</span></div>
+                        </a>
+                        <h3>School of Design</h3>
+                        <p>Fall '20</p>
+                    </div>
+
+                    <div class="gallery-item-all" data-index="2">
+                        <a href="/projects/barch-project/commercial-retail-mall.html">
+                            <img src="/projects/barch-project/assets/commercial-retail-mall/img/hero.png" alt="Commercial Shopping Centre" loading="lazy">
+                            <div class="overlay"><span class="click-text">CLICK TO VIEW</span></div>
+                        </a>
+                        <h3>Commercial Retail Mall</h3>
+                        <p>Fall '20</p>
+                    </div>
+
+                    <div class="gallery-item-all" data-index="3">
+                        <a href="/projects/barch-project/low-rise-condominiums.html">
+                            <img src="/projects/barch-project/assets/low-rise-condominiums/img/hero.png" alt="Low-Rise Urban Condominiums" loading="lazy">
+                            <div class="overlay"><span class="click-text">CLICK TO VIEW</span></div>
+                        </a>
+                        <h3>Low-Rise Condominiums</h3>
+                        <p>Fall '20</p>
+                    </div>
+
+                    <div class="gallery-item-all" data-index="4">
+                        <a href="/projects/barch-project/nordic-cliffside-retreat.html">
+                            <img src="/projects/barch-project/assets/nordic-cliffside-retreat/img/hero.png" alt="Nordic Cliffside Retreat" loading="lazy">
+                            <div class="overlay"><span class="click-text">CLICK TO VIEW</span></div>
+                        </a>
+                        <h3>Nordic Cliffside Retreat</h3>
+                        <p>Spring '20</p>
+                    </div>
+
+                    <div class="gallery-item-all" data-index="5">
+                        <a href="/projects/barch-project/hope-care-hospice.html">
+                            <img src="/projects/barch-project/assets/hope-care-hospice/img/hero.png" alt="Palliative Cancer Hospice" loading="lazy">
+                            <div class="overlay"><span class="click-text">CLICK TO VIEW</span></div>
+                        </a>
+                        <h3>Palliative Cancer Hospice</h3>
+                        <p>Spring '20</p>
+                    </div>
+
+                </div>
+                <div class="gallery-counter" style="margin-top: 25px;">6 Projects</div>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-btn-wrap">
+            <div class="breadcrumb-hint">
+                <a href="../../gallery.html" id="breadcrumbLink" class="back-to-portfolio-btn">← Back to Portfolio</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 by Vinay</p>
+        </footer>
+    </main>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-close" id="lightboxClose">
+            <a href="#" aria-label="Close lightbox">
+                <img src="../../assets/icons/x.svg" alt="Close">
+            </a>
+        </div>
+
+        <div class="lightbox-content" id="lightboxContent">
+            <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous">‹</button>
+            <button class="lightbox-nav next" id="lightboxNext" aria-label="Next">›</button>
+            <img id="lightboxImage" src="" alt="Full size view">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <script src="/assets/js/project-listing.js"></script>
+</body>
+
+</html>

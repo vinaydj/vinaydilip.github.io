@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Use and Thermal Comfort in Buildings - Vinay Dilip J</title>
+    <link rel="stylesheet" href="residential-building.css">
+    <style>
+        .report-download-btn {
+            display: none;
+        }
+
+        .file-download-grid {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .file-download-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            width: 118px;
+            padding: 18px 10px 16px;
+            border-radius: 14px;
+            transition: background 0.18s ease;
+        }
+
+        .file-download-card:hover {
+            background: #eef3f7;
+        }
+
+        .file-download-card img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .file-download-card .ftype {
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #8a8a8a;
+            text-transform: uppercase;
+        }
+
+        .file-download-card .ftitle {
+            margin-top: 3px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #242222;
+            line-height: 1.3;
+        }
+
+        .meta-cta {
+            margin: 4px 0 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .back-btn-wrap {
+            justify-content: space-between;
+        }
+
+        .back-btn-wrap .dl-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* EUI Comparison Bar Chart */
+        .chart-card {
+            background: var(--surface-subtle);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px 20px 16px;
+            margin: 20px 0 25px;
+        }
+
+        .chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 240px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            gap: 12px;
+        }
+
+        .bar-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            height: 100%;
+            justify-content: flex-end;
+        }
+
+        .bar {
+            width: 100%;
+            max-width: 48px;
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 6px;
+            transition: opacity 0.2s ease;
+        }
+
+        .bar:hover {
+            opacity: 0.85;
+        }
+
+        .bar.base {
+            background: var(--accent-blue);
+        }
+
+        .bar.other {
+            background: #7c98b3;
+        }
+
+        .bar-val {
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .bar-label {
+            font-size: 11px;
+            color: #666666;
+            text-align: center;
+            margin-top: 8px;
+            line-height: 1.3;
+        }
+
+        .chart-legend {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 14px;
+            font-size: 12px;
+            color: #666666;
+        }
+
+        .chart-legend .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+
+        .chart-legend .dot.base {
+            background: var(--accent-blue);
+        }
+
+        .chart-legend .dot.other {
+            background: #7c98b3;
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <a class="logo" style="user-select: none; cursor: default;">VINAY DILIP J</a>
+        </div>
+        <nav>
+            <a href="../../gallery.html">Gallery</a>
+            <a href="../../product.html">Product</a>
+            <a href="../../plugin.html">Plugins</a>
+            <a href="../../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== NAVIGATION ARROWS ===== -->
+    <a href="moisture-safety-design.html" class="arrow left">❮</a>
+    <a href="building-energy-management.html" class="arrow right">❯</a>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="slider-container">
+
+        <!-- Close Button -->
+        <div class="x-button">
+            <a href="building-energy-management.html">
+                <span aria-hidden="true" style="font-size:20px;color:#888;">✕</span>
+            </a>
+        </div>
+
+        <div class="wrap">
+
+            <!-- Title Block -->
+            <div class="title-block">
+                <h1>ENERGY USE &amp; THERMAL COMFORT SIMULATION</h1>
+                <div class="subhead">
+                    <span>Parametric Single-Zone Building Performance Simulation — AEBN05</span>
+                </div>
+                <div class="project-tagline">Evaluating the influence of solar orientation and surrounding urban shading
+                    context on Energy Use Intensity and zone operative temperature</div>
+            </div>
+
+            <!-- Project Info + Image -->
+            <div class="project-grid">
+                <div class="project-text">
+                    <ul class="meta-list">
+                        <li><span class="label">Location</span> Lund University, LTH — Faculty of Engineering</li>
+                        <li><span class="label">Course</span> AEBN05 — Energy Use &amp; Thermal Comfort Simulation</li>
+                        <li><span class="label">Term</span> Autumn 2024</li>
+                        <li><span class="label">Author</span> Vinay Dilip Jayaselan — Individual work</li>
+                    </ul>
+
+                    <div class="file-download-grid">
+                        <a class="file-download-card" href="./Sem-1/Course-1/reports/AEBN05-Report.pdf" target="_blank">
+                            <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                            <span class="ftype">PDF</span>
+                            <span class="ftitle">Full Report</span>
+                        </a>
+                    </div>
+
+                    <div class="description">
+                        <p><strong>How sensitive is early-stage building performance to basic massing and contextual
+                                decisions?</strong>
+                            This project developed a parametric single-zone model in Rhino and Grasshopper, simulated
+                            through ClimateStudio using Copenhagen climate data, to isolate how solar orientation and
+                            external contextual shading dictate Energy Use Intensity (EUI) and operative temperature
+                            swings.</p>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="./Sem-1/Course-1/img/hero.gif"
+                        alt="Rendered massing of the simulated room with surrounding shading context">
+                </div>
+            </div>
+
+            <!-- Overview -->
+            <h2 class="section-title">OVERVIEW &amp; METHODOLOGY</h2>
+            <p class="rec-paragraph">The investigation modeled a representative 4.5 × 4.5 m single-zone space (3 m
+                floor-to-ceiling height) with a south-facing aperture[cite: 12]. Baseline envelope parameters were
+                configured with a uniform U-value of 0.2 W/m²K, a heating setpoint of 20°C, and occupancy/lighting
+                internal gain profiles[cite: 12]. The parametric definition allowed rapid permutation testing across
+                cardinal rotations (90°, 180°, 270°) and contextual massing obstructions[cite: 12].</p>
+
+            <div class="gallery-single">
+                <img src="./Sem-1/Course-1/img/geometry.gif"
+                    alt="Base room modeled parametrically in Rhino and Grasshopper">
+            </div>
+
+            <!-- Base Parameters -->
+            <h2 class="section-title">BASELINE MODEL SPECIFICATIONS</h2>
+            <div class="stat-row">
+                <div class="stat-box"><span class="num">4.5 × 4.5 m</span><span class="label">Zone Footprint</span>
+                </div>
+                <div class="stat-box"><span class="num">0.2 W/m²K</span><span class="label">Envelope U-Value</span>
+                </div>
+                <div class="stat-box"><span class="num">20.0 °C</span><span class="label">Heating Setpoint</span></div>
+                <div class="stat-box"><span class="num">45.44</span><span class="label">Base EUI (kWh/m²)</span></div>
+            </div>
+
+            <!-- Results -->
+            <h2 class="section-title">ENERGY USE INTENSITY COMPARISON</h2>
+            <div class="chart-card">
+                <div class="chart">
+                    <div class="bar-col">
+                        <div class="bar base" style="height:113px;"><span class="bar-val">45.44</span></div>
+                        <div class="bar-label">Base Case<br>(South-facing)</div>
+                    </div>
+                    <div class="bar-col">
+                        <div class="bar other" style="height:206px;"><span class="bar-val">82.86</span></div>
+                        <div class="bar-label">Rotated<br>90°</div>
+                    </div>
+                    <div class="bar-col">
+                        <div class="bar other" style="height:220px;"><span class="bar-val">88.51</span></div>
+                        <div class="bar-label">Rotated<br>180°</div>
+                    </div>
+                    <div class="bar-col">
+                        <div class="bar other" style="height:207px;"><span class="bar-val">83.24</span></div>
+                        <div class="bar-label">Rotated<br>270°</div>
+                    </div>
+                    <div class="bar-col">
+                        <div class="bar other" style="height:206px;"><span class="bar-val">82.86</span></div>
+                        <div class="bar-label">+ Shading<br>Context</div>
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <span><span class="dot base"></span> Base Configuration</span>
+                    <span><span class="dot other"></span> Parametric Variants</span>
+                    <span style="margin-left: auto; color: #888888; font-size: 11px;">kWh/m²·year</span>
+                </div>
+            </div>
+
+            <!-- Simulation Results Gallery -->
+            <h2 class="section-title">THERMAL COMFORT &amp; ORIENTATION ANALYSIS</h2>
+            <div class="gallery-wrapper" data-gallery="simulation-results">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="./Sem-1/Course-1/img/BaseCase.png" alt="Base Case Model Configuration">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/Course-1/img/BaseCaseResult.png"
+                            alt="Base Case Operative Temperature Results">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/Course-1/img/Orientation90.png" alt="90 Degree Rotation Model">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/Course-1/img/Orientation180.png" alt="180 Degree Rotation Model">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/Course-1/img/Orientation270.png" alt="270 Degree Rotation Model">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/Course-1/img/Context.png" alt="Adjacent Shading Context Model">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/Course-1/img/ContextResult.png" alt="Context Shading Simulation Results">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 7</span>
+            </div>
+            <p class="rec-paragraph">Zone operative temperature remains stable near 19–20°C throughout winter heating
+                schedules, but escalates significantly during unconditioned summer peaks[cite: 12]. Rotating the primary
+                aperture away from the south orientation removes beneficial passive winter solar gains, causing annual
+                heating demand and EUI to nearly double[cite: 12].</p>
+
+            <!-- Takeaways -->
+            <h2 class="section-title">TAKEAWAYS</h2>
+            <ul class="rec-list">
+                <li><strong>Orientation governs baseline energy demand.</strong> Rotating the single-zone room away from
+                    its optimal south-facing orientation increased EUI from 45.44 to 88.51 kWh/m², demonstrating that
+                    solar geometry outweighs minor envelope adjustments[cite: 12].</li>
+                <li><strong>External obstruction mirrors orientation loss.</strong> Introducing an adjacent contextual
+                    building reduced peak solar overheating but concurrently eliminated winter passive heat gains,
+                    matching the EUI penalty of unfavorable rotations[cite: 12].</li>
+                <li><strong>Passive cooling controls are necessary to manage summer peaks.</strong> Without active
+                    cooling or dynamic exterior shading, high window-to-wall ratios cause operative temperatures to
+                    spike well beyond 30°C in unconditioned periods[cite: 12].</li>
+                <li><strong>Parametric modeling accelerates sensitivity benchmarking.</strong> Constructing the
+                    simulation pipeline in Grasshopper and ClimateStudio allowed immediate multi-variable comparisons
+                    without rebuilding spatial assets[cite: 12].</li>
+            </ul>
+
+            <!-- Back Button -->
+            <div class="back-btn-wrap">
+                <div class="dl-group file-download-grid">
+                    <a class="file-download-card" href="./Sem-1/Course-1/reports/AEBN05-Report.pdf" target="_blank">
+                        <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                        <span class="ftype">PDF</span>
+                        <span class="ftitle">Full Report</span>
+                    </a>
+                </div>
+                <div class="breadcrumb-hint">
+                    <a href="building-energy-management.html" class="back-to-portfolio-btn">← Back to EEBD Projects</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p class="project-foot">&copy; 2026 by Vinay</p>
+        </footer>
+
+    </main>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-close" id="lightboxClose"><span
+                style="color:#fff;font-size:28px;cursor:pointer;">&times;</span></div>
+        <div class="lightbox-content">
+            <div class="lightbox-slider-wrapper">
+                <div class="lightbox-slider" id="lightboxSlider"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Gallery slider: prev/next + counter
+        document.querySelectorAll('.gallery-wrapper').forEach((wrapper) => {
+            const slides = wrapper.querySelectorAll('.gallery-slide');
+            const counter = wrapper.querySelector('.gallery-counter');
+            const prevBtn = wrapper.querySelector('.gallery-nav.prev');
+            const nextBtn = wrapper.querySelector('.gallery-nav.next');
+            let idx = 0;
+
+            function show(i) {
+                slides.forEach((s, n) => s.classList.toggle('active', n === i));
+                if (counter) counter.textContent = `${i + 1} / ${slides.length}`;
+            }
+            if (prevBtn) prevBtn.addEventListener('click', () => { idx = (idx - 1 + slides.length) % slides.length; show(idx); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { idx = (idx + 1) % slides.length; show(idx); });
+            show(0);
+        });
+
+        // Lightbox: click any image to zoom
+        const overlay = document.getElementById('lightboxOverlay');
+        const sliderEl = document.getElementById('lightboxSlider');
+        const closeBtn = document.getElementById('lightboxClose');
+
+        document.querySelectorAll('.gallery-slide img, .gallery-single img, .project-image img').forEach((img) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                sliderEl.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+                overlay.classList.add('active');
+            });
+        });
+        closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('active'); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('active'); });
+    </script>
+
+</body>
+
+</html>

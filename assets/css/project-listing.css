@@ -1,0 +1,559 @@
+/* ================================================================
+   RESET & BASE
+   ================================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #f7f9fa;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #242222;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.gallery-page {
+    padding: 120px 40px 60px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================================================================
+   HEADER
+   ================================================================ */
+header {
+    background-color: #f7f9fa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    z-index: 1000;
+    user-select: none;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+}
+
+.logo a {
+    color: #333;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #888;
+    font-size: 0.95rem;
+    transition: color 0.25s ease;
+}
+
+nav a:hover {
+    color: #2B5B84;
+}
+
+/* ================================================================
+   NAVIGATION ARROWS (Floating Sidebar Controls)
+   ================================================================ */
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #555;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 900;
+    transition: all 0.25s ease;
+}
+
+.arrow.left {
+    left: 30px;
+}
+
+.arrow.right {
+    right: 30px;
+}
+
+.arrow:hover {
+    color: #2B5B84;
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ================================================================
+   SLIDER CONTAINER (Main Card Canvas)
+   ================================================================ */
+.slider-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    padding: 40px 50px;
+}
+
+/* Close Button (X) */
+.x-button {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+.x-button a {
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+}
+
+.x-button img {
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.x-button a:hover img {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* ================================================================
+   CATEGORY TITLES
+   ================================================================ */
+.category-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.category-title h1 {
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-size: 1.45rem;
+    margin-bottom: 8px;
+    color: #242222;
+}
+
+.category-title h2 {
+    font-weight: 300;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* ================================================================
+   PROJECT GRID & PARTITION WRAPPERS
+   ================================================================ */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.45fr;
+    gap: 40px;
+    margin: 30px auto 40px;
+    align-items: start;
+}
+
+.project-partition-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 18px;
+    width: 100%;
+    min-width: 0;
+}
+
+.vertical-title {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #242222;
+    user-select: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 24px;
+    border-left: 1px solid #c0bebe;
+    padding-left: 8px;
+    padding-bottom: 10px;
+}
+
+.project-partition-1 {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    min-width: 0;
+}
+
+.project-partition-2 {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    min-width: 0;
+}
+
+/* ================================================================
+   PROJECT CARDS
+   ================================================================ */
+.gallery-item-all {
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.gallery-item-all a {
+    width: 100%;
+    position: relative;
+    display: block;
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #edf0f2;
+}
+
+.gallery-item-all img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item-all:hover img {
+    transform: scale(1.04);
+    filter: none;
+}
+
+.gallery-item-all h3 {
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #333;
+    line-height: 1.35;
+    transition: color 0.25s ease;
+}
+
+.gallery-item-all:hover h3 {
+    color: #2B5B84;
+}
+
+.gallery-item-all p {
+    font-size: 0.75rem;
+    color: #777;
+    text-align: center;
+}
+
+.gallery-counter {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin-top: 12px;
+    grid-column: 1 / -1;
+    letter-spacing: 1px;
+}
+
+/* ================================================================
+   BACK BUTTON & FOOTER
+   ================================================================ */
+.back-btn-wrap {
+    margin: 40px auto 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.breadcrumb-hint a {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.breadcrumb-hint a:hover {
+    color: #2B5B84;
+}
+
+footer {
+    padding: 25px 0 0;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 40px;
+    color: #999;
+    font-size: 13px;
+}
+
+/* ================================================================
+   LIGHTBOX
+   ================================================================ */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(6px);
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 10001;
+}
+
+.lightbox-close img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.lightbox-close img:hover {
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 75vh;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+}
+
+.lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 10000;
+    transition: background 0.2s ease;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.lightbox-nav.prev {
+    left: 20px;
+}
+
+.lightbox-nav.next {
+    right: 20px;
+}
+
+/* Card Container */
+.gallery-item-all a {
+    width: 100%;
+    position: relative;
+    display: block;
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #edf0f2;
+}
+
+.gallery-item-all img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover Zoom & Dim */
+.gallery-item-all:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.5);
+}
+
+/* Overlay & Click Badge */
+.gallery-item-all .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.94);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+.gallery-item-all:hover .overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-item-all .overlay .click-text {
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-transform: uppercase;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+@media (max-width: 1200px) {
+    .arrow {
+        display: none;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .project-partition-wrapper {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    body.gallery-page {
+        padding: 110px 16px 30px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .slider-container {
+        padding: 30px 20px;
+    }
+
+    .project-partition-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .vertical-title {
+        writing-mode: horizontal-tb;
+        transform: none;
+        width: 100%;
+        border-left: none;
+        border-bottom: 1px solid #c0bebe;
+        text-align: center;
+        justify-content: center;
+        padding: 0 0 6px 0;
+    }
+
+    .project-partition-1,
+    .project-partition-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        width: 100%;
+    }
+
+    .lightbox-nav.prev,
+    .lightbox-nav.next {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        padding: 25px 15px;
+    }
+
+    .project-partition-1,
+    .project-partition-2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .category-title h1 {
+        font-size: 1.15rem;
+    }
+}

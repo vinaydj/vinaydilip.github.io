@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer - Vinay Dilip J</title>
+    <style>
+        /* ===== 3D MODEL VIEWER ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .model-container {
+            width: 100vw;
+            height: 100vh;
+            background: #f7f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .model-container canvas {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+        }
+
+        .model-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #64748b;
+            font-family: "Roboto", sans-serif;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            z-index: 10;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e2e8f0;
+            border-top-color: #e8734a;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .model-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-family: "Roboto", sans-serif;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(4px);
+            pointer-events: none;
+            opacity: 0.7;
+            transition: opacity 0.5s ease;
+            z-index: 5;
+            white-space: nowrap;
+        }
+
+        .model-container:hover .model-hint {
+            opacity: 1;
+        }
+
+        #loadingText {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* ===== CAMERA CONTROL BUTTONS ===== */
+        .camera-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 20;
+        }
+
+        .cam-btn {
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 13px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #1e293b;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-width: 100px;
+            text-align: left;
+        }
+
+        .cam-btn:hover {
+            background: #e8734a;
+            color: white;
+            border-color: #e8734a;
+            transform: translateX(-4px);
+            box-shadow: 0 4px 12px rgba(232, 115, 74, 0.3);
+        }
+
+        .cam-btn.active {
+            background: #e8734a;
+            color: white;
+            border-color: #e8734a;
+            box-shadow: 0 4px 12px rgba(232, 115, 74, 0.3);
+        }
+
+        .cam-btn .icon {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .camera-controls {
+                top: 10px;
+                right: 10px;
+                gap: 5px;
+            }
+            .cam-btn {
+                padding: 6px 12px;
+                font-size: 11px;
+                min-width: 70px;
+            }
+            .model-hint {
+                font-size: 11px;
+                padding: 8px 14px;
+                bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .camera-controls {
+                top: 5px;
+                right: 5px;
+                gap: 4px;
+            }
+            .cam-btn {
+                padding: 4px 10px;
+                font-size: 10px;
+                min-width: 60px;
+            }
+            .model-hint {
+                font-size: 10px;
+                padding: 6px 12px;
+                bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== 3D MODEL CONTAINER ===== -->
+    <div class="model-container" id="modelContainer">
+        <div class="model-loading" id="loadingOverlay">
+            <div class="spinner"></div>
+            <span id="loadingText">Loading 3D model...</span>
+        </div>
+        <div class="model-hint">🖱 Click & drag to rotate · Scroll to zoom</div>
+        
+        <!-- Camera Control Buttons -->
+        <div class="camera-controls" id="cameraControls">
+            <button class="cam-btn active" data-view="isometric">
+                <span class="icon">🎯</span> Isometric
+            </button>
+            <button class="cam-btn" data-view="top">
+                <span class="icon">🔽</span> Top View
+            </button>
+            <button class="cam-btn" data-view="plan">
+                <span class="icon">📐</span> Plan View
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+
+        // ================================================================
+        // SETUP
+        // ================================================================
+
+        const container = document.getElementById('modelContainer');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const loadingText = document.getElementById('loadingText');
+        let currentModel = null;
+        let isAnimating = false;
+        let currentViewMode = 'perspective'; // 'perspective' or 'orthographic'
+
+        // Scene
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xf7f9fa);
+
+        // ================================================================
+        // PERSPECTIVE CAMERA (for Isometric view)
+        // ================================================================
+
+        const perspectiveCamera = new THREE.PerspectiveCamera(28.57, container.clientWidth / container.clientHeight, 0.1, 100);
+        let activeCamera = perspectiveCamera;
+
+        // ================================================================
+        // ORTHOGRAPHIC CAMERA (for Plan and Top views - parallel projection)
+        // ================================================================
+
+        const frustumSize = 6;
+        const aspect = container.clientWidth / container.clientHeight;
+        const orthographicCamera = new THREE.OrthographicCamera(
+            -frustumSize * aspect / 2,
+            frustumSize * aspect / 2,
+            frustumSize / 2,
+            -frustumSize / 2,
+            0.1,
+            100
+        );
+
+        // ================================================================
+        // RENDERER
+        // ================================================================
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.2;
+        container.appendChild(renderer.domElement);
+
+        // ================================================================
+        // CONTROLS
+        // ================================================================
+
+        const controls = new OrbitControls(perspectiveCamera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.08;
+        controls.rotateSpeed = 0.8;
+        controls.zoomSpeed = 1.2;
+        controls.minDistance = 0.3;
+        controls.maxDistance = 20;
+        controls.target.set(0, 0, 0);
+        controls.update();
+
+        // ================================================================
+        // CAMERA PRESET SYSTEM
+        // ================================================================
+
+        const CAMERA_PRESETS = {
+            isometric: { 
+                pos: [3.57, 2.5, 3.57],
+                target: [0, 0, 0],
+                mode: 'perspective',
+                label: 'Isometric'
+            },
+            top: { 
+                pos: [0, 5.71, 0.01],
+                target: [0, 0, 0],
+                mode: 'orthographic',
+                label: 'Top View'
+            },
+            plan: { 
+                pos: [0, 5.71, 0.01],
+                target: [0, 0, 0],
+                mode: 'orthographic',
+                label: 'Plan View'
+            }
+        };
+
+        function setCameraView(viewName, animate = true, duration = 800) {
+            const view = CAMERA_PRESETS[viewName];
+            if (!view) {
+                console.warn(`Camera view "${viewName}" not found`);
+                return;
+            }
+            
+            const [x, y, z] = view.pos;
+            const [tx, ty, tz] = view.target;
+            
+            // Update active button
+            document.querySelectorAll('.cam-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.view === viewName);
+            });
+            
+            // Switch camera mode if needed
+            if (view.mode === 'orthographic' && currentViewMode !== 'orthographic') {
+                // Switch to orthographic
+                activeCamera = orthographicCamera;
+                currentViewMode = 'orthographic';
+                controls.object = orthographicCamera;
+                controls.target.set(tx, ty, tz);
+                controls.update();
+            } else if (view.mode === 'perspective' && currentViewMode !== 'perspective') {
+                // Switch to perspective
+                activeCamera = perspectiveCamera;
+                currentViewMode = 'perspective';
+                controls.object = perspectiveCamera;
+                controls.target.set(tx, ty, tz);
+                controls.update();
+            }
+            
+            // Set position
+            const camera = activeCamera;
+            camera.position.set(x, y, z);
+            
+            if (camera.isOrthographicCamera) {
+                // Update orthographic frustum based on model size
+                if (currentModel) {
+                    const box = new THREE.Box3().setFromObject(modelGroup);
+                    const size = box.getSize(new THREE.Vector3());
+                    const maxDim = Math.max(size.x, size.z);
+                    const newFrustum = maxDim * 1.2;
+                    const aspect = container.clientWidth / container.clientHeight;
+                    camera.left = -newFrustum * aspect / 2;
+                    camera.right = newFrustum * aspect / 2;
+                    camera.top = newFrustum / 2;
+                    camera.bottom = -newFrustum / 2;
+                    camera.updateProjectionMatrix();
+                }
+            }
+            
+            controls.target.set(tx, ty, tz);
+            controls.update();
+        }
+
+        // ================================================================
+        // LIGHTING
+        // ================================================================
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+
+        const mainLight = new THREE.DirectionalLight(0xffffff, 1.5);
+        mainLight.position.set(5, 10, 7);
+        mainLight.castShadow = true;
+        scene.add(mainLight);
+
+        const fillLight = new THREE.DirectionalLight(0x8888ff, 0.4);
+        fillLight.position.set(-5, 0, 5);
+        scene.add(fillLight);
+
+        const rimLight = new THREE.DirectionalLight(0xffeedd, 0.3);
+        rimLight.position.set(0, -5, -5);
+        scene.add(rimLight);
+
+        const hemiLight = new THREE.HemisphereLight(0xadd8e6, 0x8d8d8d, 0.5);
+        scene.add(hemiLight);
+
+        // ================================================================
+        // GROUND & GRID
+        // ================================================================
+
+        const gridHelper = new THREE.GridHelper(10, 20, 0x888888, 0x444444);
+        gridHelper.position.y = -0.5;
+        scene.add(gridHelper);
+
+        const plane = new THREE.Mesh(
+            new THREE.PlaneGeometry(10, 10),
+            new THREE.ShadowMaterial({ opacity: 0.2, color: 0x000000 })
+        );
+        plane.rotation.x = -Math.PI / 2;
+        plane.position.y = -0.5;
+        plane.receiveShadow = true;
+        scene.add(plane);
+
+        // Model group
+        const modelGroup = new THREE.Group();
+        scene.add(modelGroup);
+
+        // ================================================================
+        // DRACO LOADER
+        // ================================================================
+
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+        dracoLoader.setDecoderConfig({ type: 'js' });
+
+        // ================================================================
+        // MODEL FUNCTIONS
+        // ================================================================
+
+        function showLoading(text = 'Loading 3D model...') {
+            loadingText.textContent = text;
+            loadingOverlay.style.display = 'flex';
+        }
+
+        function hideLoading() {
+            loadingOverlay.style.display = 'none';
+        }
+
+        function clearModel() {
+            while (modelGroup.children.length > 0) {
+                modelGroup.remove(modelGroup.children[0]);
+            }
+            currentModel = null;
+        }
+
+        function processModel(model) {
+            try {
+                const box = new THREE.Box3().setFromObject(model);
+                const size = box.getSize(new THREE.Vector3());
+                const center = box.getCenter(new THREE.Vector3());
+
+                const maxDim = Math.max(size.x, size.y, size.z);
+                let scale = 1;
+                if (maxDim > 3) {
+                    scale = 3 / maxDim;
+                } else if (maxDim < 0.5) {
+                    scale = 1.5 / maxDim;
+                }
+
+                if (scale !== 1) {
+                    model.scale.set(scale, scale, scale);
+                }
+
+                const newCenter = new THREE.Box3().setFromObject(model).getCenter(new THREE.Vector3());
+                model.position.sub(newCenter);
+
+                const minY = new THREE.Box3().setFromObject(model).min.y;
+                if (minY < -0.1) {
+                    model.position.y = -minY;
+                }
+
+                model.traverse((child) => {
+                    if (child.isMesh) {
+                        child.castShadow = true;
+                        child.receiveShadow = true;
+                        if (child.material) {
+                            child.material.roughness = 0.4;
+                            child.material.metalness = 0.1;
+                            child.material.needsUpdate = true;
+                        }
+                    }
+                });
+
+                modelGroup.add(model);
+                currentModel = model;
+                hideLoading();
+
+                // Fit camera to model
+                fitCameraToModel();
+
+            } catch (err) {
+                console.error('Error processing model:', err);
+                hideLoading();
+            }
+        }
+
+        function fitCameraToModel() {
+            if (!currentModel) return;
+
+            const box = new THREE.Box3().setFromObject(modelGroup);
+            const size = box.getSize(new THREE.Vector3());
+            const center = box.getCenter(new THREE.Vector3());
+
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const distance = (maxDim * 2.5) / 1.4;
+
+            // Update orthographic frustum if in orthographic mode
+            if (activeCamera.isOrthographicCamera) {
+                const newFrustum = maxDim * 1.2;
+                const aspect = container.clientWidth / container.clientHeight;
+                activeCamera.left = -newFrustum * aspect / 2;
+                activeCamera.right = newFrustum * aspect / 2;
+                activeCamera.top = newFrustum / 2;
+                activeCamera.bottom = -newFrustum / 2;
+                activeCamera.updateProjectionMatrix();
+            }
+
+            const activeBtn = document.querySelector('.cam-btn.active');
+            const currentView = activeBtn ? activeBtn.dataset.view : 'isometric';
+            const view = CAMERA_PRESETS[currentView] || CAMERA_PRESETS.isometric;
+            
+            const [vx, vy, vz] = view.pos;
+            const dir = new THREE.Vector3(vx, vy, vz).normalize();
+            
+            activeCamera.position.set(
+                center.x + dir.x * distance,
+                center.y + dir.y * distance,
+                center.z + dir.z * distance
+            );
+            controls.target.set(center.x, center.y, center.z);
+            controls.update();
+        }
+
+        // ================================================================
+        // CAMERA BUTTON EVENTS
+        // ================================================================
+
+        document.querySelectorAll('.cam-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setCameraView(btn.dataset.view);
+            });
+        });
+
+        // ================================================================
+        // RESIZE
+        // ================================================================
+
+        function onResize() {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            const aspect = width / height;
+            
+            // Update perspective camera
+            perspectiveCamera.aspect = aspect;
+            perspectiveCamera.updateProjectionMatrix();
+            
+            // Update orthographic camera
+            if (currentModel) {
+                const box = new THREE.Box3().setFromObject(modelGroup);
+                const size = box.getSize(new THREE.Vector3());
+                const maxDim = Math.max(size.x, size.z);
+                const newFrustum = maxDim * 1.2;
+                orthographicCamera.left = -newFrustum * aspect / 2;
+                orthographicCamera.right = newFrustum * aspect / 2;
+                orthographicCamera.top = newFrustum / 2;
+                orthographicCamera.bottom = -newFrustum / 2;
+                orthographicCamera.updateProjectionMatrix();
+            }
+            
+            renderer.setSize(width, height);
+        }
+
+        window.addEventListener('resize', onResize);
+
+        // ================================================================
+        // ANIMATION LOOP
+        // ================================================================
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, activeCamera);
+        }
+
+        animate();
+
+        // ================================================================
+        // LOAD MODEL
+        // ================================================================
+
+        function loadModel() {
+            showLoading('Loading model...');
+            clearModel();
+
+            const loader = new GLTFLoader();
+            loader.setDRACOLoader(dracoLoader);
+
+            const modelPath = './modelParan-1.glb';
+
+            loader.load(modelPath, (gltf) => {
+                processModel(gltf.scene);
+            }, (progress) => {
+                const percent = (progress.loaded / progress.total * 100).toFixed(0);
+                loadingText.textContent = `Loading... ${percent}%`;
+            }, (error) => {
+                console.error('Error loading model:', error);
+                hideLoading();
+                loadingText.textContent = '❌ Error loading model. Check console.';
+            });
+        }
+
+        // ================================================================
+        // STARTUP
+        // ================================================================
+
+        setCameraView('isometric', false);
+        loadModel();
+    </script>
+
+</body>
+
+</html>

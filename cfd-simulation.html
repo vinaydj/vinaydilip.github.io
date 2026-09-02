@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microclimate & CFD Simulation - Vinay Dilip J</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/project-detail.css">
+    <style>
+        /* ===== LOADING SPINNER ===== */
+        .lightbox-loading {
+            flex: 0 0 100%;
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            color: #fff;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            min-height: 400px;
+        }
+
+        .lightbox-spinner {
+            width: 44px;
+            height: 44px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: lightbox-spin 0.8s linear infinite;
+        }
+
+        @keyframes lightbox-spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <a href="gallery.html">VINAY DILIP J</a>
+        </div>
+        <nav>
+            <a href="gallery.html">Gallery</a>
+            <a href="product.html">Product</a>
+            <a href="plugin.html">Plugins</a>
+            <a href="resume/Vinay_CV_Architect_BIM.pdf">Resume</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== NAVIGATION ARROWS ===== -->
+    <a href="working-drawings.html" class="arrow left" aria-label="Previous project: Working Drawings">❮</a>
+    <a href="gallery.html" class="arrow right" aria-label="Back to Gallery">❯</a>
+
+    <!-- ===== MAIN CONTENT CONTAINER ===== -->
+    <main class="slider-container">
+        <!-- Close Button -->
+        <div class="x-button">
+            <a href="gallery.html" aria-label="Close to Gallery">
+                <img src="assets/icons/x.svg" alt="Close">
+            </a>
+        </div>
+
+        <!-- Title -->
+        <div class="title-block">
+            <h1>Microclimate &amp; CFD Simulation</h1>
+        </div>
+
+        <!-- Meta Info -->
+        <div class="project-text">
+            <ul class="meta-list">
+                <li><span class="label">Software</span><span class="value">ANSYS Fluent · ANSYS Meshing · SpaceClaim</span></li>
+                <li><span class="label">Role</span><span class="value">CFD Analyst &amp; Simulation Specialist</span></li>
+                <li><span class="label">Year</span><span class="value">2024 — 2026</span></li>
+                <li><span class="label">Scope</span><span class="value">Urban Aerodynamics · Natural Ventilation · Thermal Comfort</span></li>
+                <li><span class="label">Workflow</span><span class="value">Geometry Cleanup → Domain Meshing → Solver Setup → Post-Processing</span></li>
+                <li><span class="label">Physics</span><span class="value">Steady-State &amp; Transient · RANS · Conjugate Heat Transfer (CHT)</span></li>
+            </ul>
+        </div>
+
+        <!-- Description -->
+        <div class="description">
+            <p><strong>Computational Fluid Dynamics (CFD) analysis using ANSYS Fluent for high-performance building engineering.</strong></p>
+            <p>A portfolio of microclimate and fluid dynamic studies across high-rise developments, medical facilities, and commercial interiors. Analyses focus on pedestrian wind comfort, indoor air stratification, conjugate heat transfer in HVAC terminal devices, and transient smoke evacuation for fire safety compliance.</p>
+        </div>
+
+        <!-- ===== GALLERY GRID ===== -->
+        <div class="gallery-wrapper">
+            <div class="gallery-grid" id="galleryGrid">
+                
+                <!-- Card 1 -->
+                <div class="gallery-item lightbox-trigger" data-project="highrise-wind">
+                    <div class="image-container">
+                        <img src="/assets/images/cfd-simulation/highRiseWind/Velocity.gif" alt="High-Rise Wind Analysis" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">High-Rise Wind Analysis</div>
+                        <div class="subtitle">ANSYS Fluent · Steady-State RANS</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="gallery-item lightbox-trigger" data-project="natural-ventilation">
+                    <div class="image-container">
+                        <img src="/assets/images/cfd-simulation/NV-Model/velocityVolume.gif" alt="Natural Ventilation Study" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Natural Ventilation Study</div>
+                        <div class="subtitle">Transient Indoor Airflow</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="gallery-item lightbox-trigger" data-project="radiator-heating">
+                    <div class="image-container">
+                        <img src="/assets/images/cfd-simulation/radiator/Temprature-2.gif" alt="Room Heating Radiator" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Room Radiator Heating</div>
+                        <div class="subtitle">Convection &amp; Thermal Stratification</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="gallery-item lightbox-trigger" data-project="freezer-air-curtain">
+                    <div class="image-container">
+                        <img src="/assets/images/cfd-simulation/air-curtain/VelocityContour.gif" alt="Freezer Room Air Curtain" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Freezer Air Curtain</div>
+                        <div class="subtitle">Thermal Infiltration Barrier</div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="gallery-item lightbox-trigger" data-project="hvac-distribution">
+                    <div class="image-container">
+                        <img src="assets/images/cfd-simulation/ductRoom/Eddy%20Viscocity.gif" alt="HVAC Air Distribution" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">HVAC Air Distribution</div>
+                        <div class="subtitle">Conjugate Heat Transfer</div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="gallery-item lightbox-trigger" data-project="smoke-extraction">
+                    <div class="image-container">
+                        <img src="/assets/images/cfd-simulation/smoke-extraction/model-2.gif" alt="Smoke Extraction Analysis" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Smoke Extraction Analysis</div>
+                        <div class="subtitle">Fire Safety &amp; Mass Transport</div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="gallery-item lightbox-trigger" data-project="t-duct">
+                    <div class="image-container">
+                        <img src="/assets/images/cfd-simulation/t-duct/hero.gif" alt="T-Duct Airflow Optimization" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">T-Duct Optimization</div>
+                        <div class="subtitle">Pressure Drop &amp; Flow Dynamics</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-btn-wrap">
+            <div class="breadcrumb-hint">
+                <a href="gallery.html" id="breadcrumbLink" class="back-to-portfolio-btn">← Back to Portfolio</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 by Vinay</p>
+        </footer>
+    </main>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-close" id="lightboxCloseBtn">
+            <a href="#" aria-label="Close lightbox">
+                <img src="assets/icons/x.svg" alt="Close">
+            </a>
+        </div>
+
+        <div class="lightbox-content" id="lightboxContent">
+            <div class="lightbox-slider-wrapper">
+                <div class="lightbox-slider" id="lightboxSlider"></div>
+            </div>
+
+            <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous">‹</button>
+            <button class="lightbox-nav next" id="lightboxNext" aria-label="Next">›</button>
+
+            <div id="lightboxNav"></div>
+
+            <div class="lightbox-caption" id="lightboxCaption">
+                <span id="captionText">CFD Simulation Result</span>
+                <span id="captionIndex">1 / 8</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const overlay = document.getElementById('lightboxOverlay');
+            const closeBtn = document.getElementById('lightboxCloseBtn');
+            const lightboxSlider = document.getElementById('lightboxSlider');
+            const lightboxNav = document.getElementById('lightboxNav');
+            const captionText = document.getElementById('captionText');
+            const captionIndex = document.getElementById('captionIndex');
+            const prevBtn = document.getElementById('lightboxPrev');
+            const nextBtn = document.getElementById('lightboxNext');
+
+            let currentImages = [];
+            let currentIndex = 0;
+            let isScrolling = false;
+            let sessionVersion = Date.now();
+
+            const projectImages = {
+                'highrise-wind': [
+                    { src: "/assets/images/cfd-simulation/highRiseWind/Velocity.gif", caption: 'Wind Velocity Contours' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/Preasure.gif", caption: 'Wind Surface Pressure' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/model-1.png", caption: 'Domain Geometry' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/model-2.png", caption: 'Surface Mesh' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/model-3.png", caption: 'Volume Mesh Cut-Plane' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/model-4.png", caption: 'Eddy Viscosity Distribution' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/model-5.png", caption: 'Facade Pressure Distribution' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/model-6.png", caption: 'Velocity Streamlines' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/model-7.png", caption: 'Turbulent Kinetic Energy' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/model-8.png", caption: 'Wake Zone Velocity Vector' },
+                    { src: "/assets/images/cfd-simulation/highRiseWind/model-9.png", caption: 'Wall Shear Stress Map' }
+                ],
+                'natural-ventilation': [
+                    { src: "/assets/images/cfd-simulation/NV-Model/model-1.png", caption: 'Indoor Architectural Domain' },
+                    { src: "/assets/images/cfd-simulation/NV-Model/velocityVolume.gif", caption: 'Indoor Airflow Pattern - Plan View' },
+                    { src: "/assets/images/cfd-simulation/NV-Model/velocity.gif", caption: 'Airflow Velocity Vectors' },
+                    { src: "/assets/images/cfd-simulation/NV-Model/pressure.gif", caption: 'Differential Pressure Fields' },
+                    { src: "/assets/images/cfd-simulation/NV-Model/model-2.png", caption: 'Density Contour' },
+                    { src: "/assets/images/cfd-simulation/NV-Model/model-3.png", caption: 'Velocity Vectors at Openings' },
+                    { src: "/assets/images/cfd-simulation/NV-Model/model-4.png", caption: 'Pressure Drop Profile' },
+                    { src: "/assets/images/cfd-simulation/NV-Model/model-5.png", caption: 'Pressure Gradient Iso-Surface' },
+                    { src: "/assets/images/cfd-simulation/NV-Model/model-6.png", caption: 'Temperature Distribution' },
+                    { src: "/assets/images/cfd-simulation/NV-Model/model-7.png", caption: 'Turbulent Kinetic Energy' }
+                ],
+                'radiator-heating': [
+                    { src: "/assets/images/cfd-simulation/radiator/model-1.png", caption: 'Radiator Surface Boundary' },
+                    { src: "/assets/images/cfd-simulation/radiator/Temprature-2.gif", caption: 'Thermal Stratification Animation' },
+                    { src: "/assets/images/cfd-simulation/radiator/Velocity-Streamline.gif", caption: 'Buoyancy-Driven Velocity Streamlines' },
+                    { src: "/assets/images/cfd-simulation/radiator/Temprature.gif", caption: 'Thermal Plume Formation' },
+                    { src: "/assets/images/cfd-simulation/radiator/model-2.png", caption: 'Steady-State Temperature Contour' },
+                    { src: "/assets/images/cfd-simulation/radiator/Pressure-Volume.gif", caption: 'Pressure Volume Contour' },
+                    { src: "/assets/images/cfd-simulation/radiator/model-3.png", caption: 'Natural Convection Vectors' }
+                ],
+                'freezer-air-curtain': [
+                    { src: "/assets/images/cfd-simulation/air-curtain/model-1.png", caption: 'Cold Storage Geometry' },
+                    { src: "/assets/images/cfd-simulation/air-curtain/VelocityContour.gif", caption: 'Jet Velocity Profile' },
+                    { src: "/assets/images/cfd-simulation/air-curtain/Velocity.gif", caption: 'Discharge Flow Vectors' },
+                    { src: "/assets/images/cfd-simulation/air-curtain/Temperature.gif", caption: 'Thermal Barrier Efficiency' },
+                    { src: "/assets/images/cfd-simulation/air-curtain/Pressure.gif", caption: 'Differential Pressure Profile' },
+                    { src: "/assets/images/cfd-simulation/air-curtain/Turbulence.gif", caption: 'Turbulence Intensity Map' }
+                ],
+                'hvac-distribution': [
+                    { src: "/assets/images/cfd-simulation/ductRoom/model-1.png", caption: 'Room Diffuser Layout' },
+                    { src: "assets/images/cfd-simulation/ductRoom/Eddy%20Viscocity.gif", caption: 'Eddy Viscosity Profile' },
+                    { src: "/assets/images/cfd-simulation/ductRoom/Temperature.gif", caption: 'Thermal Comfort Distribution' },
+                    { src: "/assets/images/cfd-simulation/ductRoom/VelocityStreamline.gif", caption: 'Diffuser Throw Streamlines' },
+                    { src: "/assets/images/cfd-simulation/ductRoom/Pressure.gif", caption: 'Supply Duct Static Pressure' },
+                    { src: "/assets/images/cfd-simulation/ductRoom/Eddy%20Viscocity%20Streamline.gif", caption: 'Turbulent Streamlines' },
+                    { src: "/assets/images/cfd-simulation/ductRoom/model-2.png", caption: 'Velocity Magnitude Contour' },
+                    { src: "/assets/images/cfd-simulation/ductRoom/model-3.png", caption: 'Temperature Cut-Plane' },
+                    { src: "/assets/images/cfd-simulation/ductRoom/model-4.png", caption: 'Enthalpy Profile' }
+                ],
+                'smoke-extraction': [
+                    { src: "/assets/images/cfd-simulation/smoke-extraction/model-1.png", caption: 'Enclosure Geometry' },
+                    { src: "/assets/images/cfd-simulation/smoke-extraction/model-3.gif", caption: 'Plume Velocity Streamlines' },
+                    { src: "/assets/images/cfd-simulation/smoke-extraction/model-1.gif", caption: 'Volume Rendering Animation' },
+                    { src: "/assets/images/cfd-simulation/smoke-extraction/model-2.gif", caption: 'Smoke Mass Fraction Transport' },
+                    { src: "/assets/images/cfd-simulation/smoke-extraction/model-4.gif", caption: 'Visibility Range Evolution' },
+                    { src: "/assets/images/cfd-simulation/smoke-extraction/model-3.png", caption: 'Smoke Layer Height' },
+                    { src: "/assets/images/cfd-simulation/smoke-extraction/model-4.png", caption: 'Exhaust Velocity Profile' },
+                    { src: "/assets/images/cfd-simulation/smoke-extraction/model-5.png", caption: 'Fire Temperature Contour' },
+                    { src: "/assets/images/cfd-simulation/smoke-extraction/model-6.png", caption: 'Air Mass Fraction' }
+                ],
+                't-duct': [
+                    { src: "/assets/images/cfd-simulation/t-duct/image-1.png", caption: 'Dual Inlet Junction Geometry' },
+                    { src: "/assets/images/cfd-simulation/t-duct/image-2.gif", caption: 'Velocity Streamline Dynamics' },
+                    { src: "/assets/images/cfd-simulation/t-duct/image-3.png", caption: 'Static Pressure Distribution' },
+                    { src: "/assets/images/cfd-simulation/t-duct/image-4.png", caption: 'Core Flow Velocity Streamlines' },
+                    { src: "/assets/images/cfd-simulation/t-duct/image-5.png", caption: 'Pressure Gradient Path' },
+                    { src: "/assets/images/cfd-simulation/t-duct/image-6.png", caption: 'Separation Zone Vectors' },
+                    { src: "/assets/images/cfd-simulation/t-duct/image-7.png", caption: 'Outlet Velocity Contour' }
+                ]
+            };
+
+            function getFreshUrl(url) {
+                if (!url) return '';
+                const separator = url.includes('?') ? '&' : '?';
+                return `${url}${separator}v=${sessionVersion}`;
+            }
+
+            function updateCaption(index) {
+                if (currentImages && currentImages[index]) {
+                    captionText.textContent = currentImages[index].caption || `Result ${index + 1}`;
+                    captionIndex.textContent = `${index + 1} / ${currentImages.length}`;
+                }
+            }
+
+            function updateDots(index) {
+                const dots = lightboxNav.querySelectorAll('a');
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+            }
+
+            function goToSlide(index) {
+                const slides = lightboxSlider.querySelectorAll('img');
+                if (!slides.length) return;
+
+                currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+                isScrolling = true;
+
+                slides[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                updateDots(currentIndex);
+                updateCaption(currentIndex);
+
+                setTimeout(() => { isScrolling = false; }, 350);
+            }
+
+            function openLightboxWithImages(images) {
+                currentImages = images;
+                currentIndex = 0;
+                lightboxSlider.innerHTML = '';
+                lightboxNav.innerHTML = '';
+
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+
+                images.forEach((_, idx) => {
+                    const dot = document.createElement('a');
+                    dot.href = 'javascript:void(0)';
+                    if (idx === 0) dot.classList.add('active');
+                    dot.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        goToSlide(idx);
+                    });
+                    lightboxNav.appendChild(dot);
+                });
+
+                images.forEach((imgData, index) => {
+                    const img = document.createElement('img');
+                    img.alt = imgData.caption || `CFD Result ${index + 1}`;
+                    img.dataset.caption = imgData.caption || `CFD Result ${index + 1}`;
+                    img.loading = index === 0 ? 'eager' : 'lazy';
+
+                    img.onerror = function () {
+                        this.style.opacity = '0.3';
+                        this.alt = 'Simulation asset unavailable';
+                    };
+
+                    img.src = getFreshUrl(imgData.src);
+                    lightboxSlider.appendChild(img);
+                });
+
+                updateCaption(0);
+                updateDots(0);
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    lightboxSlider.innerHTML = '';
+                    lightboxNav.innerHTML = '';
+                    currentImages = [];
+                    currentIndex = 0;
+                }, 200);
+            }
+
+            lightboxSlider.addEventListener('scroll', function () {
+                if (isScrolling) return;
+                const slides = this.querySelectorAll('img');
+                if (!slides.length) return;
+
+                const slideWidth = this.scrollWidth / slides.length;
+                const activeIndex = Math.round(this.scrollLeft / slideWidth);
+                const clampedIndex = Math.min(Math.max(activeIndex, 0), slides.length - 1);
+
+                if (currentIndex !== clampedIndex) {
+                    currentIndex = clampedIndex;
+                    updateDots(clampedIndex);
+                    updateCaption(clampedIndex);
+                }
+            });
+
+            let touchStartX = 0;
+            lightboxSlider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            lightboxSlider.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].screenX;
+                if (touchEndX < touchStartX - 50) goToSlide(currentIndex + 1);
+                if (touchEndX > touchStartX + 50) goToSlide(currentIndex - 1);
+            }, { passive: true });
+
+            if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); goToSlide(currentIndex - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); goToSlide(currentIndex + 1); });
+            if (closeBtn) closeBtn.addEventListener('click', (e) => { e.preventDefault(); closeLightbox(); });
+
+            document.addEventListener('keydown', function (e) {
+                if (!overlay.classList.contains('active')) return;
+                if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+                if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+                if (e.key === 'Escape') closeLightbox();
+            });
+
+            document.querySelectorAll('.lightbox-trigger').forEach(function (trigger) {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const projectId = this.dataset.project || this.closest('[data-project]')?.dataset.project;
+                    const imgElement = this.tagName.toLowerCase() === 'img' ? this : this.querySelector('img');
+                    const imgSrc = imgElement ? imgElement.getAttribute('src') : null;
+
+                    if (projectId && projectImages[projectId]) {
+                        openLightboxWithImages(projectImages[projectId]);
+                    } else if (imgSrc) {
+                        openLightboxWithImages([{ src: imgSrc, caption: imgElement.alt || 'CFD Result' }]);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

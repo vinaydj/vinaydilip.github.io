@@ -1,0 +1,115 @@
+<svg viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" font-family="Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2B5B84"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="620" fill="#ffffff"/>
+  <text x="30" y="34" font-size="12.5" fill="#777" letter-spacing="1">END-TO-END PROJECT WORKFLOW</text>
+
+  <!-- ROW 1 -->
+  <!-- Step 1 -->
+  <g>
+    <rect x="30" y="60" width="250" height="120" rx="12" fill="#eaf1f7" stroke="#2B5B84" stroke-width="1.2"/>
+    <text x="45" y="85" font-size="11" fill="#2B5B84" font-weight="700" letter-spacing="1">01 — SETUP</text>
+    <text x="45" y="110" font-size="14" fill="#242222" font-weight="700">Room &amp; Sensor Selection</text>
+    <text x="45" y="132" font-size="11.5" fill="#555">Corridor room, Parenthesen (1964).</text>
+    <text x="45" y="149" font-size="11.5" fill="#555">DHT21 (1.3m), ENS160 (0.5m),</text>
+    <text x="45" y="166" font-size="11.5" fill="#555">PIR (2.0m) placed &amp; vent sealed.</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g>
+    <rect x="317" y="60" width="250" height="120" rx="12" fill="#eaf1f7" stroke="#2B5B84" stroke-width="1.2"/>
+    <text x="332" y="85" font-size="11" fill="#2B5B84" font-weight="700" letter-spacing="1">02 — SENSING</text>
+    <text x="332" y="110" font-size="14" fill="#242222" font-weight="700">IoT Node Deployment</text>
+    <text x="332" y="132" font-size="11.5" fill="#555">ESP32 nodes sample temp,</text>
+    <text x="332" y="149" font-size="11.5" fill="#555">CO₂eq, TVOC &amp; PIR every 2s,</text>
+    <text x="332" y="166" font-size="11.5" fill="#555">post JSON over Wi-Fi.</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g>
+    <rect x="604" y="60" width="250" height="120" rx="12" fill="#eaf2ec" stroke="#4c8a5e" stroke-width="1.2"/>
+    <text x="619" y="85" font-size="11" fill="#4c8a5e" font-weight="700" letter-spacing="1">03 — BACKEND</text>
+    <text x="619" y="110" font-size="14" fill="#242222" font-weight="700">Ingest &amp; Storage</text>
+    <text x="619" y="132" font-size="11.5" fill="#555">FastAPI validates &amp; timestamps;</text>
+    <text x="619" y="149" font-size="11.5" fill="#555">SQLite logs readings; Nginx</text>
+    <text x="619" y="166" font-size="11.5" fill="#555">fronts it on a Pi Zero 2 W.</text>
+  </g>
+
+  <!-- Step 4 -->
+  <g>
+    <rect x="891" y="60" width="250" height="120" rx="12" fill="#eaf2ec" stroke="#4c8a5e" stroke-width="1.2"/>
+    <text x="906" y="85" font-size="11" fill="#4c8a5e" font-weight="700" letter-spacing="1">04 — PROCESSING</text>
+    <text x="906" y="110" font-size="14" fill="#242222" font-weight="700">Clean, Align, Resample</text>
+    <text x="906" y="132" font-size="11.5" fill="#555">Reject invalid values, align</text>
+    <text x="906" y="149" font-size="11.5" fill="#555">timelines, resample 2s raw</text>
+    <text x="906" y="166" font-size="11.5" fill="#555">readings to 2-min intervals.</text>
+  </g>
+
+  <!-- Row1 arrows -->
+  <path d="M280,120 L317,120" fill="none" stroke="#2B5B84" stroke-width="1.6" marker-end="url(#arrow2)"/>
+  <path d="M567,120 L604,120" fill="none" stroke="#2B5B84" stroke-width="1.6" marker-end="url(#arrow2)"/>
+  <path d="M854,120 L891,120" fill="none" stroke="#2B5B84" stroke-width="1.6" marker-end="url(#arrow2)"/>
+
+  <!-- Wrap arrow row1 -> row2 -->
+  <path d="M1016,180 C1016,235 300,235 300,270 L300,300" fill="none" stroke="#2B5B84" stroke-width="1.6" marker-end="url(#arrow2)"/>
+
+  <!-- ROW 2 -->
+  <!-- Step 5 -->
+  <g>
+    <rect x="175" y="300" width="250" height="120" rx="12" fill="#f6ece0" stroke="#b9773e" stroke-width="1.2"/>
+    <text x="190" y="325" font-size="11" fill="#b9773e" font-weight="700" letter-spacing="1">05 — OCCUPANCY</text>
+    <text x="190" y="350" font-size="14" fill="#242222" font-weight="700">Rule-Based Sensor Fusion</text>
+    <text x="190" y="372" font-size="11.5" fill="#555">PIR + CO₂eq/TVOC trend rules</text>
+    <text x="190" y="389" font-size="11.5" fill="#555">produce a binary Occupancy(t)</text>
+    <text x="190" y="406" font-size="11.5" fill="#555">signal — no ML required.</text>
+  </g>
+
+  <!-- Step 6 -->
+  <g>
+    <rect x="462" y="300" width="250" height="120" rx="12" fill="#f6ece0" stroke="#b9773e" stroke-width="1.2"/>
+    <text x="477" y="325" font-size="11" fill="#b9773e" font-weight="700" letter-spacing="1">06 — CALIBRATION</text>
+    <text x="477" y="350" font-size="14" fill="#242222" font-weight="700">1R1C Model Fitting</text>
+    <text x="477" y="372" font-size="11.5" fill="#555">R from envelope properties;</text>
+    <text x="477" y="389" font-size="11.5" fill="#555">C from free-float decay; Q_bg</text>
+    <text x="477" y="406" font-size="11.5" fill="#555">fitted from indoor sensor data.</text>
+  </g>
+
+  <!-- Step 7 -->
+  <g>
+    <rect x="749" y="300" width="250" height="120" rx="12" fill="#eee8f4" stroke="#7c5ba6" stroke-width="1.2"/>
+    <text x="764" y="325" font-size="11" fill="#7c5ba6" font-weight="700" letter-spacing="1">07 — VALIDATION</text>
+    <text x="764" y="350" font-size="14" fill="#242222" font-weight="700">Measured vs Simulated</text>
+    <text x="764" y="372" font-size="11.5" fill="#555">7,001 timesteps, 10 days.</text>
+    <text x="764" y="389" font-size="11.5" fill="#555">MBE, RMSE, CV-RMSE scored</text>
+    <text x="764" y="406" font-size="11.5" fill="#555">per ASHRAE Guideline 14.</text>
+  </g>
+
+  <!-- Row2 arrows -->
+  <path d="M425,360 L462,360" fill="none" stroke="#2B5B84" stroke-width="1.6" marker-end="url(#arrow2)"/>
+  <path d="M712,360 L749,360" fill="none" stroke="#2B5B84" stroke-width="1.6" marker-end="url(#arrow2)"/>
+
+  <!-- Wrap arrow row2 -> row3 -->
+  <path d="M874,420 C874,475 300,475 300,510 L300,540" fill="none" stroke="#2B5B84" stroke-width="1.6" marker-end="url(#arrow2)"/>
+
+  <!-- ROW 3 -->
+  <!-- Step 8 -->
+  <g>
+    <rect x="175" y="540" width="290" height="60" rx="12" fill="#eee8f4" stroke="#7c5ba6" stroke-width="1.2"/>
+    <text x="190" y="562" font-size="11" fill="#7c5ba6" font-weight="700" letter-spacing="1">08 — FORECASTING</text>
+    <text x="190" y="582" font-size="13" fill="#242222" font-weight="700">1–6h ahead prediction, 0.95→1.35°C RMSE</text>
+  </g>
+
+  <path d="M465,570 L500,570" fill="none" stroke="#2B5B84" stroke-width="1.6" marker-end="url(#arrow2)"/>
+
+  <!-- Step 9 : Insights -->
+  <g>
+    <rect x="500" y="540" width="500" height="60" rx="12" fill="#2B5B84"/>
+    <text x="518" y="562" font-size="11" fill="#cfe0ee" font-weight="700" letter-spacing="1">09 — OUTPUT</text>
+    <text x="518" y="583" font-size="13.5" fill="#ffffff" font-weight="700">Energy-saving insights: occupancy-aware setback &amp; MPC-ready model</text>
+  </g>
+
+</svg>

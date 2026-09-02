@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin Product - Vinay Dilip J</title>
+    <style>
+        /* ================================================================
+           1. BASE STYLES & VARIABLES
+           ================================================================ */
+        :root {
+            --bg-primary: #f7f9fa;
+            --card-bg: #ffffff;
+            --surface-subtle: #fafbfc;
+            --text-main: #242222;
+            --text-muted: #666666;
+            --text-light: #888888;
+            --accent-blue: #2B5B84;
+            --accent-orange: #d4692a;
+            --border-color: #edf0f2;
+            --border-subtle: #eceef0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text-main);
+            padding: 60px 40px 60px;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================================================================
+           2. HEADER
+           ================================================================ */
+        header {
+            background-color: var(--bg-primary);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            z-index: 1000;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .logo {
+            color: #333333;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            transition: color 0.25s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent-blue);
+        }
+
+        /* ================================================================
+           3. CONTAINER & WRAPPER
+           ================================================================ */
+        .slider-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            padding: 50px 60px 40px;
+            text-align: center;
+        }
+
+        .x-button {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+
+        /* ================================================================
+           4. 3D VIEWER CONTAINER
+           ================================================================ */
+        .map-wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #d6d2ca;
+            margin: 20px 0 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            pointer-events: none;
+            backdrop-filter: blur(8px);
+            z-index: 10;
+        }
+
+        /* ================================================================
+           5. SENSOR TELEMETRY & POI NODES
+           ================================================================ */
+        .section-title {
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: #1e293b;
+            text-align: left;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 1.5px solid var(--border-color);
+        }
+
+        .legend-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            text-align: left;
+            margin: 20px 0 35px;
+            padding: 0 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            background: var(--surface-subtle);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .legend-item:hover {
+            border-color: var(--accent-blue);
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .legend-icon {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .legend-icon.sensor {
+            background: rgba(43, 91, 132, 0.12);
+        }
+
+        .legend-icon.server {
+            background: rgba(212, 105, 42, 0.12);
+        }
+
+        .legend-icon.physics {
+            background: rgba(46, 117, 89, 0.12);
+        }
+
+        .legend-info {
+            flex: 1;
+        }
+
+        .legend-info .name {
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        .legend-info .type {
+            font-size: 11px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .legend-tag {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 2px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .legend-tag.sensor {
+            background: rgba(43, 91, 132, 0.1);
+            color: var(--accent-blue);
+        }
+
+        .legend-tag.server {
+            background: rgba(212, 105, 42, 0.1);
+            color: var(--accent-orange);
+        }
+
+        .legend-tag.physics {
+            background: rgba(46, 117, 89, 0.1);
+            color: #2e7559;
+        }
+
+        /* ================================================================
+           6. PIPELINE & SYSTEM SPECS
+           ================================================================ */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            text-align: left;
+            margin-bottom: 35px;
+        }
+
+        .feature-card {
+            background: var(--surface-subtle);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px 18px;
+        }
+
+        .feature-card .card-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .feature-card h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .feature-card p {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #666666;
+        }
+
+        /* ================================================================
+           7. BACK BUTTON & FOOTER
+           ================================================================ */
+        .back-btn-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .back-to-portfolio-btn {
+            font-size: 13.5px;
+            color: var(--accent-blue);
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            background: var(--surface-subtle);
+            padding: 8px 18px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .back-to-portfolio-btn:hover {
+            background: #ffffff;
+            border-color: var(--accent-blue);
+        }
+
+        footer {
+            padding: 25px 0 0;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 40px;
+            color: #999999;
+            font-size: 13px;
+        }
+
+        /* ================================================================
+           8. RESPONSIVE
+           ================================================================ */
+        @media (max-width: 968px) {
+            body {
+                padding: 110px 16px 30px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+
+            .slider-container {
+                padding: 35px 20px;
+            }
+
+            .map-wrapper {
+                height: 400px;
+            }
+
+            .legend-section {
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .x-button {
+                top: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .map-wrapper {
+                height: 320px;
+            }
+
+            .map-overlay {
+                font-size: 10px;
+                padding: 6px 14px;
+                top: 10px;
+            }
+
+            .legend-item {
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="slider-container">
+
+        <!-- Close Button -->
+        <div class="x-button">
+            <a href="gallery.html">
+                <span aria-hidden="true" style="font-size:20px;color:#888;">✕</span>
+            </a>
+        </div>
+
+        <!-- Title Block -->
+        <div class="title-block" style="margin-bottom: 10px;">
+            <h1 style="font-weight: 500; letter-spacing: 2px; font-size: 1.6rem; color: var(--text-main);">
+                DIGITAL TWIN — PARENTHESEN 1964
+            </h1>
+            <p class="project-tagline"
+                style="font-size: 14px; color: #666666; max-width: 620px; margin: 8px auto 0; line-height: 1.6;">
+                Real-time 3D telemetry spatializer and 1R1C thermal model environment calibrated for existing building
+                stock in Lund.
+            </p>
+        </div>
+
+        <!-- ===== 3D ENVIRONMENT IFRAME ===== -->
+        <div class="map-wrapper">
+            <div class="map-overlay">Live Spatial Telemetry • 1R1C Model Active</div>
+            <iframe src="/interactive-map/dist/index.html" title="Parenthesen Digital Twin 3D View" allow="fullscreen" loading="lazy"></iframe>
+        </div>
+
+        <!-- ===== NODES & TELEMETRY ===== -->
+        <h3 class="section-title">DEPLOYED SENSOR NODES &amp; BOUNDARIES</h3>
+        <div class="legend-section">
+
+            <!-- DHT21 Temp Array -->
+            <div class="legend-item" onclick="focusPOI('dht21')">
+                <div class="legend-icon sensor">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B5B84" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+                    </svg>
+                </div>
+                <div class="legend-info">
+                    <div class="name">DHT21 Array (P1–P3)</div>
+                    <div class="type">Temperature Array — 1.3 m Height</div>
+                </div>
+                <span class="legend-tag sensor">ESP32 Node</span>
+            </div>
+
+            <!-- ENS160 Air Quality -->
+            <div class="legend-item" onclick="focusPOI('ens160')">
+                <div class="legend-icon sensor">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B5B84" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 16a4 4 0 0 1-.88-7.9 5 5 0 0 1 9.76-1.3A4 4 0 0 1 19 14h-1" />
+                        <path d="M13 14v4a2 2 0 0 1-4 0v-4" />
+                    </svg>
+                </div>
+                <div class="legend-info">
+                    <div class="name">ENS160 Node</div>
+                    <div class="type">CO₂eq &amp; TVOC — 0.5 m Height</div>
+                </div>
+                <span class="legend-tag sensor">Air Quality</span>
+            </div>
+
+            <!-- PIR Motion -->
+            <div class="legend-item" onclick="focusPOI('pir')">
+                <div class="legend-icon sensor">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B5B84" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="5" r="3" />
+                        <path d="M12 8v8" />
+                        <path d="M8 12l4 2 4-2" />
+                        <path d="M9 21l3-5 3 5" />
+                    </svg>
+                </div>
+                <div class="legend-info">
+                    <div class="name">PIR Motion Sensor</div>
+                    <div class="type">Occupancy Detection — 2.0 m Height</div>
+                </div>
+                <span class="legend-tag sensor">Occupancy</span>
+            </div>
+
+            <!-- Raspberry Pi Zero 2 W Hub -->
+            <div class="legend-item" onclick="focusPOI('hub')">
+                <div class="legend-icon server">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4692a" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                        <line x1="6" y1="6" x2="6.01" y2="6" />
+                        <line x1="6" y1="18" x2="6.01" y2="18" />
+                    </svg>
+                </div>
+                <div class="legend-info">
+                    <div class="name">Pi Zero 2 W Backend</div>
+                    <div class="type">FastAPI / SQLite / Nginx Hub</div>
+                </div>
+                <span class="legend-tag server">Central Node</span>
+            </div>
+
+            <!-- Envelope Boundary -->
+            <div class="legend-item" onclick="focusPOI('envelope')">
+                <div class="legend-icon physics">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2e7559" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="12" y1="3" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="legend-info">
+                    <div class="name">NW Wall Boundary</div>
+                    <div class="type">R = 0.218 K/W Envelope Path</div>
+                </div>
+                <span class="legend-tag physics">Thermal Model</span>
+            </div>
+
+            <!-- Calibration Diagnostics -->
+            <div class="legend-item" onclick="focusPOI('calibration')">
+                <div class="legend-icon physics">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2e7559" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 3v18h18" />
+                        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+                    </svg>
+                </div>
+                <div class="legend-info">
+                    <div class="name">Decay Calibration</div>
+                    <div class="type">τ ≈ 239.7 h | RMSE 0.92 °C</div>
+                </div>
+                <span class="legend-tag physics">Benchmark</span>
+            </div>
+
+        </div>
+
+        <!-- ===== TECHNICAL CAPABILITIES ===== -->
+        <h3 class="section-title">TECHNICAL PIPELINE</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="card-tag">Edge Ingestion</span>
+                <h3>ESP32 + REST Hub</h3>
+                <p>2s polling with 2-minute resampling on a Raspberry Pi Zero 2 W running FastAPI and SQLite.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="card-tag">Sensor Fusion</span>
+                <h3>Rule-Based Occupancy</h3>
+                <p>PIR and CO₂eq/TVOC trend fusion for non-intrusive binary occupancy without ML training data.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="card-tag">Physics Model</span>
+                <h3>1R1C Thermal Twin</h3>
+                <p>Single-zone RC model calibrated via free-float decay, keeping 75.8% of timesteps within ±1 °C.</p>
+            </div>
+        </div>
+
+        <!-- ===== BACK BUTTON ===== -->
+        <div class="back-btn-wrap">
+            <a href="projects/masters-project/Sem-4/thesis-digital-twin.html" class="back-to-portfolio-btn">← View Research Thesis</a>
+        </div>
+
+    </main>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        function focusPOI(poiId, element) {
+            const iframe = document.querySelector('.map-wrapper iframe');
+            if (iframe && iframe.contentWindow) {
+                try {
+                    iframe.contentWindow.postMessage({
+                        type: 'focusPOI',
+                        poi: poiId
+                    }, '*');
+
+                    const items = document.querySelectorAll('.legend-item');
+                    items.forEach(item => {
+                        item.style.borderColor = 'var(--border-color)';
+                        item.style.background = 'var(--surface-subtle)';
+                    });
+
+                    if (element) {
+                        element.style.borderColor = 'var(--accent-blue)';
+                        element.style.background = '#ffffff';
+                    }
+                } catch (e) {
+                    console.warn('3D Viewer frame not ready yet:', e);
+                }
+            }
+        }
+
+        window.addEventListener('message', function (event) {
+            if (event.data && event.data.type) {
+                console.log('Message from 3D scene:', event.data);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

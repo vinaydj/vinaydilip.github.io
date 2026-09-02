@@ -1,0 +1,72 @@
+<svg viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg" font-family="Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2B5B84"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="520" fill="#ffffff"/>
+
+  <!-- Inputs -->
+  <g>
+    <rect x="30" y="60" width="150" height="46" rx="8" fill="#f7f9fa" stroke="#edf0f2"/>
+    <text x="105" y="88" text-anchor="middle" font-size="14" fill="#242222" font-weight="600">PIR motion</text>
+
+    <rect x="30" y="230" width="150" height="46" rx="8" fill="#f7f9fa" stroke="#edf0f2"/>
+    <text x="105" y="258" text-anchor="middle" font-size="14" fill="#242222" font-weight="600">CO₂eq trend</text>
+
+    <rect x="30" y="400" width="150" height="46" rx="8" fill="#f7f9fa" stroke="#edf0f2"/>
+    <text x="105" y="428" text-anchor="middle" font-size="14" fill="#242222" font-weight="600">TVOC trend</text>
+  </g>
+
+  <!-- ONSET decision -->
+  <g>
+    <polygon points="430,40 590,110 430,180 270,110" fill="#eaf1f7" stroke="#2B5B84" stroke-width="1.5"/>
+    <text x="430" y="100" text-anchor="middle" font-size="13" fill="#1e293b" font-weight="700">Motion detected</text>
+    <text x="430" y="118" text-anchor="middle" font-size="12" fill="#444">OR CO₂eq/TVOC ≥20 ppm</text>
+    <text x="430" y="134" text-anchor="middle" font-size="12" fill="#444">rise over 10 min?</text>
+  </g>
+
+  <!-- END decision -->
+  <g>
+    <polygon points="430,335 590,405 430,475 270,405" fill="#eaf1f7" stroke="#2B5B84" stroke-width="1.5"/>
+    <text x="430" y="392" text-anchor="middle" font-size="13" fill="#1e293b" font-weight="700">PIR inactive AND</text>
+    <text x="430" y="410" text-anchor="middle" font-size="12" fill="#444">CO₂eq/TVOC ≥15 ppm</text>
+    <text x="430" y="428" text-anchor="middle" font-size="12" fill="#444">decline over 10–15 min?</text>
+  </g>
+
+  <!-- Lines from inputs to decisions -->
+  <path d="M180,83 C260,83 260,95 268,102" fill="none" stroke="#2B5B84" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M180,253 C230,253 230,140 268,118" fill="none" stroke="#2B5B84" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M180,253 C230,253 230,380 268,398" fill="none" stroke="#2B5B84" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M180,423 C230,423 230,410 268,410" fill="none" stroke="#2B5B84" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Onset -> Occupancy 1 -->
+  <path d="M590,110 C720,110 720,150 760,150" fill="none" stroke="#2B5B84" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="760" y="120" width="180" height="60" rx="10" fill="#2B5B84"/>
+  <text x="850" y="145" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="700">YES</text>
+  <text x="850" y="165" text-anchor="middle" font-size="14" fill="#ffffff" font-weight="700">Occupancy(t) = 1</text>
+
+  <!-- Onset -> stays 0 -->
+  <path d="M430,180 C430,220 430,220 430,230" fill="none" stroke="#aab4bd" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <text x="450" y="210" font-size="11" fill="#888">no</text>
+
+  <!-- hold state -->
+  <rect x="330" y="230" width="200" height="46" rx="8" fill="#fafbfc" stroke="#eceef0"/>
+  <text x="430" y="258" text-anchor="middle" font-size="12.5" fill="#666" font-weight="600">Hold last state</text>
+
+  <path d="M430,276 C430,300 430,300 430,335" fill="none" stroke="#aab4bd" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- End -> Occupancy 0 -->
+  <path d="M590,405 C720,405 720,365 760,365" fill="none" stroke="#2B5B84" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="760" y="335" width="180" height="60" rx="10" fill="#f7f9fa" stroke="#2B5B84" stroke-width="1.5"/>
+  <text x="850" y="360" text-anchor="middle" font-size="13" fill="#2B5B84" font-weight="700">YES</text>
+  <text x="850" y="380" text-anchor="middle" font-size="14" fill="#2B5B84" font-weight="700">Occupancy(t) = 0</text>
+
+  <!-- End -> stays 1 (loop back label) -->
+  <path d="M430,475 C430,495 620,495 620,300 C620,200 620,180 590,155" fill="none" stroke="#aab4bd" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <text x="560" y="495" font-size="11" fill="#888">no — stays occupied</text>
+
+  <!-- Legend -->
+  <text x="30" y="30" font-size="12.5" fill="#777" letter-spacing="1">RULE-BASED FUSION — ONSET (TOP) &amp; END (BOTTOM) OF OCCUPANCY</text>
+</svg>

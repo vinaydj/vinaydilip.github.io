@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Objective Retrofit - Vinay Dilip J</title>
+    <link rel="stylesheet" href="./residential-building.css">
+    <style>
+        .report-download-btn {
+            display: none;
+        }
+
+        .file-download-grid {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .file-download-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            width: 118px;
+            padding: 18px 10px 16px;
+            border-radius: 14px;
+            transition: background 0.18s ease;
+        }
+
+        .file-download-card:hover {
+            background: #eef3f7;
+        }
+
+        .file-download-card svg {
+            width: 52px;
+            height: 60px;
+            stroke: #333333;
+            fill: none;
+            stroke-width: 1.6;
+        }
+
+        .file-download-card .ftype {
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #8a8a8a;
+            text-transform: uppercase;
+        }
+
+        .file-download-card .ftitle {
+            margin-top: 3px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #242222;
+            line-height: 1.3;
+        }
+
+        .meta-cta {
+            margin: 4px 0 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .back-btn-wrap {
+            justify-content: space-between;
+        }
+
+        .back-btn-wrap .dl-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <a class="logo" style="user-select: none; cursor: default;">VINAY DILIP J</a>
+        </div>
+        <nav>
+            <a href="../../gallery.html">Gallery</a>
+            <a href="../../product.html">Product</a>
+            <a href="../../plugin.html">Plugins</a>
+            <a href="../../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== NAVIGATION ARROWS ===== -->
+    <a href="digital-twin-thesis.html" class="arrow left">❮</a>
+    <a href="life-cycle-cost-assessment.html" class="arrow right">❯</a>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="slider-container">
+
+        <!-- Close Button -->
+        <div class="x-button">
+            <a href="building-energy-management.html">
+                <span aria-hidden="true" style="font-size:20px;color:#888;">✕</span>
+            </a>
+        </div>
+
+        <div class="wrap">
+
+            <!-- Title Block -->
+            <div class="title-block">
+                <h1>MULTI-OBJECTIVE RETROFIT</h1>
+                <div class="subhead">
+                    <span>Balancing Energy, Economy and Environment for Västra Bjäre Pastorat</span>
+                </div>
+                <div class="project-tagline">324 simulated renovation combinations for a Swedish community centre,
+                    optimised across energy demand, life cycle cost and embodied carbon at once</div>
+            </div>
+
+            <!-- Project Info + Image -->
+            <div class="project-grid">
+                <div class="project-text">
+                    <ul class="meta-list">
+                        <li><span class="label">Location</span> Lund University, LTH — Divisions of Energy and Building
+                            Design &amp; Building Services</li>
+                        <li><span class="label">Course</span> AEBN21 — Building Retrofit Design</li>
+                        <li><span class="label">Team members</span> <strong>Vinay Dilip Jayaselan</strong>Himadri Gulalia, Kamal Sinha, 
+                            (Group 10)</li>
+                    </ul>
+                    <div class="file-download-grid">
+                        <a class="file-download-card" href="../../projects/masters-project/Sem-3/mainProject-1/reports/AEBN21-Group10-Report.pdf" target="_blank">
+                            <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                            <span class="ftype">PDF</span>
+                            <span class="ftitle">Full Report</span>
+                        </a>
+                        <a class="file-download-card" href="../../projects/masters-project/Sem-3/mainProject-1/reports/AEBN21-Group10-Presentation.pdf" target="_blank">
+                            <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                            <span class="ftype">PDF</span>
+                            <span class="ftitle">Presentation</span>
+                        </a>
+                    </div>
+
+                    <div class="description">
+                        <p><strong>There's rarely one renovation that's simultaneously the cheapest, greenest and most
+                                energy-efficient — so instead of picking a single "best" retrofit, this project mapped
+                                out all the trade-offs at once.</strong>
+                            Västra Bjäre Pastorat, a community centre and parish office in Västra Karup, Skåne, was
+                            modelled in Rhino and Grasshopper, then run through a parametric workflow testing passive
+                            measures (insulation, windows),
+                            active measures (rooftop PV), and a behavioural scenario converting part of the office into
+                            residential apartments.</p>
+                        <p>Every combination was scored on three axes — annual energy demand, 50-year Life Cycle Cost,
+                            and Life Cycle Assessment carbon impact — and a Pareto front analysis found the renovation
+                            sets that balance all three
+                            best, rather than optimising any single one in isolation.</p>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="../../projects/masters-project/Sem-3/mainProject-1/img/hero.png"
+                        alt="First floor thermal zone diagram of the existing building, colour-coded by zone">
+                </div>
+            </div>
+
+            <!-- Site Introduction -->
+            <h2 class="section-title">SITE INTRODUCTION</h2>
+            <div class="gallery-single">
+                <img src="../../projects/masters-project/Sem-3/mainProject-1/img/siteIntroduction.png"
+                    alt="Basement thermal zone diagram of the existing building">
+            </div>
+
+            <!-- Research and Strategies -->
+            <h2 class="section-title">RESEARCH &amp; STRATEGIES</h2>
+            <section class="container">
+                <div class="slider-wrapper">
+                    <div class="img-slider" id="smooth-slider">
+                        <img id="slide-1" src="./Sem-3/mainProject-1/img/researchStratergies-1.png" alt="Slide 1" />
+                        <img id="slide-2" src="./Sem-3/mainProject-1/img/researchStratergies-2.png" alt="Slide 2" />
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#slide-1" class="active"></a>
+                        <a href="#slide-2"></a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Baseline -->
+            <h2 class="section-title">BASELINE &amp; METHODOLOGY</h2>
+            <div class="gallery-wrapper" data-gallery="baseline">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="./Sem-3/mainProject-1/img/baseline-1.png" alt="baseline-1.png">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-3/mainProject-1/img/baseline-2.png" alt="baseline-2.png">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-3/mainProject-1/img/baseline-3.png" alt="baseline-3.png">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-3/mainProject-1/img/baseline-4.png" alt="baseline-4.png">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-3/mainProject-1/img/baseline-5.png" alt="baseline-5.png">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 5</span>
+            </div>
+            <p class="rec-paragraph">The existing two-storey building, plus basement and attic, has a heated floor area
+                of roughly 576.2 m². Measured energy bills put its Energy Use Intensity at 57.1 kWh/m²·year; the
+                calibrated Grasshopper
+                model came out at 54.50 kWh/m²·year — close enough to serve as the benchmark every renovation measure
+                was tested against. Heating runs entirely on electricity via a heat pump, with no district heating
+                connection and no
+                central ventilation, just individual exhaust fans per zone.</p>
+
+            <!-- Strategies -->
+            <h2 class="section-title">RENOVATION STRATEGIES</h2>
+            <div class="gallery-wrapper" data-gallery="strategies">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="./Sem-3/mainProject-1/img/strategies-1.png" alt="strategies-1.png">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-3/mainProject-1/img/strategies-2.png" alt="strategies-2.png">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 2</span>
+            </div>
+            <p class="rec-paragraph">Three families of measures were tested. Passive: glass mineral wool versus hemp
+                fibre insulation, 100–300 mm thick, on interior or exterior wall faces, plus a choice of existing,
+                double- or
+                triple-glazed windows. Active: rooftop photovoltaic arrays in three configurations — 5.8 kWp above the
+                attic, 11.0 kWp above the main hall, or 16.9 kWp combining both. Behavioural: converting 208.5 m² of
+                existing office
+                space into residential apartments — a double-bedroom unit on the first floor, two one-bedroom units on
+                the second — evaluated with ClimateStudio's default residential occupancy profiles in place of office
+                schedules.</p>
+
+            <!-- Individual Results -->
+            <h2 class="section-title">INDIVIDUAL PARAMETER RESULTS</h2>
+            <section class="container">
+                <div class="slider-wrapper">
+                    <div class="img-slider">
+                        <img src="./Sem-3/mainProject-1/img/individualResults-1.png" alt="Slide 1" />
+                        <img src="./Sem-3/mainProject-1/img/individualResults-2.png" alt="Slide 2" />
+                        <img src="./Sem-3/mainProject-1/img/individualResults-3.png" alt="Slide 3" />
+                        <img src="./Sem-3/mainProject-1/img/individualResults-4.png" alt="Slide 4" />
+                        <img src="./Sem-3/mainProject-1/img/individualResults-5.png" alt="Slide 5" />
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#" class="active"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <p class="rec-paragraph">Tested one at a time, the largest PV array (16.9 kWp) delivers the lowest annual
+                energy demand of any single measure, while — unsurprisingly — the base case with no interventions at all
+                has the lowest
+                life cycle cost. Every passive measure sits somewhere in between on both axes, none matching what active
+                generation alone achieves for energy.</p>
+            <p class="rec-paragraph">Looked at as embodied carbon alone, 300 mm of hemp insulation on the interior side
+                wins outright — it's a biogenic material with a small enough footprint to undercut everything else. But
+                once
+                operational energy is folded back in, that ranking flips: the 16.9 kWp PV system cuts total life cycle
+                emissions by roughly 35% versus the base case, more than any passive measure manages on its own, even
+                though hemp
+                remains the better choice product-for-product.</p>
+
+            <!-- Trade-off Analysis -->
+            <h2 class="section-title">TRADE-OFF ANALYSIS</h2>
+            <section class="container">
+                <div class="slider-wrapper">
+                    <div class="img-slider">
+                        <img src="./Sem-3/mainProject-1/img/tradeOff-1.png" alt="Slide 1" />
+                        <img src="./Sem-3/mainProject-1/img/tradeOff-2.png" alt="Slide 2" />
+                        <img src="./Sem-3/mainProject-1/img/tradeOff-3.png" alt="Slide 3" />
+                        <img src="./Sem-3/mainProject-1/img/tradeOff-4.png" alt="Slide 4" />
+                        <img src="./Sem-3/mainProject-1/img/tradeOff-5.png" alt="Slide 5" />
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#" class="active"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <p class="rec-paragraph">Of the 324 parametric combinations simulated, 61 optimised sets were analysed for
+                the existing office function and 32 for the proposed apartment function. Across every pairwise trade-off
+                tested,
+                energy demand and embodied carbon moved together directly — a design that saves energy also tends to cut
+                LCA impact, which isn't guaranteed in retrofit work and made the three-way optimisation that followed
+                more
+                tractable than it might otherwise have been.</p>
+
+            <!-- 3D Pareto -->
+            <h2 class="section-title">OPTIMAL RENOVATION PATHWAYS</h2>
+            <div class="gallery-wrapper" data-gallery="pareto3d">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="../../projects/masters-project/Sem-3/mainProject-1/img/3dPareto-1.png"
+                            alt="Three-dimensional Pareto front bubble chart for the office function, ranking cases as excellent, good or poor">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../../projects/masters-project/Sem-3/mainProject-1/img/3dPareto-2.png"
+                            alt="Three-dimensional Pareto front bubble chart for the apartment function, ranking cases as excellent, good or poor">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 2</span>
+            </div>
+            <p class="rec-paragraph">Combining all three criteria with equal weighting, the office function converges on
+                a clear answer: maximum PV (16.9 kWp), existing windows, no added insulation — 35% energy savings for
+                just 3%
+                extra cost, with envelope upgrades adding cost and embodied carbon without meaningfully improving
+                comfort, since internal heat gains from people, lighting and equipment dominate its demand anyway. The
+                apartment function
+                tells a different story: it benefits from pairing 100 mm interior glass mineral wool with the same 16.9
+                kWp PV system, reaching 41% energy savings for 6% extra cost, because residential heating demand
+                responds to
+                insulation in a way office internal gains don't.</p>
+
+            <!-- Takeaways -->
+            <h2 class="section-title">TAKEAWAYS</h2>
+            <ul class="rec-list">
+                <li><strong>No universal retrofit solution.</strong> The office and apartment functions in the very same
+                    building arrive at different optimal strategies, because their primary energy balance drivers
+                    (internal gains vs. heating demand) differ fundamentally.</li>
+                <li><strong>Active generation outpaces envelope upgrades.</strong> Both functions converge on the 16.9 kWp
+                    PV array, confirming that on-site solar generation consistently provides stronger returns than deep
+                    fabric intervention for this context.</li>
+                <li><strong>Whole-system impact reverses material ranking.</strong> While 300 mm hemp insulation has the
+                    lowest standalone embodied carbon, the PV system avoids far more total life cycle emissions once
+                    operational displacement is factored in.</li>
+                <li><strong>Diminishing returns on deep fabric interventions.</strong> Adding insulation beyond 200 mm and
+                    specifying premium glazing steeply increases cost and embodied carbon with negligible extra energy
+                    reductions.</li>
+                <li><strong>Energy and LCA carbon align closely.</strong> Because operational energy reductions directly
+                    lowered lifecycle carbon across all iterations, the core design optimization resolved between cost
+                    versus environmental performance.</li>
+            </ul>
+
+            <!-- Final Image -->
+            <div class="gallery-single">
+                <img src="../../projects/masters-project/Sem-3/mainProject-1/img/finalResults-1.png"
+                    alt="Table of ranked optimal renovation measures for the office function">
+            </div>
+
+            <!-- Back Button -->
+            <div class="back-btn-wrap">
+                <div class="dl-group file-download-grid">
+                    <a class="file-download-card"
+                        href="../../projects/masters-project/Sem-3/mainProject-1/reports/AEBN21-Group10-Report.pdf" target="_blank">
+                        <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                        <span class="ftype">PDF</span>
+                        <span class="ftitle">Full Report</span>
+                    </a>
+                    <a class="file-download-card"
+                        href="../../projects/masters-project/Sem-3/mainProject-1/reports/AEBN21-Group10-Presentation.pdf" target="_blank">
+                        <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                        <span class="ftype">PDF</span>
+                        <span class="ftitle">Presentation</span>
+                    </a>
+                </div>
+                <div class="breadcrumb-hint">
+                    <a href="building-energy-management.html" class="back-to-portfolio-btn">← Back to EEBD Projects</a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <p class="project-foot">&copy; 2026 by Vinay</p>
+            </footer>
+
+        </div>
+
+    </main>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-close" id="lightboxClose"><span style="color:#fff;font-size:28px;cursor:pointer;">&times;</span></div>
+        <div class="lightbox-content">
+            <div class="lightbox-slider-wrapper">
+                <div class="lightbox-slider" id="lightboxSlider"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Gallery slider: prev/next + counter
+        document.querySelectorAll('.gallery-wrapper').forEach((wrapper) => {
+            const slides = wrapper.querySelectorAll('.gallery-slide');
+            const counter = wrapper.querySelector('.gallery-counter');
+            const prevBtn = wrapper.querySelector('.gallery-nav.prev');
+            const nextBtn = wrapper.querySelector('.gallery-nav.next');
+            let idx = 0;
+
+            function show(i) {
+                slides.forEach((s, n) => s.classList.toggle('active', n === i));
+                if (counter) counter.textContent = `${i + 1} / ${slides.length}`;
+            }
+            if (prevBtn) prevBtn.addEventListener('click', () => { idx = (idx - 1 + slides.length) % slides.length; show(idx); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { idx = (idx + 1) % slides.length; show(idx); });
+            show(0);
+        });
+
+        // Lightbox: click any gallery/single image to zoom
+        const overlay = document.getElementById('lightboxOverlay');
+        const sliderEl = document.getElementById('lightboxSlider');
+        const closeBtn = document.getElementById('lightboxClose');
+
+        document.querySelectorAll('.gallery-slide img, .gallery-single img, .project-image img, .img-slider img').forEach((img) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                sliderEl.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+                overlay.classList.add('active');
+            });
+        });
+        closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('active'); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('active'); });
+
+        // Auto slider initialization
+        document.querySelectorAll('.slider-wrapper').forEach((wrapper) => {
+            const slider = wrapper.querySelector('.img-slider');
+            const slides = slider.querySelectorAll('img');
+            const nav = wrapper.querySelector('.slider-nav');
+            if (!slider || slides.length === 0) return;
+
+            let idx = 0;
+            const total = slides.length;
+            nav.innerHTML = '';
+
+            slides.forEach((_, i) => {
+                const dot = document.createElement('a');
+                dot.href = '#';
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    goTo(i);
+                });
+                nav.appendChild(dot);
+            });
+
+            const dots = nav.querySelectorAll('a');
+
+            function goTo(i) {
+                idx = i;
+                slider.style.transform = `translateX(-${idx * 100}%)`;
+                dots.forEach((d, n) => d.classList.toggle('active', n === idx));
+            }
+
+            let interval = setInterval(() => goTo((idx + 1) % total), 3500);
+            wrapper.addEventListener('mouseenter', () => clearInterval(interval));
+            wrapper.addEventListener('mouseleave', () => interval = setInterval(() => goTo((idx + 1) % total), 3500));
+        });
+    </script>
+
+</body>
+
+</html>

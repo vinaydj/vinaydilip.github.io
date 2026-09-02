@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Vinay Dilip J</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/gallery.css">
+    <style>
+        :root {
+            --accent-blue: #2B5B84;
+        }
+
+        /* Active & Hover Nav Links Highlighted in Blue */
+        nav a {
+            color: #888888;
+            transition: color 0.25s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent-blue) !important;
+        }
+
+        /* ===== LOADING SPINNER ===== */
+        .lightbox-loading {
+            flex: 0 0 100%;
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            color: #fff;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            min-height: 400px;
+        }
+
+        .lightbox-spinner {
+            width: 44px;
+            height: 44px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: lightbox-spin 0.8s linear infinite;
+        }
+
+        @keyframes lightbox-spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <a>VINAY DILIP J</a>
+        </div>
+        <nav>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="product.html">Product</a>
+            <a href="plugin.html">Plugins</a>
+            <!-- <a href="resume/Vinay_CV_Architect_BIM.pdf">Resume</a> -->
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- ===== ACADEMIC SECTION ===== -->
+        <section class="project-section">
+            <div class="category-title">
+                <h1>ARCHITECTURE | BIM | BEM</h1>
+                <h2>Academic Projects</h2>
+            </div>
+
+            <div class="project-grid">
+
+                <!-- ========================================== -->
+                <!-- COLUMN 1: Building Energy Management       -->
+                <!-- ========================================== -->
+                <div class="project-partition-wrapper">
+                    <div class="vertical-title">M.Sc in Building Energy Design (EEBD-Lund)</div>
+                    <div class="project-partition">
+                        <div class="project-card">
+                            <a href="projects/masters-project/digital-twin-thesis.html">
+                                <img src="./projects/masters-project/Sem-4/img/hero.svg" alt="Final Thesis" loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>Master's Thesis Project</h3>
+                            <p>Spring 26</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/masters-project/multi-objective-retrofit.html">
+                                <img src="projects/masters-project/Sem-3/mainProject-1/img/hero.png" alt="Public Building"
+                                    loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>Civic Cultural Building</h3>
+                            <p>Autumn 25</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/masters-project/green-innovation-park-renovation.html">
+                                <img src="projects/masters-project/Sem-2/mainProject-1/img/hero.png" alt="Office Building"
+                                    loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>Net-Zero Commercial Office</h3>
+                            <p>Spring 25</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/masters-project/residential-building.html">
+                                <img src="projects/masters-project/Sem-1/mainProject-1/img/hero-final.png"
+                                    alt="Residential Building" loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>Multi-Family Residential</h3>
+                            <p>Autumn 24</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/masters-project/solar-energy-lab.html">
+                                <img src="projects/masters-project/Sem-3/Course-1/img/hero.gif" alt="Solar Energy Systems"
+                                    loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>Building-Integrated Solar (BIPV)</h3>
+                            <p>Autumn 25</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/masters-project/building-energy-management.html">
+                                <img src="/projects/masters-project/Sem-1/Course-1/img/hero.gif" alt="more-projects"
+                                    style="filter: blur(2px);" loading="lazy">
+                                <div class="plus-overlay">
+                                    <img src="assets/icons/more.png" alt="More" class="plus-image-overlay">
+                                </div>
+                            </a>
+                            <h3>More..</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- COLUMN 2: B.Arch Architecture & BIM        -->
+                <!-- ========================================== -->
+                <div class="project-partition-wrapper">
+                    <div class="vertical-title">Bachelor of Architecture (B.Arch)</div>
+                    <div class="project-partition">
+                        <div class="project-card">
+                            <a href="projects/barch-project/regional-cancer-care-centre.html">
+                                <img src="/projects/barch-project/assets/regional-cancer-care-centre/img/hero.png" alt="Final Thesis"
+                                    loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>B.Arch Thesis</h3>
+                            <p>Spring '21</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/barch-project/faculty-of-design-school.html">
+                                <img src="/projects/barch-project/assets/faculty-of-design-school/img/hero.png" alt="Design School"
+                                    loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>School of Design</h3>
+                            <p>Fall '20</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/barch-project/commercial-retail-mall.html">
+                                <img src="/projects/barch-project/assets/commercial-retail-mall/img/hero.png" alt="Shopping Centre"
+                                    loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>Commercial Retail Mall</h3>
+                            <p>Fall '20</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/barch-project/low-rise-condominiums.html">
+                                <img src="/projects/barch-project/assets/low-rise-condominiums/img/hero.png" alt="Low-Rise Condo"
+                                    loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>Low-Rise Condominiums</h3>
+                            <p>Fall '20</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/barch-project/nordic-cliffside-retreat.html">
+                                <img src="/projects/barch-project/assets/nordic-cliffside-retreat/img/hero.png" alt="My House" loading="lazy">
+                                <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                            </a>
+                            <h3>Nordic Cliffside Retreat</h3>
+                            <p>Fall '20</p>
+                        </div>
+                        <div class="project-card">
+                            <a href="projects/barch-project/more-projects.html">
+                                <img src="/projects/barch-project/assets/hope-care-hospice/img/hero.png" alt="more-projects"
+                                    style="filter: blur(2px);" loading="lazy">
+                                <div class="plus-overlay">
+                                    <img src="assets/icons/more.png" alt="More" class="plus-image-overlay">
+                                </div>
+                            </a>
+                            <h3>More..</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- COLUMN 3: TECHNICAL & COMPUTATIONAL        -->
+                <!-- ========================================== -->
+                <div class="project-right-column-wrapper">
+                    <div class="project-partition-wrapper">
+                        <div class="vertical-title">COMPUTATIONAL & TECHNICAL BIM</div>
+                        <div class="project-partition three-items">
+
+                            <!-- Working Drawings -->
+                            <div class="project-card">
+                                <a href="working-drawings.html">
+                                    <img src="/assets/images/working-drawings/hero.gif" alt="working-drawings"
+                                        loading="lazy">
+                                    <div class="plus-overlay">
+                                        <img src="assets/icons/more.png" class="plus-image-overlay" alt="More">
+                                    </div>
+                                </a>
+                                <h3>Technical Detailing</h3>
+                                <p>&nbsp;</p>
+                            </div>
+
+                            <!-- Revit Family's -->
+                            <div class="project-card">
+                                <a href="#" class="lightbox-trigger" data-project="CMC-TSQ">
+                                    <img src="/assets/images/revit-family/hero.gif" alt="Revit Family's" loading="lazy">
+                                    <div class="plus-overlay">
+                                        <img src="assets/icons/more.png" class="plus-image-overlay" alt="More">
+                                    </div>
+                                </a>
+                                <h3>Parametric Revit Families</h3>
+                                <p>&nbsp;</p>
+                            </div>
+
+                            <!-- CFD Simulation -->
+                            <div class="project-card">
+                                <a href="cfd-simulation.html">
+                                    <img src="/assets/images/cfd-simulation/hero.gif" alt="CFD Simulation" loading="lazy">
+                                    <div class="plus-overlay">
+                                        <img src="assets/icons/more.png" class="plus-image-overlay" alt="More">
+                                    </div>
+                                </a>
+                                <h3>Microclimate &amp; CFD Simulation</h3>
+                                <p>&nbsp;</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== PROFESSIONAL SECTION ===== -->
+        <section class="professional-section">
+            <div class="category-title">
+                <h1>PROFESSIONAL WORKS</h1>
+                <h2>Work and Internship</h2>
+            </div>
+
+            <div class="project-grid-normal">
+                <div class="project-card">
+                    <a href="projects/professional-work/vdc-data-engineer.html">
+                        <img src="/projects/professional-work/assets/architectural-internship-bn-architects/hero.gif" alt="Confidential Analytics" loading="lazy">
+                        <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                    </a>
+                    <h3>Confidential · AI Analytics</h3>
+                    <p>(VDC Engineer)</p>
+                    <p>2019 - 2019</p>
+                </div>
+                <div class="project-card">
+                    <a href="projects/professional-work/bim-architect-gmsc.html">
+                        <img src="/projects/professional-work/assets/project-architect-rathi-associates/hero.gif" alt="GMSC" loading="lazy">
+                        <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                    </a>
+                    <h3>GMSC Consultant</h3>
+                    <p>(BIM Architect)</p>
+                    <p>2019 - 2019</p>
+                </div>
+                <div class="project-card">
+                    <a href="projects/professional-work/project-architect-rathi-associates.html">
+                        <img src="/projects/professional-work/assets/bim-architect-gmsc/hero.gif" alt="Rathi" loading="lazy">
+                        <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                    </a>
+                    <h3>Rathi Associates</h3>
+                    <p>(Architect)</p>
+                    <p>2019 - 2019</p>
+                </div>
+                <div class="project-card">
+                    <a href="projects/professional-work/architectural-internship-bn-architects.html">
+                        <img src="/projects/professional-work/assets/vdc-data-engineer/hero.gif" alt="BNA" loading="lazy">
+                        <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                    </a>
+                    <h3>BNA Architects</h3>
+                    <p>(Internship)</p>
+                    <p>2019 - 2019</p>
+                </div>
+                <div class="project-card">
+                    <a href="projects/professional-work/independent-practice-freelance.html">
+                        <img src="/projects/professional-work/assets/independent-practice-freelance/hero.gif" alt="Freelance" loading="lazy">
+                        <div class="view-overlay"><span>CLICK TO VIEW</span></div>
+                    </a>
+                    <h3>Freelance</h3>
+                    <p>(Architect & Designer)</p>
+                    <p>2013 – Present</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LIGHTBOX ===== -->
+        <div class="lightbox-overlay" id="lightboxOverlay">
+            <div class="lightbox-close" id="lightboxCloseBtn">
+                <a href="#" aria-label="Close lightbox">
+                    <img src="assets/icons/x.svg" alt="Close">
+                </a>
+            </div>
+
+            <div class="lightbox-content" id="lightboxContent">
+                <div class="lightbox-slider-wrapper">
+                    <div class="lightbox-slider" id="lightboxSlider"></div>
+                </div>
+
+                <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous">‹</button>
+                <button class="lightbox-nav next" id="lightboxNext" aria-label="Next">›</button>
+
+                <div id="lightboxNav"></div>
+
+                <div class="lightbox-caption" id="lightboxCaption">
+                    <span id="captionText">Concept Drawing</span>
+                    <span id="captionIndex">1 / 8</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 by Vinay</p>
+    </footer>
+
+    <!-- ===== EMBEDDED SCRIPT ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ================================================================
+            // LIGHTBOX CONFIGURATION & STATE
+            // ================================================================
+            const overlay = document.getElementById('lightboxOverlay');
+            const closeBtn = document.getElementById('lightboxCloseBtn');
+            const lightboxSlider = document.getElementById('lightboxSlider');
+            const lightboxNav = document.getElementById('lightboxNav');
+            const captionText = document.getElementById('captionText');
+            const captionIndex = document.getElementById('captionIndex');
+            const prevBtn = document.getElementById('lightboxPrev');
+            const nextBtn = document.getElementById('lightboxNext');
+
+            let currentImages = [];
+            let currentIndex = 0;
+            let isScrolling = false;
+            let loadId = 0;
+
+            // Touch swipe handling
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            // ================================================================
+            // PROJECT DATA DICTIONARY
+            // ================================================================
+            const projectImages = {
+                'CMC-TSQ': [
+                    { src: '/assets/images/revit-family/image-1.png', caption: 'Detail 1' },
+                    { src: '/assets/images/revit-family/image-2.png', caption: 'Detail 2' },
+                    { src: '/assets/images/revit-family/image-3.png', caption: 'Detail 3' },
+                    { src: '/assets/images/revit-family/image-4.png', caption: 'Detail 4' },
+                    { src: '/assets/images/revit-family/image-5.png', caption: 'Detail 5' },
+                    { src: '/assets/images/revit-family/image-6.png', caption: 'Detail 6' },
+                    { src: '/assets/images/revit-family/image-7.png', caption: 'Detail 7' },
+                    { src: '/assets/images/revit-family/image-8.png', caption: 'Detail 8' },
+                    { src: '/assets/images/revit-family/image-9.png', caption: 'Detail 9' }
+                ]
+            };
+
+            // ================================================================
+            // HELPER FUNCTIONS
+            // ================================================================
+            function createLoadingIndicator(count) {
+                const loadingDiv = document.createElement('div');
+                loadingDiv.className = 'lightbox-loading';
+
+                const spinner = document.createElement('div');
+                spinner.className = 'lightbox-spinner';
+
+                const label = document.createElement('span');
+                label.textContent = 'Loading ' + count + ' image' + (count === 1 ? '' : 's') + '...';
+
+                loadingDiv.appendChild(spinner);
+                loadingDiv.appendChild(label);
+                return loadingDiv;
+            }
+
+            function updateCaption(index) {
+                if (currentImages && currentImages[index]) {
+                    if (captionText) captionText.textContent = currentImages[index].caption || 'Image ' + (index + 1);
+                    if (captionIndex) captionIndex.textContent = (index + 1) + ' / ' + currentImages.length;
+                }
+            }
+
+            function updateDots(index) {
+                if (!lightboxNav) return;
+                const dots = lightboxNav.querySelectorAll('a');
+                dots.forEach(function (dot, i) {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            function goToSlide(index) {
+                const slider = document.getElementById('lightboxSlider');
+                if (!slider) return;
+
+                const slides = slider.querySelectorAll('img');
+                if (!slides.length) return;
+
+                if (index < 0) index = 0;
+                if (index >= slides.length) index = slides.length - 1;
+
+                if (slides[index]) {
+                    currentIndex = index;
+                    isScrolling = true;
+                    slides[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+
+                    setTimeout(function () {
+                        isScrolling = false;
+                        updateDots(index);
+                        updateCaption(index);
+                    }, 350);
+                }
+            }
+
+            function nextSlide() {
+                const slider = document.getElementById('lightboxSlider');
+                if (!slider) return;
+                const slides = slider.querySelectorAll('img');
+                const nextIndex = Math.min(currentIndex + 1, slides.length - 1);
+                goToSlide(nextIndex);
+            }
+
+            function prevSlide() {
+                const prevIndex = Math.max(currentIndex - 1, 0);
+                goToSlide(prevIndex);
+            }
+
+            // ================================================================
+            // LIGHTBOX CORE CONTROLLER
+            // ================================================================
+            function openLightboxWithImages(images, projectId) {
+                const currentLoadId = ++loadId;
+
+                lightboxSlider.innerHTML = '';
+                lightboxNav.innerHTML = '';
+                currentImages = images;
+                currentIndex = 0;
+
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+
+                const loadingDiv = createLoadingIndicator(images.length);
+                lightboxSlider.appendChild(loadingDiv);
+
+                let loadedCount = 0;
+                const totalImages = images.length;
+
+                function finishLoading() {
+                    if (currentLoadId !== loadId) return;
+                    const loadingEl = lightboxSlider.querySelector('.lightbox-loading');
+                    if (loadingEl) loadingEl.remove();
+
+                    images.forEach(function (_, idx) {
+                        const dot = document.createElement('a');
+                        dot.href = 'javascript:void(0)';
+                        if (idx === 0) dot.classList.add('active');
+                        dot.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            goToSlide(idx);
+                        });
+                        lightboxNav.appendChild(dot);
+                    });
+
+                    updateCaption(0);
+                    updateDots(0);
+                    setupSliderEvents();
+                }
+
+                images.forEach(function (imgData, index) {
+                    const img = document.createElement('img');
+                    img.alt = imgData.caption || 'Image ' + (index + 1);
+                    img.dataset.caption = imgData.caption || 'Image ' + (index + 1);
+                    img.loading = index === 0 ? 'eager' : 'lazy';
+
+                    img.onload = img.onerror = function () {
+                        if (currentLoadId !== loadId) return;
+                        loadedCount++;
+                        if (loadedCount === totalImages) finishLoading();
+                    };
+
+                    img.src = imgData.src;
+                    lightboxSlider.appendChild(img);
+                });
+
+                setTimeout(function () {
+                    if (currentLoadId !== loadId) return;
+                    if (lightboxSlider.querySelector('.lightbox-loading')) finishLoading();
+                }, 6000);
+            }
+
+            function setupSliderEvents() {
+                const currentSlider = document.getElementById('lightboxSlider');
+                if (!currentSlider) return;
+
+                currentSlider.addEventListener('scroll', function () {
+                    if (isScrolling) return;
+                    const slides = this.querySelectorAll('img');
+                    if (!slides.length) return;
+
+                    const slideWidth = this.scrollWidth / slides.length;
+                    const activeIndex = Math.round(this.scrollLeft / slideWidth);
+                    const clampedIndex = Math.min(Math.max(activeIndex, 0), slides.length - 1);
+
+                    if (currentIndex !== clampedIndex) {
+                        currentIndex = clampedIndex;
+                        updateDots(clampedIndex);
+                        updateCaption(clampedIndex);
+                    }
+                });
+
+                currentSlider.addEventListener('touchstart', function (e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                currentSlider.addEventListener('touchend', function (e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipeGesture();
+                }, { passive: true });
+            }
+
+            function handleSwipeGesture() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    nextSlide();
+                }
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    prevSlide();
+                }
+            }
+
+            function closeLightbox() {
+                loadId++;
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+                setTimeout(function () {
+                    lightboxSlider.innerHTML = '';
+                    lightboxNav.innerHTML = '';
+                    currentImages = [];
+                    currentIndex = 0;
+                }, 300);
+            }
+
+            // ================================================================
+            // EVENT LISTENERS
+            // ================================================================
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    prevSlide();
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    nextSlide();
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeLightbox();
+                });
+            }
+
+            if (overlay) {
+                overlay.addEventListener('click', function (e) {
+                    if (e.target === overlay) {
+                        closeLightbox();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (!overlay || !overlay.classList.contains('active')) return;
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    nextSlide();
+                } else if (e.key === 'Escape') {
+                    e.preventDefault();
+                    closeLightbox();
+                }
+            });
+
+            document.querySelectorAll('.lightbox-trigger').forEach(function (trigger) {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const projectId = this.dataset.project || this.closest('[data-project]')?.dataset.project;
+                    const imgElement = this.querySelector('img');
+                    const imgSrc = imgElement ? imgElement.src : this.src;
+
+                    if (projectId && projectImages[projectId]) {
+                        openLightboxWithImages(projectImages[projectId], projectId);
+                    } else if (imgSrc) {
+                        openLightboxWithImages([{
+                            src: imgSrc,
+                            caption: imgElement ? imgElement.alt : 'Project Preview'
+                        }], 'single');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

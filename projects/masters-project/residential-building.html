@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Building - Vinay Dilip J</title>
+    <link rel="stylesheet" href="residential-building.css">
+    <style>
+        .report-download-btn {
+            display: none;
+        }
+
+        .file-download-grid {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .file-download-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            width: 118px;
+            padding: 18px 10px 16px;
+            border-radius: 14px;
+            transition: background 0.18s ease;
+        }
+
+        .file-download-card:hover {
+            background: #eef3f7;
+        }
+
+        .file-download-card img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .file-download-card .ftype {
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #8a8a8a;
+            text-transform: uppercase;
+        }
+
+        .file-download-card .ftitle {
+            margin-top: 3px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #242222;
+            line-height: 1.3;
+        }
+
+        .meta-cta {
+            margin: 4px 0 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .back-btn-wrap {
+            justify-content: space-between;
+        }
+
+        .back-btn-wrap .dl-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <a class="logo" style="user-select: none; cursor: default;">VINAY DILIP J</a>
+        </div>
+        <nav>
+            <a href="../../gallery.html">Gallery</a>
+            <a href="../../product.html">Product</a>
+            <a href="../../plugin.html">Plugins</a>
+            <a href="../../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== NAVIGATION ARROWS ===== -->
+    <a href="daylighting-lighting.html" class="arrow left">❮</a>
+    <a href="moisture-safety-design.html" class="arrow right">❯</a>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="slider-container">
+
+        <!-- Close Button -->
+        <div class="x-button">
+            <a href="building-energy-management.html">
+                <span aria-hidden="true" style="font-size:20px;color:#888;">✕</span>
+            </a>
+        </div>
+
+        <div class="wrap">
+
+            <!-- Title Block -->
+            <div class="title-block">
+                <h1>RESIDENTIAL BUILDING AUTUMN'24</h1>
+                <div class="subhead">
+                    <span>Integrating Thermal and Moisture Aspects</span>
+                </div>
+                <div class="project-tagline">A near-zero-energy apartment building in Brunnshög, Lund — energy, thermal
+                    comfort and moisture safety designed together, not in isolation</div>
+            </div>
+
+            <!-- Project Info + Image -->
+            <div class="project-grid">
+                <div class="project-text">
+                    <ul class="meta-list">
+                        <li><span class="label">Location</span> Lund University, LTH — Faculty of Engineering</li>
+                        <li><span class="label">Course</span> AEBN11 — Residential Building</li>
+                        <li><span class="label">Term</span> Autumn 2024</li>
+                        <li><span class="label">Team members</span><strong>Vinay Dilip Jayaselan</strong> Jiaying Chen, Savo Sleman</li>
+                    </ul>
+
+                    <div class="file-download-grid">
+                        <a class="file-download-card"
+                            href="./Sem-1/mainProject-1/Reports/Group03-Projectreport-AEBN11.pdf" target="_blank">
+                            <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                            <span class="ftype">PDF</span>
+                            <span class="ftitle">Full Report</span>
+                        </a>
+                        <a class="file-download-card"
+                            href="./Sem-1/mainProject-1/Reports/Group-03-Final-Project-Presentation.pdf"
+                            target="_blank">
+                            <img src="../../assets/icons/ppt.png" alt="PPT Icon" width="42" height="42" />
+                            <span class="ftype">PPT</span>
+                            <span class="ftitle">Presentation</span>
+                        </a>
+                    </div>
+
+                    <div class="description">
+                        <p><strong>Can a multi-story residential building hit near-zero energy in Sweden's cold climate
+                                without compromising comfort or risking mould?</strong>
+                            The brief called for a multi-family building on a Brunnshög, Lund site, modelled end-to-end:
+                            massing and orientation in Rhino/Grasshopper,
+                            energy and thermal comfort simulation against Swedish building code (BBR) targets, and
+                            hygrothermal performance of the envelope in WUFI, cross-checked
+                            against the VTT mould growth model.</p>
+                        <p>The design went through two full iterations. An intermediate scheme surfaced problems — an
+                            entrance facing the wrong way, uneven PV coverage,
+                            room layouts driving overheating — that a final, south-oriented redesign resolved, cutting
+                            heating demand by over half while keeping every
+                            envelope assembly safely below its moisture risk threshold.</p>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="./Sem-1/mainProject-1/img/hero-final.png"
+                        alt="Final design render of the residential building">
+                </div>
+            </div>
+
+            <!-- Climate & Site -->
+            <h2 class="section-title">CLIMATE &amp; SITE ANALYSIS</h2>
+            <section class="container">
+                <div class="slider-wrapper">
+                    <div class="img-slider">
+                        <img src="./Sem-1/mainProject-1/img/siteAnalysis.png" alt="Site Analysis" />
+                        <img src="./Sem-1/mainProject-1/img/climate-1.png" alt="Climate Analysis 1" />
+                        <img src="./Sem-1/mainProject-1/img/climate-2.png" alt="Climate Analysis 2" />
+                        <img src="./Sem-1/mainProject-1/img/climate-3.png" alt="Climate Analysis 3" />
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#" class="active"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <p class="rec-paragraph">Lund's summers are mild (15–17°C average) with high cloud cover year-round, so
+                heating dominates the annual energy balance far
+                more than cooling. Three candidate sites in Brunnshög were scored on sun-hours by view direction;
+                Site 2 (1,329 m²) won on the strength of its
+                south-facing exposure, the direction that matters most for passive solar gain in this climate.</p>
+
+            <!-- Concept -->
+            <h2 class="section-title">CONCEPT</h2>
+            <div class="gallery-single">
+                <img src="./Sem-1/mainProject-1/img/site-diagram.png"
+                    alt="Site massing diagram comparing candidate sites in Brunnshög">
+            </div>
+
+            <!-- Design Development -->
+            <h2 class="section-title">DESIGN DEVELOPMENT</h2>
+            <section class="container">
+                <div class="slider-wrapper">
+                    <div class="img-slider">
+                        <img src="./Sem-1/mainProject-1/img/designDevelopment-1.png" alt="Design Development 1" />
+                        <img src="./Sem-1/mainProject-1/img/designDevelopment-2.png" alt="Design Development 2" />
+                        <img src="./Sem-1/mainProject-1/img/designDevelopment-3.png" alt="Design Development 3" />
+                        <img src="./Sem-1/mainProject-1/img/designDevelopment-4.png" alt="Design Development 4" />
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#" class="active"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <p class="rec-paragraph">The intermediate scheme — 4 floors, a single top-floor apartment, PV panels
+                scattered across every roof surface — flagged three
+                problems: a south-facing entrance wasting passive heat gain, room layouts that pushed overheating past
+                acceptable limits, and PV panels colonising
+                balconies and complicating maintenance. The final design responds directly: entrance repositioned, rooms
+                reorganised around solar orientation, and
+                PV panels consolidated onto the roof where daylight hours are longest.</p>
+
+            <div class="gallery-wrapper" data-gallery="final-design">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="./Sem-1/mainProject-1/img/design-1.png"
+                            alt="Perspective view of the final design">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/design-2.png"
+                            alt="Typical floor plan of the final design">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/design-3.png"
+                            alt="Typical floor plan with five apartment zones colour-coded">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/design-4.png"
+                            alt="Floor plan and zone breakout of the critical south-west first-floor apartment">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 4</span>
+            </div>
+            <p class="rec-paragraph">Each floor holds five apartments of varying layout plus a shared corridor, oriented
+                so south-facing rooms catch winter sun
+                while shading on the east and west facades controls glare and summer heat gain. The most exposed unit —
+                the south-west apartment on the first floor
+                (64 m² floor area, 10 m² of glazing) — was broken out and simulated independently as the critical case
+                for both energy and comfort.</p>
+
+            <!-- Energy & Comfort -->
+            <h2 class="section-title">ENERGY PERFORMANCE &amp; THERMAL COMFORT</h2>
+            <div class="gallery-wrapper" data-gallery="energyPerformanceDesign">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="./Sem-1/mainProject-1/img/energyPerformanceDesign-1.png"
+                            alt="Relative humidity versus critical RH in the roof over one year">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/energyPerformanceDesign-2.png"
+                            alt="Energy performance design breakdown 2">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/energyPerformanceDesign-3.png"
+                            alt="Energy performance design breakdown 3">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/energyPerformanceDesign-4.png"
+                            alt="Energy performance design breakdown 4">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/energyPerformanceDesign-5.png"
+                            alt="Energy performance design breakdown 5">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 5</span>
+            </div>
+            <section class="container">
+                <div class="slider-wrapper">
+                    <div class="img-slider">
+                        <img src="./Sem-1/mainProject-1/img/energyPerformance-1.png" alt="Energy Performance 1" />
+                        <img src="./Sem-1/mainProject-1/img/energyPerformance-2.png" alt="Energy Performance 2" />
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#" class="active"></a>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </section>
+            <p class="rec-paragraph">The redesign cut heating demand by 52.3% versus the intermediate scheme, landing
+                under the BBR's 35 kWh/m²/year near-zero-energy
+                target. Roof-mounted PV generates 29,010 kWh a year — not quite enough to offset all energy input, but
+                enough to bring the building to a near-zero
+                balance overall. On comfort, nearly half the apartments now overheat less than 1% of the year; one
+                outlier (Apartment 2) still runs at 12.16% and
+                would need another shading pass. The critical south-west unit stays within 20.48–23.79°C year-round,
+                comfortably inside the 20–26°C target band.</p>
+
+            <!-- Moisture & Thermal Bridge -->
+            <h2 class="section-title">MOISTURE SAFETY &amp; THERMAL BRIDGE</h2>
+            <div class="gallery-wrapper" data-gallery="moisture">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="./Sem-1/mainProject-1/img/constructionDetail-1.png"
+                            alt="Relative humidity versus critical RH in the roof over one year">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/constructionDetail-2.png"
+                            alt="Mould index of the roof assembly">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/constructionDetail-3.png"
+                            alt="Wall construction detail">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/moisture-1.png" alt="Moisture analysis 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/moisture-2.png" alt="Moisture analysis 2">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 5</span>
+            </div>
+            <p class="rec-paragraph">Both the cellulose-insulated roof and the CLT exterior wall (WUFI + MATLAB,
+                checked against the VTT mould growth model) stay
+                well clear of the 80% critical RH threshold at every point in the year, holding a mould index of 0
+                throughout. Under the ground slab, calculated RH
+                reached 47.5% — again far below the level needed for mould to take hold, confirming the foundation
+                detail didn't need an extra vapour barrier.</p>
+
+            <div class="gallery-wrapper" data-gallery="thermal-bridge">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="./Sem-1/mainProject-1/img/thermal-bridge-1.png"
+                            alt="Wall-to-roof junction construction detail">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/thermal-bridge-2.png"
+                            alt="HEAT2 temperature field at the wall-to-roof junction">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="./Sem-1/mainProject-1/img/thermal-bridge-3.png"
+                            alt="Wall-to-intermediate-slab junction construction detail">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 3</span>
+            </div>
+            <p class="rec-paragraph">Three junctions carry most of the envelope's unavoidable heat loss:
+                wall-to-roof, wall-to-intermediate-slab and
+                wall-to-ground-slab. Each was modelled in HEAT2 as a steady-state 2D heat transfer problem; all
+                three held below the 0.4 W/m·K thermal-bridge
+                guideline used for wall-to-slab connections in this course.</p>
+
+            <!-- Takeaways -->
+            <h2 class="section-title">TAKEAWAYS</h2>
+            <ul class="rec-list">
+                <li><strong>Iterative redesign drives the majority of energy gains.</strong> Strategic building
+                    reorientation and layout optimizations cut space heating demand by 52.3%, comfortably surpassing
+                    BBR near-zero energy thresholds[cite: 10].</li>
+                <li><strong>Consolidated rooftop PV simplifies operations.</strong> Centralizing the 29,010 kWh/year
+                    solar array on the primary roof resolved architectural clutter and maintenance challenges from
+                    earlier balcony mounts[cite: 10].</li>
+                <li><strong>Spatial comfort demands localized shading adjustments.</strong> While most zones overheated
+                    for under 1% of the year, specific corner units exhibited 12.16% overheating, requiring targeted
+                    facade interventions[cite: 10].</li>
+                <li><strong>Hygrothermal safety held with clear margins.</strong> WUFI modeling verified that CLT and
+                    cellulose assemblies maintained a zero mould index throughout the annual cycle without compromising
+                    thermal resistance[cite: 10].</li>
+                <li><strong>Junction details mitigate thermal bridging.</strong> Critical 2D HEAT2 simulations confirmed
+                    all wall-to-slab and roof connections performed well below the 0.4 W/m·K guideline without requiring
+                    supplementary membranes[cite: 10].</li>
+            </ul>
+
+            <!-- Final Image -->
+            <div class="gallery-single">
+                <img src="./Sem-1/mainProject-1/img/design-stats.png"
+                    alt="Isometric zone breakout of the building showing five apartment types per floor">
+            </div>
+
+            <!-- Back Button -->
+            <div class="back-btn-wrap">
+                <div class="dl-group file-download-grid">
+                    <a class="file-download-card"
+                        href="./Sem-1/mainProject-1/Reports/Group03-Projectreport-AEBN11.pdf" target="_blank">
+                        <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                        <span class="ftype">PDF</span>
+                        <span class="ftitle">Full Report</span>
+                    </a>
+                    <a class="file-download-card"
+                        href="./Sem-1/mainProject-1/Reports/Group-03-Final-Project-Presentation.pdf" target="_blank">
+                        <img src="../../assets/icons/ppt.png" alt="PPT Icon" width="42" height="42" />
+                        <span class="ftype">PPT</span>
+                        <span class="ftitle">Presentation</span>
+                    </a>
+                </div>
+                <div class="breadcrumb-hint">
+                    <a href="building-energy-management.html" class="back-to-portfolio-btn">← Back to EEBD Projects</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p class="project-foot">&copy; 2026 by Vinay</p>
+        </footer>
+
+    </main>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-close" id="lightboxClose"><span style="color:#fff;font-size:28px;cursor:pointer;">&times;</span></div>
+        <div class="lightbox-content">
+            <div class="lightbox-slider-wrapper">
+                <div class="lightbox-slider" id="lightboxSlider"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Gallery slider: prev/next + counter
+        document.querySelectorAll('.gallery-wrapper').forEach((wrapper) => {
+            const slides = wrapper.querySelectorAll('.gallery-slide');
+            const counter = wrapper.querySelector('.gallery-counter');
+            const prevBtn = wrapper.querySelector('.gallery-nav.prev');
+            const nextBtn = wrapper.querySelector('.gallery-nav.next');
+            let idx = 0;
+
+            function show(i) {
+                slides.forEach((s, n) => s.classList.toggle('active', n === i));
+                if (counter) counter.textContent = `${i + 1} / ${slides.length}`;
+            }
+            if (prevBtn) prevBtn.addEventListener('click', () => { idx = (idx - 1 + slides.length) % slides.length; show(idx); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { idx = (idx + 1) % slides.length; show(idx); });
+            show(0);
+        });
+
+        // Lightbox: click any image to zoom
+        const overlay = document.getElementById('lightboxOverlay');
+        const sliderEl = document.getElementById('lightboxSlider');
+        const closeBtn = document.getElementById('lightboxClose');
+
+        document.querySelectorAll('.gallery-slide img, .gallery-single img, .project-image img, .img-slider img').forEach((img) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                sliderEl.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+                overlay.classList.add('active');
+            });
+        });
+        closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('active'); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('active'); });
+
+        // Auto slider loop for smooth-slider containers
+        document.querySelectorAll('.slider-wrapper').forEach((wrapper) => {
+            const slider = wrapper.querySelector('.img-slider');
+            const slides = slider.querySelectorAll('img');
+            const nav = wrapper.querySelector('.slider-nav');
+            if (!slider || slides.length === 0) return;
+
+            let idx = 0;
+            const total = slides.length;
+            nav.innerHTML = '';
+
+            slides.forEach((_, i) => {
+                const dot = document.createElement('a');
+                dot.href = '#';
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    goTo(i);
+                });
+                nav.appendChild(dot);
+            });
+
+            const dots = nav.querySelectorAll('a');
+
+            function goTo(i) {
+                idx = i;
+                slider.style.transform = `translateX(-${idx * 100}%)`;
+                dots.forEach((d, n) => d.classList.toggle('active', n === idx));
+            }
+
+            let interval = setInterval(() => goTo((idx + 1) % total), 3500);
+            wrapper.addEventListener('mouseenter', () => clearInterval(interval));
+            wrapper.addEventListener('mouseleave', () => interval = setInterval(() => goTo((idx + 1) % total), 3500));
+        });
+    </script>
+
+</body>
+
+</html>

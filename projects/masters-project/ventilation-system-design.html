@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventilation System Design - Vinay Dilip J</title>
+    <link rel="stylesheet" href="residential-building.css">
+    <style>
+        .report-download-btn {
+            display: none;
+        }
+
+        .file-download-grid {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .file-download-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            width: 118px;
+            padding: 18px 10px 16px;
+            border-radius: 14px;
+            transition: background 0.18s ease;
+        }
+
+        .file-download-card:hover {
+            background: #eef3f7;
+        }
+
+        .file-download-card img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .file-download-card .ftype {
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #8a8a8a;
+            text-transform: uppercase;
+        }
+
+        .file-download-card .ftitle {
+            margin-top: 3px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #242222;
+            line-height: 1.3;
+        }
+
+        .meta-cta {
+            margin: 4px 0 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .back-btn-wrap {
+            justify-content: space-between;
+        }
+
+        .back-btn-wrap .dl-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <a class="logo" style="user-select: none; cursor: default;">VINAY DILIP J</a>
+        </div>
+        <nav>
+            <a href="../../gallery.html">Gallery</a>
+            <a href="../../product.html">Product</a>
+            <a href="../../plugin.html">Plugins</a>
+            <a href="../../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== NAVIGATION ARROWS ===== -->
+    <a href="green-innovation-park-renovation.html" class="arrow left">❮</a>
+    <a href="daylighting-lighting.html" class="arrow right">❯</a>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="slider-container">
+
+        <!-- Close Button -->
+        <div class="x-button">
+            <a href="building-energy-management.html">
+                <span aria-hidden="true" style="font-size:20px;color:#888;">✕</span>
+            </a>
+        </div>
+
+        <div class="wrap">
+
+            <!-- Title Block -->
+            <div class="title-block">
+                <h1>VENTILATION SYSTEM DESIGN</h1>
+                <div class="subhead">
+                    <span>Design of a Ventilation System for an Office Building</span>
+                </div>
+                <div class="project-tagline">A complete CAV ventilation system for a one-story Gothenburg office —
+                    energy simulation, ductwork, diffusers and air handling unit, designed as one system</div>
+            </div>
+
+            <!-- Project Info + Image -->
+            <div class="project-grid">
+                <div class="project-text">
+                    <ul class="meta-list">
+                        <li><span class="label">Location</span> Lund University, LTH — Department of Energy and Building
+                            Design</li>
+                        <li><span class="label">Course</span> ABKN01 — Ventilation and Air Conditioning Systems</li>
+                        <li><span class="label">Team members</span> <strong>Vinay Dilip
+                                Jayaselan,</strong> Lukas Rosberg, Sakineh J. Z. Afshari, </li>
+                    </ul>
+                    <div class="file-download-grid">
+                        <a class="file-download-card"
+                            href="../../projects/masters-project/Sem-2/Course-2/reports/ABKN01 Group 12 final report.pdf" target="_blank">
+                            <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                            <span class="ftype">PDF</span>
+                            <span class="ftitle">Full Report</span>
+                        </a>
+                    </div>
+                    <div class="description">
+                        <p><strong>A one-story office in Gothenburg needed a constant-air-volume ventilation system
+                                sized around what the building actually needed for cooling, not just a rule of
+                                thumb.</strong>
+                            Rhino, Grasshopper and ClimateStudio were used to simulate peak cooling loads and thermal
+                            comfort, which set the airflow the whole downstream system — ducts, diffusers, and the
+                            air handling unit — had to be sized around.</p>
+                        <p>The base-case building overheated badly: indoor operative temperature exceeded 26°C for 51%
+                            of hours between April and September. Shading, better glazing, more efficient lighting,
+                            a shifted cooling schedule and 80% sensible heat recovery brought that down to 10% before a
+                            single duct was sized.</p>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <img src="../../projects/masters-project/Sem-2/Course-2/img/hero-duct-3d-view.png"
+                        alt="3D view of the supply and exhaust duct system across the full building">
+                </div>
+            </div>
+
+            <!-- System Overview -->
+            <h2 class="section-title">SYSTEM OVERVIEW</h2>
+            <div class="gallery-single">
+                <img src="../../projects/masters-project/Sem-2/Course-2/img/ahu-connection-diagram1.png"
+                    alt="Floor plan of the open-plan office showing workstations and entrance">
+            </div>
+            <p class="rec-paragraph">The building is modelled as a single open-plan office with an all-air CAV system:
+                one air handling unit on the roof, feeding supply and exhaust ducts down through a
+                central shaft to diffusers positioned over every workstation. Reducing peak cooling load first — through
+                shading, glazing and lighting changes — meant the downstream ductwork and AHU
+                could be sized smaller and cheaper than a base-case design would have needed.</p>
+
+            <!-- Duct Design -->
+            <h2 class="section-title">DUCT SYSTEM</h2>
+            <div class="gallery-single">
+                <img src="../../projects/masters-project/Sem-2/Course-2/img/ahu-connection-diagram.png"
+                    alt="EAGLE CRa 315-600-RO supply diffuser product render">
+            </div>
+            <p class="rec-paragraph">Circular ducts were used throughout — cheaper, more airtight and easier to install
+                than rectangular sections. Each duct was sized against a friction-loss chart, then
+                checked for air velocity and pressure drop, including fittings via their equivalent lengths. Supply and
+                exhaust runs both connect back to the AHU through the building's main shaft, which
+                kept the layout close to symmetrical even though the furniture plan and shaft position ruled out a
+                perfectly mirrored design.</p>
+
+            <!-- Diffusers -->
+            <h2 class="section-title">DIFFUSERS</h2>
+            <div class="gallery-wrapper" data-gallery="diffusers">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="../../projects/masters-project/Sem-2/Course-2/img/airflow-cooling-pattern1.png"
+                            alt="EAGLE CRa 315-600-RO supply diffuser product render">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../../projects/masters-project/Sem-2/Course-2/img/airflow-cooling-pattern.png"
+                            alt="Diffuser airflow pattern for cooling mode across the office ceiling">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 2</span>
+            </div>
+            <p class="rec-paragraph">The EAGLE CRa 315-600-RO + ALSd 250-315 (Swegon) was selected for both supply and
+                exhaust, chosen to avoid draught, keep CO₂ concentration in an acceptable range, and
+                support CAV operation. A 0.9 m ceiling void limited which diffuser connection types would fit, ruling
+                out top-connected models in favour of diffusers with side connections.</p>
+
+            <!-- AHU -->
+            <h2 class="section-title">AIR HANDLING UNIT &amp; ENERGY</h2>
+            <div class="gallery-single">
+                <img src="../../projects/masters-project/Sem-2/Course-2/img/final-duct-floorplan-overlay.gif"
+                    alt="AHU quick-choice sizing table by airflow and air velocity">
+            </div>
+            <p class="rec-paragraph">A total airflow of 1.9 m³/s across the building set the AHU size: size 30 was
+                selected for a final air velocity of 2.35 m/s, comfortably under the 2.5 m/s design
+                limit, with a measured temperature efficiency of 83% on the heat exchanger. Specific fan power came out
+                inside the 1.0–2.0 kW/(m³/s) range considered efficient for this class of system.</p>
+
+            <div class="gallery-wrapper" data-gallery="mollier">
+                <div class="gallery-slides">
+                    <div class="gallery-slide active">
+                        <img src="../../projects/masters-project/Sem-2/Course-2/img/mollier-cooling-coil1.png"
+                            alt="Mollier diagram dimensioning the heating coil and preheating stage">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../../projects/masters-project/Sem-2/Course-2/img/mollier-cooling-coil2.png"
+                            alt="Mollier diagram dimensioning the cooling coil">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../../projects/masters-project/Sem-2/Course-2/img/mollier-cooling-coil3.png"
+                            alt="Mollier diagram dimensioning the cooling coil">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../../projects/masters-project/Sem-2/Course-2/img/mollier-cooling-coil4.png"
+                            alt="Mollier diagram dimensioning the cooling coil">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="../../projects/masters-project/Sem-2/Course-2/img/mollier-cooling-coil5.png"
+                            alt="Mollier diagram dimensioning the cooling coil">
+                    </div>
+                </div>
+                <button class="gallery-nav prev" aria-label="Previous slide">‹</button>
+                <button class="gallery-nav next" aria-label="Next slide">›</button>
+                <span class="gallery-counter">1 / 5</span>
+            </div>
+            <p class="rec-paragraph">Coil sizing used the Gothenburg EPW design extremes — -15.9°C in winter, 27.1°C in
+                summer — traced through a Mollier diagram. With 83% heat recovery covering most of
+                the heating load, the preheating and heating coils came out at 4.58 kW and 19.24 kW respectively; the
+                cooling coil, sized against the summer design condition down to an 18°C supply
+                temperature, came out at 32.83 kW.</p>
+
+            <!-- Takeaways -->
+            <h2 class="section-title">TAKEAWAYS</h2>
+            <ul class="rec-list">
+                <li><strong>Upstream cooling reductions downscale mechanical infrastructure.</strong> Lowering peak
+                    cooling loads dropped overheating hours from 51% to 10%, directly downsizing downstream ductwork,
+                    chillers, and air handling equipment[cite: 8].</li>
+                <li><strong>Practical layout constraints override theoretical symmetry.</strong> Shaft locations and
+                    desk
+                    configurations made strict symmetrical duct branching unfeasible, necessitating standardized duct
+                    diameters across zones[cite: 8].</li>
+                <li><strong>Ceiling void depth acts as a hard boundary condition.</strong> The restricted 0.9 m plenum
+                    ruled out top-entry diffusers, requiring side-connection terminals to accommodate vertical space
+                    limits[cite: 8].</li>
+                <li><strong>Design efficiency depends on baseline degradation factors.</strong> Sizing assumptions like
+                    83% heat exchanger efficiency represent initial performance metrics that degrade over continuous
+                    operation[cite: 8].</li>
+                <li><strong>Critical path optimization refines fan power performance.</strong> Although the system met
+                    the
+                    1.0–2.0 kW/(m³/s) specific fan power target, streamlining the longest critical run provides further
+                    pressure reduction gains[cite: 8].</li>
+            </ul>
+
+            <!-- Final Image -->
+            <div class="gallery-single">
+                <img src="../../projects/masters-project/Sem-2/Course-2/img/final-duct-floorplan-overlay.jpg"
+                    alt="Full drawing of the duct system and diffusers overlaid on the office floor plan">
+            </div>
+
+            <!-- Back Button -->
+            <div class="back-btn-wrap">
+                <div class="dl-group file-download-grid">
+                    <a class="file-download-card"
+                        href="../../projects/masters-project/Sem-2/Course-2/reports/ABKN01 Group 12 final report.pdf" target="_blank">
+                        <img src="../../assets/icons/pdf.png" alt="PDF Icon" width="42" height="42" />
+                        <span class="ftype">PDF</span>
+                        <span class="ftitle">Full Report</span>
+                    </a>
+                </div>
+                <div class="breadcrumb-hint">
+                    <a href="building-energy-management.html" class="back-to-portfolio-btn">← Back to EEBD Projects</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p class="project-foot">&copy; 2026 by Vinay</p>
+        </footer>
+
+    </main>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-close" id="lightboxClose"><span
+                style="color:#fff;font-size:28px;cursor:pointer;">&times;</span></div>
+        <div class="lightbox-content">
+            <div class="lightbox-slider-wrapper">
+                <div class="lightbox-slider" id="lightboxSlider"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Gallery slider: prev/next + counter
+        document.querySelectorAll('.gallery-wrapper').forEach((wrapper) => {
+            const slides = wrapper.querySelectorAll('.gallery-slide');
+            const counter = wrapper.querySelector('.gallery-counter');
+            const prevBtn = wrapper.querySelector('.gallery-nav.prev');
+            const nextBtn = wrapper.querySelector('.gallery-nav.next');
+            let idx = 0;
+
+            function show(i) {
+                slides.forEach((s, n) => s.classList.toggle('active', n === i));
+                if (counter) counter.textContent = `${i + 1} / ${slides.length}`;
+            }
+            if (prevBtn) prevBtn.addEventListener('click', () => { idx = (idx - 1 + slides.length) % slides.length; show(idx); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { idx = (idx + 1) % slides.length; show(idx); });
+            show(0);
+        });
+
+        // Lightbox: click any image to zoom
+        const overlay = document.getElementById('lightboxOverlay');
+        const sliderEl = document.getElementById('lightboxSlider');
+        const closeBtn = document.getElementById('lightboxClose');
+
+        document.querySelectorAll('.gallery-slide img, .gallery-single img, .project-image img').forEach((img) => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                sliderEl.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+                overlay.classList.add('active');
+            });
+        });
+        closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('active'); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('active'); });
+    </script>
+
+</body>
+
+</html>

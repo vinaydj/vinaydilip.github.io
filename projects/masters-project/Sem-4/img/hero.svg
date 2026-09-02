@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <defs>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#242222" stroke-width="0.5" stroke-opacity="0.05" />
+    </pattern>
+    <!-- Thermal decay gradient -->
+    <linearGradient id="decayGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b9773e" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#2B5B84" stop-opacity="0.02" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="400" height="500" fill="#fafbfc" />
+  <rect width="400" height="500" fill="url(#grid)" />
+
+  <!-- ================= HEADER / METRIC TAGS ================= -->
+  <g transform="translate(28, 36)">
+    <!-- Category Badge -->
+    <rect x="0" y="0" width="102" height="22" rx="11" fill="#2B5B84" />
+    <text x="51" y="14.5" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.8" text-anchor="middle">M.SC. THESIS</text>
+
+    <!-- Key Metrics Badges (Top-Right) -->
+    <g transform="translate(242, 0)">
+      <rect x="0" y="0" width="102" height="22" rx="6" fill="#ffffff" stroke="#242222" stroke-opacity="0.12" stroke-width="1" />
+      <circle cx="10" cy="11" r="3.5" fill="#4c8a5e" />
+      <text x="20" y="14.5" fill="#242222" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" letter-spacing="0.3">RMSE 0.92°C</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="52" fill="#242222" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" letter-spacing="0.6">DIGITAL TWIN</text>
+    <text x="0" y="70" fill="#2B5B84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" letter-spacing="0.4">1R1C Thermal Model • Low-Cost IoT</text>
+  </g>
+
+  <!-- ================= THERMAL DECAY CURVE (BACKGROUND) ================= -->
+  <g transform="translate(0, 110)">
+    <!-- Area under curve -->
+    <path d="M 28 90 Q 110 35, 200 65 T 372 110 L 372 135 L 28 135 Z" fill="url(#decayGrad)" />
+    <!-- Decay / Validation Curve -->
+    <path d="M 28 90 Q 110 35, 200 65 T 372 110" fill="none" stroke="#b9773e" stroke-width="2" stroke-linecap="round" />
+    <!-- Reference Baseline -->
+    <line x1="28" y1="125" x2="372" y2="125" stroke="#242222" stroke-opacity="0.15" stroke-width="1" stroke-dasharray="3 3" />
+    <!-- τ Label -->
+    <text x="320" y="98" fill="#b9773e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700">τ ≈ 240h</text>
+  </g>
+
+  <!-- ================= ISOMETRIC / SECTION ROOM ================= -->
+  <g transform="translate(48, 255)">
+    <!-- Floor Outline / Base -->
+    <polygon points="152,0 304,68 152,136 0,68" fill="#ffffff" stroke="#242222" stroke-width="1.8" stroke-linejoin="round" />
+
+    <!-- External Wall (NW Facing with Window) -->
+    <polygon points="0,68 152,136 152,40 0,-28" fill="#ffffff" fill-opacity="0.4" stroke="#242222" stroke-width="1.8" stroke-linejoin="round" />
+    <!-- Window Outline on Ext Wall -->
+    <polygon points="30,42 90,69 90,25 30,-2" fill="#2B5B84" fill-opacity="0.08" stroke="#2B5B84" stroke-width="1.4" stroke-linejoin="round" />
+
+    <!-- Internal Partition Wall -->
+    <polygon points="152,136 304,68 304,-28 152,40" fill="#ffffff" fill-opacity="0.7" stroke="#242222" stroke-width="1.8" stroke-linejoin="round" />
+
+    <!-- Sealed Ventilation Grille Indicator -->
+    <g transform="translate(245, 12)">
+      <rect x="0" y="0" width="22" height="12" rx="2" fill="#fafbfc" stroke="#7c5ba6" stroke-width="1.2" stroke-dasharray="2 2" />
+      <line x1="4" y1="4" x2="18" y2="4" stroke="#7c5ba6" stroke-width="0.8" />
+      <line x1="4" y1="8" x2="18" y2="8" stroke="#7c5ba6" stroke-width="0.8" />
+    </g>
+
+    <!-- ================= SENSOR NETWORK & NODES ================= -->
+    <!-- Network Topology Dashed Lines -->
+    <line x1="88" y1="62" x2="152" y2="86" stroke="#2B5B84" stroke-width="1.4" stroke-dasharray="3 3" />
+    <line x1="152" y1="86" x2="225" y2="52" stroke="#2B5B84" stroke-width="1.4" stroke-dasharray="3 3" />
+    <line x1="152" y1="86" x2="190" y2="12" stroke="#7c5ba6" stroke-width="1.2" stroke-dasharray="2 2" />
+
+    <!-- Node 1: DHT21 Temp Array (P1-P3 at 1.3m) -->
+    <g transform="translate(88, 62)">
+      <circle cx="0" cy="0" r="10" fill="#2B5B84" fill-opacity="0.12" />
+      <circle cx="0" cy="0" r="5" fill="#2B5B84" />
+      <text x="-8" y="-12" fill="#2B5B84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="700">DHT21</text>
+    </g>
+
+    <!-- Node 2: Central ENS160 Air Quality (eCO2 / TVOC at 0.5m) -->
+    <g transform="translate(152, 86)">
+      <circle cx="0" cy="0" r="12" fill="#4c8a5e" fill-opacity="0.15" />
+      <circle cx="0" cy="0" r="5.5" fill="#4c8a5e" />
+      <text x="-16" y="19" fill="#4c8a5e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="700">ENS160</text>
+    </g>
+
+    <!-- Node 3: ESP32 + Base Hub (FastAPI / RPi) -->
+    <g transform="translate(225, 52)">
+      <circle cx="0" cy="0" r="10" fill="#b9773e" fill-opacity="0.15" />
+      <circle cx="0" cy="0" r="5" fill="#b9773e" />
+      <text x="8" y="-8" fill="#b9773e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="700">ESP32</text>
+      <!-- Subtle Wi-Fi Waves -->
+      <path d="M 6 -14 A 10 10 0 0 1 18 -2" fill="none" stroke="#b9773e" stroke-width="1.2" stroke-linecap="round" />
+      <path d="M 9 -17 A 15 15 0 0 1 23 0" fill="none" stroke="#b9773e" stroke-width="1.2" stroke-linecap="round" />
+    </g>
+
+    <!-- Node 4: PIR Occupancy Fusion Sensor (Wall mounted at 2.0m) -->
+    <g transform="translate(190, 12)">
+      <circle cx="0" cy="0" r="8" fill="#7c5ba6" fill-opacity="0.15" />
+      <circle cx="0" cy="0" r="4.5" fill="#7c5ba6" />
+      <text x="-7" y="-10" fill="#7c5ba6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="700">PIR</text>
+    </g>
+  </g>
+
+  <!-- ================= FOOTER / FRAMEWORK ACCENTS ================= -->
+  <g transform="translate(28, 442)">
+    <!-- Divider Line -->
+    <line x1="0" y1="0" x2="344" y2="0" stroke="#242222" stroke-opacity="0.08" stroke-width="1" />
+    
+    <!-- Accent Color Palette Swatches -->
+    <circle cx="5" cy="20" r="4.5" fill="#2B5B84" />
+    <circle cx="20" cy="20" r="4.5" fill="#4c8a5e" />
+    <circle cx="35" cy="20" r="4.5" fill="#b9773e" />
+    <circle cx="50" cy="20" r="4.5" fill="#7c5ba6" />
+
+    <!-- Institutional / Location Tag -->
+    <text x="344" y="23" fill="#242222" fill-opacity="0.45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" text-anchor="end">LTH • PARENTHESEN STUDY</text>
+  </g>
+</svg>

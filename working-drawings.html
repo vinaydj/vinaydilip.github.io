@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Drawings & Detailing - Vinay Dilip J</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/project-detail.css">
+    <style>
+        /* ===== LOADING SPINNER ===== */
+        .lightbox-loading {
+            flex: 0 0 100%;
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            color: #fff;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            min-height: 400px;
+        }
+
+        .lightbox-spinner {
+            width: 44px;
+            height: 44px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: lightbox-spin 0.8s linear infinite;
+        }
+
+        @keyframes lightbox-spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <a href="gallery.html">VINAY DILIP J</a>
+        </div>
+        <nav>
+            <a href="gallery.html">Gallery</a>
+            <a href="product.html">Product</a>
+            <a href="plugin.html">Plugins</a>
+            <a href="resume/Vinay_CV_Architect_BIM.pdf">Resume</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== NAVIGATION ARROWS ===== -->
+    <a href="gallery.html" class="arrow left" aria-label="Previous project">❮</a>
+    <a href="cfd-simulation.html" class="arrow right" aria-label="Back to Gallery">❯</a>
+
+    <!-- ===== MAIN CONTENT CONTAINER ===== -->
+    <main class="slider-container">
+        <!-- Close Button -->
+        <div class="x-button">
+            <a href="gallery.html" aria-label="Close to Gallery">
+                <img src="assets/icons/x.svg" alt="Close">
+            </a>
+        </div>
+
+        <!-- Title -->
+        <div class="title-block">
+            <h1>Working Drawings & Technical Detailing</h1>
+        </div>
+
+        <!-- Meta Info -->
+        <div class="project-text">
+            <ul class="meta-list">
+                <li><span class="label">Practice</span> GMSC Consultants · Rathi Associates · BNA Architects</li>
+                <li><span class="label">Role</span> BIM Lead &amp; Technical Coordinator</li>
+                <li><span class="label">Duration</span> 2019 — 2020</li>
+                <li><span class="label">Sector Scope</span> Healthcare Facilities · Urban Housing · Commercial
+                    Hospitality</li>
+                <li><span class="label">Execution</span> LOD 350 Modeling · Constructability Reviews · GFC Packages</li>
+                <li><span class="label">Environment</span> Autodesk Revit Architecture · Navisworks · AutoCAD</li>
+            </ul>
+        </div>
+
+        <!-- Description -->
+        <div class="description">
+            <p><strong>AutoCAD, Revit, and BIM workflows — from concept to execution.</strong></p>
+            <p>A curated selection of Good-For-Construction (GFC) drawings and technical packages produced across
+                tenures at GMSC Consultants, Rathi Associates, and BNA Architects. Leveraging BIM-driven coordination,
+                these sets delivered clash-free documentation, detailed assemblies, and accurate schedules across
+                healthcare, residential, and hospitality sectors—ready for on-site execution.</p>
+        </div>
+
+        <!-- ===== GALLERY GRID ===== -->
+        <div class="gallery-wrapper">
+            <div class="gallery-grid" id="galleryGrid">
+
+                <!-- Card 1 -->
+                <div class="gallery-item lightbox-trigger" data-project="CMC-MedicalInstitute">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/CMC-Academic/hero.png" alt="CMC — Academic Block"
+                            loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">CMC — Academic Block</div>
+                        <div class="subtitle">Medical Institute</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="gallery-item lightbox-trigger" data-project="CMC-TSQ">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/CMC-TSQ/hero.png" alt="CMC — TSQ" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">CMC — TSQ</div>
+                        <div class="subtitle">Medical Institute</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="gallery-item lightbox-trigger" data-project="CMC-Dome">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/CMC-Dome/hero.png" alt="CMC — Dome" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">CMC — Dome</div>
+                        <div class="subtitle">Medical Institute</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="gallery-item lightbox-trigger" data-project="HMC-Academic">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/HMC-Academic/hero.png" alt="HMC — Academic Block"
+                            loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">HMC — Academic Block</div>
+                        <div class="subtitle">Medical Institute</div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="gallery-item lightbox-trigger" data-project="sattva-nelamangala">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/nelamangala/hero.png" alt="Sattva Nelamangala"
+                            loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Sattva Nelamangala</div>
+                        <div class="subtitle">Plotted Development</div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="gallery-item lightbox-trigger" data-project="sattva-casa">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/casa/hero.png" alt="Sattva Casa Irene" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Sattva Casa Irene</div>
+                        <div class="subtitle">Residential Apartment</div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="gallery-item lightbox-trigger" data-project="sattva-jigeni">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/jigeni/hero.png" alt="Sattva Jigeni" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Sattva Jigeni</div>
+                        <div class="subtitle">Residential Apartment</div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="gallery-item lightbox-trigger" data-project="toit-taproom-pune">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/toit/hero.png" alt="Toit Taproom Pune" loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Toit Taproom Pune</div>
+                        <div class="subtitle">Commercial Restobar</div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="gallery-item lightbox-trigger" data-project="shridhar-redy-residence">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/shridhar/hero.png" alt="Shridhar Reddy Residence"
+                            loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Shridhar Reddy Residence</div>
+                        <div class="subtitle">Custom Residence</div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="gallery-item lightbox-trigger" data-project="sangita-karthik-residence">
+                    <div class="image-container">
+                        <img src="assets/images/working-drawings/sangita/hero.png" alt="Sangita Karthik Residence"
+                            loading="lazy">
+                        <div class="overlay">
+                            <span class="click-text">CLICK TO VIEW</span>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <div class="title">Sangita Karthik Residence</div>
+                        <div class="subtitle">Custom Residence</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-btn-wrap">
+            <div class="breadcrumb-hint">
+                <a href="gallery.html" id="breadcrumbLink" class="back-to-portfolio-btn">← Back to Portfolio</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 by Vinay</p>
+        </footer>
+    </main>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-close" id="lightboxCloseBtn">
+            <a href="#" aria-label="Close lightbox">
+                <img src="assets/icons/x.svg" alt="Close">
+            </a>
+        </div>
+
+        <div class="lightbox-content" id="lightboxContent">
+            <div class="lightbox-slider-wrapper">
+                <div class="lightbox-slider" id="lightboxSlider"></div>
+            </div>
+
+            <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous">‹</button>
+            <button class="lightbox-nav next" id="lightboxNext" aria-label="Next">›</button>
+
+            <div id="lightboxNav"></div>
+
+            <div class="lightbox-caption" id="lightboxCaption">
+                <span id="captionText">Technical Drawing</span>
+                <span id="captionIndex">1 / 8</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const overlay = document.getElementById('lightboxOverlay');
+            const closeBtn = document.getElementById('lightboxCloseBtn');
+            const lightboxSlider = document.getElementById('lightboxSlider');
+            const lightboxNav = document.getElementById('lightboxNav');
+            const captionText = document.getElementById('captionText');
+            const captionIndex = document.getElementById('captionIndex');
+            const prevBtn = document.getElementById('lightboxPrev');
+            const nextBtn = document.getElementById('lightboxNext');
+
+            let currentImages = [];
+            let currentIndex = 0;
+            let isScrolling = false;
+            let sessionVersion = Date.now(); // Cache-busting timestamp
+
+            // Project data repository
+            const projectImages = {
+                'CMC-MedicalInstitute': [
+                    { src: "/assets/images/working-drawings/CMC-Academic/elevation-1.png", caption: 'Elevation 1' },
+                    { src: "/assets/images/working-drawings/CMC-Academic/elevation-2.png", caption: 'Elevation 2' },
+                    { src: "/assets/images/working-drawings/CMC-Academic/elevation-3.png", caption: 'Elevation 3' },
+                    { src: "/assets/images/working-drawings/CMC-Academic/elevation-4.png", caption: 'Elevation 4' },
+                    { src: "/assets/images/working-drawings/CMC-Academic/floorPlan-1.png", caption: 'Floor Plan 1' },
+                    { src: "/assets/images/working-drawings/CMC-Academic/floorPlan-2.png", caption: 'Floor Plan 2' }
+                ],
+                'CMC-TSQ': [
+                    { src: '/assets/images/working-drawings/CMC-TSQ/floorPlan1.png', caption: 'Floor Plan 1' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/floorPlan2.png', caption: 'Floor Plan 2' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/floorPlan6.png', caption: 'Floor Plan 6' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/floorPlan7.png', caption: 'Floor Plan 7' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/elevation-1.png', caption: 'Elevation 1' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/elevation-2.png', caption: 'Elevation 2' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/section-1.png', caption: 'Section 1' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/detail-1.png', caption: 'Detail 1' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/detail-3.png', caption: 'Detail 3' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/detail-4.png', caption: 'Detail 4' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/detail-7.png', caption: 'Detail 7' },
+                    { src: '/assets/images/working-drawings/CMC-TSQ/detail-8.png', caption: 'Detail 8' }
+                ],
+                'CMC-Dome': [
+                    { src: '/assets/images/working-drawings/CMC-Dome/plan-1.png', caption: 'Floor Plan 1' },
+                    { src: '/assets/images/working-drawings/CMC-Dome/plan-2.png', caption: 'Floor Plan 2' },
+                    { src: '/assets/images/working-drawings/CMC-Dome/plan-3.png', caption: 'Floor Plan 3' }
+                ],
+                'HMC-Academic': [
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-1.png', caption: 'Floor Plan 1' },
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-2.png', caption: 'Floor Plan 2' },
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-3.png', caption: 'Floor Plan 3' },
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-4.png', caption: 'Floor Plan 4' },
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-5.png', caption: 'Floor Plan 5' },
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-6.png', caption: 'Floor Plan 6' },
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-7.png', caption: 'Floor Plan 7' },
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-8.png', caption: 'Floor Plan 8' },
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-9.png', caption: 'Floor Plan 9' },
+                    { src: '/assets/images/working-drawings/HMC-Academic/HMC-Plan-10.png', caption: 'Floor Plan 10' }
+                ],
+                'sattva-casa': [
+                    { src: '/assets/images/working-drawings/casa/elevation-1.png', caption: 'Elevation 1' },
+                    { src: '/assets/images/working-drawings/casa/elevation-2.png', caption: 'Elevation 2' },
+                    { src: '/assets/images/working-drawings/casa/elevation-3.png', caption: 'Elevation 3' },
+                    { src: '/assets/images/working-drawings/casa/elevation-4.png', caption: 'Elevation 4' },
+                    { src: '/assets/images/working-drawings/casa/floorPlan-1.png', caption: 'Floor Plan 1' },
+                    { src: '/assets/images/working-drawings/casa/floorPlan-2.png', caption: 'Floor Plan 2' },
+                    { src: '/assets/images/working-drawings/casa/floorPlan-3.png', caption: 'Floor Plan 3' },
+                    { src: '/assets/images/working-drawings/casa/floorPlan-4.png', caption: 'Floor Plan 4' },
+                    { src: '/assets/images/working-drawings/casa/floorPlan-5.png', caption: 'Floor Plan 5' }
+                ],
+                'sattva-nelamangala': [
+                    { src: '/assets/images/working-drawings/nelamangala/masterPlan-1.png', caption: 'Master Plan' },
+                    { src: '/assets/images/working-drawings/nelamangala/clubHouse-1.png', caption: 'Elevation 1' },
+                    { src: '/assets/images/working-drawings/nelamangala/clubHouse-2.png', caption: 'Elevation 2' },
+                    { src: '/assets/images/working-drawings/nelamangala/clubHouse-3.png', caption: 'Elevation 3' },
+                    { src: '/assets/images/working-drawings/nelamangala/sections-1.png', caption: 'Section' },
+                    { src: '/assets/images/working-drawings/nelamangala/playArea-1.png', caption: 'Play Area - 1' },
+                    { src: '/assets/images/working-drawings/nelamangala/playArea-2.png', caption: 'Play Area - 2' },
+                    { src: '/assets/images/working-drawings/nelamangala/playArea-3.png', caption: 'Play Area - 3' }
+                ],
+                'sattva-jigeni': [
+                    { src: '/assets/images/working-drawings/jigeni/floorPlan-1.png', caption: 'Floor Plan 1' },
+                    { src: '/assets/images/working-drawings/jigeni/floorPlan-2.png', caption: 'Floor Plan 2' },
+                    { src: '/assets/images/working-drawings/jigeni/floorPlan-3.png', caption: 'Floor Plan 3' },
+                    { src: '/assets/images/working-drawings/jigeni/floorPlan-4.png', caption: 'Floor Plan 4' },
+                    { src: '/assets/images/working-drawings/jigeni/floorPlan-5.png', caption: 'Floor Plan 5' },
+                    { src: '/assets/images/working-drawings/jigeni/floorPlan-6.png', caption: 'Floor Plan 6' },
+                    { src: '/assets/images/working-drawings/jigeni/floorPlan-7.png', caption: 'Floor Plan 7' },
+                    { src: '/assets/images/working-drawings/jigeni/floorPlan-8.png', caption: 'Floor Plan 8' },
+                    { src: '/assets/images/working-drawings/jigeni/floorPlan-9.png', caption: 'Floor Plan 9' }
+                ],
+                'toit-taproom-pune': [
+                    { src: '/assets/images/working-drawings/toit/floorPlan-1.png', caption: 'Floor Plan 1' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-2.png', caption: 'Floor Plan 2' },
+                    { src: '/assets/images/working-drawings/toit/section-1.png', caption: 'Section 1' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-3.png', caption: 'Floor Plan 3' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-4.png', caption: 'Floor Plan 4' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-5.png', caption: 'Floor Plan 5' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-6.png', caption: 'Floor Plan 6' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-7.png', caption: 'Floor Plan 7' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-8.png', caption: 'Floor Plan 8' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-9.png', caption: 'Floor Plan 9' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-10.png', caption: 'Floor Plan 10' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-11.png', caption: 'Floor Plan 11' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-12.png', caption: 'Floor Plan 12' },
+                    { src: '/assets/images/working-drawings/toit/floorPlan-13.png', caption: 'Floor Plan 13' }
+                ],
+                'shridhar-redy-residence': [
+                    { src: '/assets/images/working-drawings/shridhar/plans-1.png', caption: 'Floor Plan 1' },
+                    { src: '/assets/images/working-drawings/shridhar/plans-2.png', caption: 'Floor Plan 2' },
+                    { src: '/assets/images/working-drawings/shridhar/plans-3.png', caption: 'Floor Plan 3' },
+                    { src: '/assets/images/working-drawings/shridhar/plans-4.png', caption: 'Floor Plan 4' },
+                    { src: '/assets/images/working-drawings/shridhar/plans-5.png', caption: 'Floor Plan 5' },
+                    { src: '/assets/images/working-drawings/shridhar/plans-6.png', caption: 'Floor Plan 6' },
+                    { src: '/assets/images/working-drawings/shridhar/sectionElevation-1.png', caption: 'Section Elevation 1' },
+                    { src: '/assets/images/working-drawings/shridhar/sectionElevation-2.png', caption: 'Section Elevation 2' },
+                    { src: '/assets/images/working-drawings/shridhar/sectionElevation-3.png', caption: 'Section Elevation 3' },
+                    { src: '/assets/images/working-drawings/shridhar/sectionElevation-4.png', caption: 'Section Elevation 4' },
+                    { src: '/assets/images/working-drawings/shridhar/sectionElevation-5.png', caption: 'Section Elevation 5' },
+                    { src: '/assets/images/working-drawings/shridhar/sectionElevation-6.png', caption: 'Section Elevation 6' },
+                    { src: '/assets/images/working-drawings/shridhar/sectionElevation-7.png', caption: 'Section Elevation 7' }
+                ],
+                'sangita-karthik-residence': [
+                    { src: '/assets/images/working-drawings/sangita/elevation-1.png', caption: 'Elevation 1' },
+                    { src: '/assets/images/working-drawings/sangita/elevation-2.png', caption: 'Elevation 2' },
+                    { src: '/assets/images/working-drawings/sangita/elevation-3.png', caption: 'Elevation 3' },
+                    { src: '/assets/images/working-drawings/sangita/plan-1.png', caption: 'Floor Plan 1' },
+                    { src: '/assets/images/working-drawings/sangita/plan-2.png', caption: 'Floor Plan 2' },
+                    { src: '/assets/images/working-drawings/sangita/plan-3.png', caption: 'Floor Plan 3' },
+                    { src: '/assets/images/working-drawings/sangita/plan-4.png', caption: 'Floor Plan 4' },
+                    { src: '/assets/images/working-drawings/sangita/plan-5.png', caption: 'Floor Plan 5' },
+                    { src: '/assets/images/working-drawings/sangita/section-1.png', caption: 'Section 1' }
+                ]
+            };
+
+            function getFreshUrl(url) {
+                if (!url) return '';
+                const separator = url.includes('?') ? '&' : '?';
+                return `${url}${separator}v=${sessionVersion}`;
+            }
+
+            function updateCaption(index) {
+                if (currentImages && currentImages[index]) {
+                    captionText.textContent = currentImages[index].caption || `Sheet ${index + 1}`;
+                    captionIndex.textContent = `${index + 1} / ${currentImages.length}`;
+                }
+            }
+
+            function updateDots(index) {
+                const dots = lightboxNav.querySelectorAll('a');
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+            }
+
+            function goToSlide(index) {
+                const slides = lightboxSlider.querySelectorAll('img');
+                if (!slides.length) return;
+
+                currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+                isScrolling = true;
+
+                slides[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                updateDots(currentIndex);
+                updateCaption(currentIndex);
+
+                setTimeout(() => { isScrolling = false; }, 350);
+            }
+
+            function openLightboxWithImages(images) {
+                currentImages = images;
+                currentIndex = 0;
+                lightboxSlider.innerHTML = '';
+                lightboxNav.innerHTML = '';
+
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+
+                // Build navigation dots
+                images.forEach((_, idx) => {
+                    const dot = document.createElement('a');
+                    dot.href = 'javascript:void(0)';
+                    if (idx === 0) dot.classList.add('active');
+                    dot.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        goToSlide(idx);
+                    });
+                    lightboxNav.appendChild(dot);
+                });
+
+                // Inject slides with cache busting & error fallbacks
+                images.forEach((imgData, index) => {
+                    const img = document.createElement('img');
+                    img.alt = imgData.caption || `Drawing Sheet ${index + 1}`;
+                    img.dataset.caption = imgData.caption || `Drawing Sheet ${index + 1}`;
+                    img.loading = index === 0 ? 'eager' : 'lazy';
+
+                    img.onerror = function () {
+                        this.style.opacity = '0.3';
+                        this.alt = 'Image temporarily unavailable';
+                    };
+
+                    img.src = getFreshUrl(imgData.src);
+                    lightboxSlider.appendChild(img);
+                });
+
+                updateCaption(0);
+                updateDots(0);
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    lightboxSlider.innerHTML = '';
+                    lightboxNav.innerHTML = '';
+                    currentImages = [];
+                    currentIndex = 0;
+                }, 200);
+            }
+
+            // Scroll-snap detection
+            lightboxSlider.addEventListener('scroll', function () {
+                if (isScrolling) return;
+                const slides = this.querySelectorAll('img');
+                if (!slides.length) return;
+
+                const slideWidth = this.scrollWidth / slides.length;
+                const activeIndex = Math.round(this.scrollLeft / slideWidth);
+                const clampedIndex = Math.min(Math.max(activeIndex, 0), slides.length - 1);
+
+                if (currentIndex !== clampedIndex) {
+                    currentIndex = clampedIndex;
+                    updateDots(clampedIndex);
+                    updateCaption(clampedIndex);
+                }
+            });
+
+            // Touch swipe support
+            let touchStartX = 0;
+            lightboxSlider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            lightboxSlider.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].screenX;
+                if (touchEndX < touchStartX - 50) goToSlide(currentIndex + 1);
+                if (touchEndX > touchStartX + 50) goToSlide(currentIndex - 1);
+            }, { passive: true });
+
+            // Click controls
+            if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); goToSlide(currentIndex - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); goToSlide(currentIndex + 1); });
+            if (closeBtn) closeBtn.addEventListener('click', (e) => { e.preventDefault(); closeLightbox(); });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function (e) {
+                if (!overlay.classList.contains('active')) return;
+                if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+                if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+                if (e.key === 'Escape') closeLightbox();
+            });
+
+            // Wire up triggers
+            document.querySelectorAll('.lightbox-trigger').forEach(function (trigger) {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const projectId = this.dataset.project || this.closest('[data-project]')?.dataset.project;
+                    const imgElement = this.tagName.toLowerCase() === 'img' ? this : this.querySelector('img');
+                    const imgSrc = imgElement ? imgElement.getAttribute('src') : null;
+
+                    if (projectId && projectImages[projectId]) {
+                        openLightboxWithImages(projectImages[projectId]);
+                    } else if (imgSrc) {
+                        openLightboxWithImages([{ src: imgSrc, caption: imgElement.alt || 'Technical Drawing' }]);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

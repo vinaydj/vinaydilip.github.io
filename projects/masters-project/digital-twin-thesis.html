@@ -65,12 +65,13 @@
         .page-toc {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 8px;
             margin: 0 0 28px;
             padding: 12px 0 14px;
             border-bottom: 1px solid var(--border-color);
             position: sticky;
-            top: 76px;
+            top: var(--header-h, 76px);
             z-index: 40;
             background: #ffffff;
         }
@@ -243,6 +244,7 @@
             .stat-row {
                 grid-template-columns: repeat(2, 1fr);
             }
+
         }
     </style>
 </head>
@@ -720,6 +722,24 @@
 
 
     <script src="/assets/js/back-nav.js" defer></script>
+    <script>
+        // Pin .page-toc flush under the fixed header, whatever its real
+        // rendered height is (it changes: single row on wide screens,
+        // stacked/wrapped rows on narrow ones). Hardcoded px guesses
+        // drift out of sync with that and leave a gap or an overlap.
+        (function () {
+            var header = document.querySelector('header');
+            if (!header) return;
+            function syncHeaderHeight() {
+                document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+            }
+            syncHeaderHeight();
+            window.addEventListener('resize', syncHeaderHeight);
+            if (window.ResizeObserver) {
+                new ResizeObserver(syncHeaderHeight).observe(header);
+            }
+        })();
+    </script>
 </body>
 
 </html>

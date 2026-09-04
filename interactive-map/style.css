@@ -255,13 +255,19 @@ body:has(.info-panel.open) .camera-controls,
   right: 0 !important;
 }
 
-/* Close button floats directly over the panel content -- no separate
-   header bar / divider line. */
-.close {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  z-index: 20;
+.info-panel-header {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 56px;
+  min-height: 56px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.6);
+  z-index: 10;
+  box-sizing: border-box;
 }
 
 .info-panel-content {
@@ -274,7 +280,7 @@ body:has(.info-panel.open) .camera-controls,
 }
 
 .info-panel-content-wrapper {
-  padding: 52px 24px 24px 24px;
+  padding: 28px 24px 24px 24px;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -373,10 +379,6 @@ body:has(.info-panel.open) .camera-controls,
   filter: grayscale(1);
   transition: filter 0.2s ease;
   flex-shrink: 0;
-  background: rgba(250, 250, 250, 0.85);
-  border-radius: 50%;
-  padding: 6px;
-  box-sizing: content-box;
 }
 
 .close:hover {

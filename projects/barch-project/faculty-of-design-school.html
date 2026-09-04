@@ -40,7 +40,7 @@
 
         <!-- Close Button -->
         <div class="x-button">
-            <a href="/projects/barch-project/more-projects.html" aria-label="Close to B.Arch Projects">
+            <a data-back-link href="/projects/barch-project/more-projects.html" aria-label="Close to B.Arch Projects">
                 <img src="../../assets/icons/x.svg" alt="Go Back">
             </a>
         </div>
@@ -192,7 +192,7 @@
             <!-- Back Button -->
             <div class="back-btn-wrap">
                 <div class="breadcrumb-hint">
-                    <a href="/projects/barch-project/more-projects.html" id="breadcrumbLink" class="back-to-portfolio-btn">← Back to B.Arch Projects</a>
+                    <a href="/projects/barch-project/more-projects.html" id="breadcrumbLink" class="back-to-portfolio-btn" data-back-link >← Back to B.Arch Projects</a>
                 </div>
             </div>
 
@@ -448,5 +448,7 @@
             });
         });
     </script>
+
+    <script src="/assets/js/back-nav.js" defer></script>
 </body>
 </html>

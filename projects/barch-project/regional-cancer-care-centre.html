@@ -100,7 +100,7 @@
 
         <!-- Close Button -->
         <div class="x-button">
-            <a href="more-projects.html">
+            <a data-back-link href="more-projects.html">
                 <span aria-hidden="true" style="font-size:20px;color:#888;">✕</span>
             </a>
         </div>
@@ -346,7 +346,7 @@
                     </a>
                 </div>
                 <div class="breadcrumb-hint">
-                    <a href="/projects/barch-project/more-projects.html" id="breadcrumbLink" class="back-to-portfolio-btn">← Back to B.Arch Projects</a>
+                    <a href="/projects/barch-project/more-projects.html" id="breadcrumbLink" class="back-to-portfolio-btn" data-back-link >← Back to B.Arch Projects</a>
                 </div>
             </div>
 
@@ -440,6 +440,8 @@
         });
     </script>
 
+
+    <script src="/assets/js/back-nav.js" defer></script>
 </body>
 
 </html>

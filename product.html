@@ -396,7 +396,7 @@
 
         <!-- Close Button -->
         <div class="x-button">
-            <a href="gallery.html">
+            <a data-back-link href="gallery.html">
                 <span aria-hidden="true" style="font-size:20px;color:#888;">✕</span>
             </a>
         </div>
@@ -549,8 +549,12 @@
 
         <!-- ===== BACK BUTTON ===== -->
         <div class="back-btn-wrap">
-            <a href="projects/masters-project/Sem-4/thesis-digital-twin.html" class="back-to-portfolio-btn">← View Research Thesis</a>
+            <a href="projects/masters-project/Sem-4/thesis-digital-twin.html" class="back-to-portfolio-btn" data-back-link >← View Research Thesis</a>
         </div>
+
+        <footer>
+            <p>&copy; 2026 by Vinay</p>
+        </footer>
 
     </main>
 
@@ -588,6 +592,8 @@
         });
     </script>
 
+
+    <script src="/assets/js/back-nav.js" defer></script>
 </body>
 
 </html>

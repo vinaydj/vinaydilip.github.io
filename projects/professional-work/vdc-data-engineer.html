@@ -40,7 +40,7 @@
 
         <!-- Close Button -->
         <div class="x-button">
-            <a href="../../gallery.html" aria-label="Close to Gallery">
+            <a data-back-link href="../../gallery.html" aria-label="Close to Gallery">
                 <img src="../../assets/icons/x.svg" alt="Go Back">
             </a>
         </div>
@@ -204,7 +204,7 @@
             <!-- Back Button -->
             <div class="back-btn-wrap">
                 <div class="breadcrumb-hint">
-                    <a href="../../gallery.html" id="breadcrumbLink" class="back-to-portfolio-btn">← Back to Portfolio</a>
+                    <a href="../../gallery.html" id="breadcrumbLink" class="back-to-portfolio-btn" data-back-link >← Back to Portfolio</a>
                 </div>
             </div>
 
@@ -437,5 +437,7 @@
             });
         });
     </script>
+
+    <script src="/assets/js/back-nav.js" defer></script>
 </body>
 </html>

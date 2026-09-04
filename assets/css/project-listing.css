@@ -16,7 +16,7 @@ body {
 }
 
 body.gallery-page {
-    padding: 120px 40px 60px;
+    padding: 120px 40px 28px;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -311,7 +311,7 @@ footer {
     padding: 25px 0 0;
     text-align: center;
     border-top: 1px solid #f0f0f0;
-    margin-top: 40px;
+    margin-top: 16px;
     color: #999;
     font-size: 13px;
 }

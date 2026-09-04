@@ -15,6 +15,11 @@ body {
     overflow-y: auto;
 }
 
+/* ===== NAME PRELOADER (mobile only) ===== */
+#name-preloader {
+    display: none;
+}
+
 /* ===== CONTAINER ===== */
 .container {
     display: flex;
@@ -64,10 +69,7 @@ body {
     height: 180px;
     border-radius: 0;
     object-fit: cover;
-    border: 1px solid #b0bec5;
-    background: #e0e0e0;
-    animation: highlightBorder 2s ease-out forwards;
-    animation-delay: 3.5s;
+    background: transparent;
 }
 
 .image-caption {
@@ -527,7 +529,7 @@ footer#icons {
     .bio-text {
         text-align: center;
         font-size: 14px;
-        max-width: 450px;
+        max-width: 100%;
     }
 
     .left-line {
@@ -699,26 +701,32 @@ footer#icons {
     }
 
     footer#icons {
-        bottom: 35px;
-        right: 20px;
-        gap: 40px;
+        position: static;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        margin-top: 14px;
     }
 
     #linkedin img,
     #github img {
-        width: 28px;
-        height: 28px;
+        width: 24px;
+        height: 24px;
     }
 
     #skill-icons {
-        bottom: 35px;
-        left: 20px;
-        gap: 16px;
+        position: static;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        margin-top: 16px;
+        padding: 0 20px;
     }
 
     #skill-icons img {
-        width: 22px;
-        height: 22px;
+        width: 24px;
+        height: 24px;
     }
 
     @keyframes gentlePulseGlow {
@@ -768,6 +776,66 @@ footer#icons {
 
 /* Mobile (480px - 768px) */
 @media (max-width: 480px) {
+    #name-preloader {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        align-items: center;
+        justify-content: center;
+        background: #f7f9fa;
+        z-index: 9999;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .preloader-content {
+        text-align: center;
+        padding: 0 24px;
+    }
+
+    .preloader-name {
+        font-size: 28px;
+        font-weight: 300;
+        color: #546e7a;
+        margin-bottom: 5px;
+    }
+
+    .preloader-role {
+        font-size: 12px;
+        font-weight: 300;
+        color: #546e7a;
+        letter-spacing: 0.4px;
+        margin-bottom: 3px;
+    }
+
+    .preloader-location {
+        font-size: 10px;
+        font-weight: 300;
+        color: #b0bec5;
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+    }
+
+    .preloader-info {
+        font-size: 14px;
+        font-weight: 300;
+        color: #b0bec5;
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .preloader-sep {
+        font-weight: 100;
+    }
+
+    #name-preloader.hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
     .container {
         padding: 30px 10px;
         padding-top: 40px;
@@ -809,11 +877,27 @@ footer#icons {
         animation-delay: 2.8s, 3.5s;
     }
 
+    .left-section {
+        opacity: 1;
+        animation: none;
+    }
+
+    .skill-tags {
+        opacity: 1;
+        animation: none;
+    }
+
+    .left-line {
+        width: 100px;
+        opacity: 1;
+        animation: none;
+    }
+
     .right-content {
         padding: 0 5px;
-        transform: translateY(-160px);
-        animation: slideDownSmall 1s ease-out forwards;
-        animation-delay: 2s;
+        transform: none;
+        opacity: 1;
+        animation: none;
     }
 
     #name {
@@ -869,26 +953,32 @@ footer#icons {
     }
 
     footer#icons {
-        bottom: 35px;
-        right: 15px;
-        gap: 30px;
+        position: static;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        margin-top: 10px;
     }
 
     #linkedin img,
     #github img {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
     }
 
     #skill-icons {
-        bottom: 35px;
-        left: 10px;
-        gap: 6px;
+        position: static;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 12px;
+        padding: 0 10px;
     }
 
     #skill-icons img {
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
     }
 
     @keyframes expandLineHorizontalMobile {
@@ -904,20 +994,15 @@ footer#icons {
         }
     }
 
-    @keyframes slideDownSmall {
-        0% {
-            transform: translateY(-160px);
-            opacity: 0.5;
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
+
 }
 
 /* Very Small Phones (below 360px) */
 @media (max-width: 360px) {
+    .left-line {
+        width: 80px;
+    }
+
     .profile-image {
         width: 80px;
         height: 80px;
@@ -958,26 +1043,32 @@ footer#icons {
     }
 
     footer#icons {
-        bottom: 35px;
-        right: 12px;
-        gap: 25px;
+        position: static;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        margin-top: 8px;
     }
 
     #linkedin img,
     #github img {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
     }
 
     #skill-icons {
-        bottom: 35px;
-        left: 8px;
-        gap: 4px;
+        position: static;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin-top: 8px;
+        padding: 0 8px;
     }
 
     #skill-icons img {
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
     }
 
     @keyframes expandLineHorizontalMobile {

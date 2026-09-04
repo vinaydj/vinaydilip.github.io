@@ -11,13 +11,26 @@
 
 <body>
 
+    <div id="name-preloader" aria-hidden="true">
+        <div class="preloader-content">
+            <h1 class="preloader-name">Vinay Dilip J</h1>
+            <p class="preloader-role">Energy Consultant &middot; Digital Twin &middot; VDC Engineer &middot; BIM Specialist &middot; Architect</p>
+            <p class="preloader-location">Sk&aring;ne, Sweden</p>
+            <div class="preloader-info">
+                <span>inboxvinaydj@gmail.com</span>
+                <span class="preloader-sep">|</span>
+                <span>resume</span>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="content-wrapper">
             <!-- LEFT SECTION: Bio + Image -->
             <div class="left-section">
                 <div class="profile-section">
                     <img 
-                        src="https://via.placeholder.com/100" 
+                        src="./assets/images/profile.png"
                         alt="Profile" 
                         class="profile-image"
                     />
@@ -102,6 +115,21 @@
     </footer>
 
     <script src="/assets/js/back-nav.js" defer></script>
+    <script>
+        (function () {
+            var preloader = document.getElementById('name-preloader');
+            if (!preloader) return;
+            if (!window.matchMedia('(max-width: 480px)').matches) {
+                preloader.classList.add('hide');
+                return;
+            }
+            // Show the name full-screen first, then fade it out to reveal the
+            // real page (already sitting at its normal resting position underneath).
+            window.setTimeout(function () {
+                preloader.classList.add('hide');
+            }, 2000);
+        })();
+    </script>
 </body>
 
 </html>

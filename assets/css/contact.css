@@ -29,7 +29,7 @@ body {
 .content-wrapper {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 60px;
     justify-content: center;
     width: 100%;
     max-width: 1400px;
@@ -46,7 +46,7 @@ body {
     opacity: 0;
     animation: fadeInContent 0.8s ease-out forwards;
     animation-delay: 3.2s;
-    max-width: 420px;
+    max-width: 700px;
     flex-shrink: 0;
 }
 
@@ -62,7 +62,7 @@ body {
 .profile-image {
     width: 180px;
     height: 180px;
-    border-radius: 50%;
+    border-radius: 0;
     object-fit: cover;
     border: 1px solid #b0bec5;
     background: #e0e0e0;
@@ -85,8 +85,7 @@ body {
     font-weight: 300;
     color: #b0bec5;
     line-height: 1.9;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
     animation: highlightText 1s ease-out forwards;
     animation-delay: 3s;
 }
@@ -102,7 +101,7 @@ body {
 /* ===== VERTICAL LINE ===== */
 .left-line {
     width: 0;
-    height: 350px;
+    height: 600px;
     background: #b0bec5;
     opacity: 0;
     animation: expandLine 0.8s ease-out forwards, highlightLine 2s ease-out forwards;
@@ -117,9 +116,10 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    max-width: 400px;
+    max-width: 450px;
     flex-shrink: 0;
-    transform: translateX(-200px);
+    opacity: 0.5;
+    transform: translateX(-300px);
     animation: slideFromCenter 1s ease-out forwards;
     animation-delay: 2s;
 }
@@ -135,6 +135,48 @@ body {
     white-space: nowrap;
 }
 
+/* ===== ROLE / LOCATION TAGS ===== */
+#role-tag {
+    font-size: 16px;
+    font-weight: 300;
+    color: #546e7a;
+    letter-spacing: 0.4px;
+    margin-bottom: 4px;
+    animation: highlightText 2s ease-out forwards;
+    animation-delay: 0.65s;
+}
+
+#location-tag {
+    font-size: 13px;
+    font-weight: 300;
+    color: #b0bec5;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    animation: highlightText 2s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+/* ===== SKILL TAGS ===== */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    opacity: 0;
+    animation: fadeInContent 0.8s ease-out forwards;
+    animation-delay: 3.4s;
+}
+
+.skill-tags span {
+    font-size: 10.5px;
+    font-weight: 400;
+    color: #607d8b;
+    background: rgba(176, 190, 197, 0.15);
+    border: 1px solid rgba(176, 190, 197, 0.4);
+    border-radius: 8px;
+    padding: 4px 9px;
+    letter-spacing: 0.3px;
+}
+
 /* ===== CONTACT INFO ===== */
 #info {
     font-size: 22px;
@@ -147,17 +189,29 @@ body {
 #email {
     color: #b0bec5;
     text-decoration: none;
-    animation: highlightEmail 2s ease-out forwards;
-    animation-delay: 0.8s;
+    animation: highlightEmail 2s ease-out forwards,
+        gentlePulseGlow 5s ease-in-out infinite;
+    animation-delay: 0.8s, 3s;
 }
 
 #resume {
     color: #b0bec5;
     text-decoration: none;
-    animation: highlightResume 2s ease-out forwards;
-    animation-delay: 0.8s;
+    animation: highlightResume 2s ease-out forwards,
+        gentlePulseGlow 5s ease-in-out infinite;
+    animation-delay: 0.8s, 3.4s;
     transition: color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#resume-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.9;
+    animation: gentlePulseIconGlow 5s ease-in-out infinite;
+    animation-delay: 3.4s;
 }
 
 #resume:hover {
@@ -193,6 +247,63 @@ body {
     color: #000;
 }
 
+/* ===== SKILL LOGOS (bottom-left) ===== */
+#skill-icons {
+    position: fixed;
+    bottom: 35px;
+    left: 35px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-end;
+    z-index: 100;
+}
+
+.skill-icon {
+    position: relative;
+    display: inline-flex;
+}
+
+#skill-icons img {
+    width: 26px;
+    height: 26px;
+    opacity: 0.3;
+    filter: grayscale(1);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    animation: highlightIcon 2s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+.skill-icon:hover img {
+    opacity: 1;
+    transform: scale(1.12);
+}
+
+/* Hover tooltip with the tool name */
+.skill-icon::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    color: #fff;
+    background: #37474f;
+    padding: 4px 9px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 10;
+}
+
+.skill-icon:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 /* ===== SOCIAL ICONS ===== */
 footer#icons {
     position: fixed;
@@ -200,7 +311,7 @@ footer#icons {
     right: 35px;
     display: flex;
     gap: 60px;
-    align-items: center;
+    align-items: flex-end;
     z-index: 100;
 }
 
@@ -212,6 +323,10 @@ footer#icons {
     opacity: 0.3;
     animation: highlightIcon 2s ease-out forwards;
     animation-delay: 0.8s;
+}
+
+#github img {
+    filter: brightness(0);
 }
 
 #linkedin:hover img,
@@ -247,7 +362,27 @@ footer#icons {
 
 @keyframes highlightLine {
     from { background: #b0bec5; }
-    to { background: #37474f; }
+    to { background: #cfd8dc; }
+}
+
+@keyframes gentlePulseGlow {
+    0%, 100% {
+        color: #b0bec5;
+        text-shadow: 0 0 0 rgba(0, 140, 158, 0);
+    }
+    50% {
+        color: #008c9e;
+        text-shadow: 0 0 12px rgba(0, 140, 158, 0.55);
+    }
+}
+
+@keyframes gentlePulseIconGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 0 rgba(0, 140, 158, 0));
+    }
+    50% {
+        filter: drop-shadow(0 0 5px rgba(0, 140, 158, 0.6));
+    }
 }
 
 @keyframes highlightIcon {
@@ -264,7 +399,7 @@ footer#icons {
     to {
         width: 3px;
         opacity: 1;
-        height: 350px;
+        height: 600px;
     }
 }
 
@@ -281,7 +416,7 @@ footer#icons {
 
 @keyframes slideFromCenter {
     0% {
-        transform: translateX(-200px);
+        transform: translateX(-300px);
         opacity: 0.5;
     }
     100% {
@@ -297,7 +432,7 @@ footer#icons {
 /* Large Screens (1200px - 1400px) */
 @media (max-width: 1200px) {
     .content-wrapper {
-        gap: 40px;
+        gap: 70px;
         padding: 0 30px;
     }
 
@@ -313,15 +448,29 @@ footer#icons {
         font-size: 50px;
     }
 
+    #role-tag {
+        font-size: 15px;
+    }
+
+    #location-tag {
+        font-size: 12px;
+    }
+
+    .skill-tags span {
+        font-size: 8.5px;
+        padding: 3px 6px;
+    }
+
     #info {
         font-size: 20px;
     }
 
     .left-line {
-        height: 300px;
+        height: 420px;
     }
 
     .right-content {
+        max-width: 350px;
         transform: translateX(-150px);
         animation: slideFromCenterTablet 1s ease-out forwards;
         animation-delay: 2s;
@@ -336,7 +485,7 @@ footer#icons {
         to {
             width: 3px;
             opacity: 1;
-            height: 300px;
+            height: 420px;
         }
     }
 
@@ -359,7 +508,7 @@ footer#icons {
     }
 
     .content-wrapper {
-        gap: 30px;
+        gap: 50px;
         flex-wrap: wrap;
         justify-content: center;
         padding: 0 20px;
@@ -382,8 +531,20 @@ footer#icons {
     }
 
     .left-line {
-        height: 200px;
+        height: 260px;
         order: 2;
+    }
+
+    #role-tag {
+        font-size: 14px;
+    }
+
+    #location-tag {
+        font-size: 12px;
+    }
+
+    .skill-tags {
+        justify-content: center;
     }
 
     .right-content {
@@ -420,7 +581,7 @@ footer#icons {
         to {
             width: 3px;
             opacity: 1;
-            height: 200px;
+            height: 260px;
         }
     }
 
@@ -503,6 +664,24 @@ footer#icons {
         text-align: center;
     }
 
+    #role-tag {
+        font-size: 13px;
+    }
+
+    #location-tag {
+        font-size: 11px;
+    }
+
+    .skill-tags {
+        justify-content: center;
+    }
+
+    .skill-tags span {
+        font-size: 9px;
+        padding: 3px 7px;
+        gap: 6px;
+    }
+
     #info {
         font-size: 16px;
         flex-wrap: wrap;
@@ -529,6 +708,37 @@ footer#icons {
     #github img {
         width: 28px;
         height: 28px;
+    }
+
+    #skill-icons {
+        bottom: 35px;
+        left: 20px;
+        gap: 16px;
+    }
+
+    #skill-icons img {
+        width: 22px;
+        height: 22px;
+    }
+
+    @keyframes gentlePulseGlow {
+        0%, 100% {
+            color: #b0bec5;
+            text-shadow: 0 0 0 rgba(0, 140, 158, 0);
+        }
+        50% {
+            color: #008c9e;
+            text-shadow: 0 0 6px rgba(0, 140, 158, 0.5);
+        }
+    }
+
+    @keyframes gentlePulseIconGlow {
+        0%, 100% {
+            filter: drop-shadow(0 0 0 rgba(0, 140, 158, 0));
+        }
+        50% {
+            filter: drop-shadow(0 0 3px rgba(0, 140, 158, 0.55));
+        }
     }
 
     @keyframes expandLineHorizontal {
@@ -601,8 +811,8 @@ footer#icons {
 
     .right-content {
         padding: 0 5px;
-        transform: translateX(-30px);
-        animation: slideFromCenterSmall 1s ease-out forwards;
+        transform: translateY(-160px);
+        animation: slideDownSmall 1s ease-out forwards;
         animation-delay: 2s;
     }
 
@@ -611,6 +821,31 @@ footer#icons {
         white-space: normal;
         text-align: center;
         margin-bottom: 5px;
+    }
+
+    #role-tag {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    #location-tag {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .skill-tags {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .skill-tags span {
+        font-size: 9.5px;
+        padding: 4px 8px;
+    }
+
+    #resume-icon {
+        width: 14px;
+        height: 14px;
     }
 
     #info {
@@ -645,6 +880,17 @@ footer#icons {
         height: 24px;
     }
 
+    #skill-icons {
+        bottom: 35px;
+        left: 10px;
+        gap: 6px;
+    }
+
+    #skill-icons img {
+        width: 15px;
+        height: 15px;
+    }
+
     @keyframes expandLineHorizontalMobile {
         from {
             width: 0;
@@ -658,13 +904,13 @@ footer#icons {
         }
     }
 
-    @keyframes slideFromCenterSmall {
+    @keyframes slideDownSmall {
         0% {
-            transform: translateX(-30px);
+            transform: translateY(-160px);
             opacity: 0.5;
         }
         100% {
-            transform: translateX(0);
+            transform: translateY(0);
             opacity: 1;
         }
     }
@@ -679,6 +925,19 @@ footer#icons {
 
     #name {
         font-size: 24px;
+    }
+
+    #role-tag {
+        font-size: 11px;
+    }
+
+    #location-tag {
+        font-size: 9px;
+    }
+
+    .skill-tags span {
+        font-size: 8px;
+        padding: 2px 6px;
     }
 
     #info {
@@ -708,6 +967,17 @@ footer#icons {
     #github img {
         width: 20px;
         height: 20px;
+    }
+
+    #skill-icons {
+        bottom: 35px;
+        left: 8px;
+        gap: 4px;
+    }
+
+    #skill-icons img {
+        width: 12px;
+        height: 12px;
     }
 
     @keyframes expandLineHorizontalMobile {

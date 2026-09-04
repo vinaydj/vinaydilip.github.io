@@ -246,6 +246,22 @@
             }
 
         }
+
+        /* Very narrow phones (~300-340px): keep the nine pills wrapping
+           tight instead of eating the page with big touch targets. */
+        @media (max-width: 340px) {
+            .page-toc {
+                gap: 4px;
+                padding: 8px 0 10px;
+            }
+
+            .page-toc a {
+                font-size: 9.5px;
+                padding: 4px 7px;
+                letter-spacing: 0.5px;
+                border-radius: 4px;
+            }
+        }
     </style>
 </head>
 

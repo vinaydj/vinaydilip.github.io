@@ -871,7 +871,7 @@ footer {
 
 .lightbox-nav.prev,
 .lightbox-nav.next {
-    position: fixed;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: #fff;
@@ -882,14 +882,33 @@ footer {
     border-radius: 6px;
     cursor: pointer;
     z-index: 10000;
+    transition: background 0.2s ease;
+}
+
+.lightbox-nav.prev:hover,
+.lightbox-nav.next:hover {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .lightbox-nav.prev {
-    left: 20px;
+    left: -65px;
 }
 
 .lightbox-nav.next {
-    right: 20px;
+    right: -65px;
+}
+
+@media (max-width: 1200px) {
+    .lightbox-nav.prev { left: 10px; }
+    .lightbox-nav.next { right: 10px; }
+}
+
+@media (max-width: 600px) {
+    .lightbox-nav.prev,
+    .lightbox-nav.next {
+        font-size: 24px;
+        padding: 8px 12px;
+    }
 }
 
 .lightbox-caption {

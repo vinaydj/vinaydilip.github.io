@@ -426,6 +426,7 @@
             if (lbPrevBtn) lbPrevBtn.addEventListener('click', (e) => { e.preventDefault(); goToSlide(currentIndex - 1); });
             if (lbNextBtn) lbNextBtn.addEventListener('click', (e) => { e.preventDefault(); goToSlide(currentIndex + 1); });
             if (closeBtn) closeBtn.addEventListener('click', (e) => { e.preventDefault(); closeLightbox(); });
+            if (overlay) overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
 
             document.addEventListener('keydown', function (e) {
                 if (!overlay.classList.contains('active')) return;

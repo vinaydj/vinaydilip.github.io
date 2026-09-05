@@ -421,11 +421,6 @@ table th {
   font-weight: 600;
 }
 
-.col-min {
-  width: 35%;
-  min-width: 80px;
-}
-
 /* Action Button */
 button {
   display: inline-block;
@@ -627,11 +622,6 @@ footer {
 .links a:hover {
   border-bottom-color: #666666;
   color: #333333;
-}
-
-.controls-mouse,
-.controls-touch {
-  display: none !important;
 }
 
 /* ===== RESPONSIVE ===== */

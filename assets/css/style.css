@@ -143,15 +143,6 @@ nav a:hover {
    PROJECT PAGE (SLIDER)
    ================================================================ */
 
-body.project-page {
-  padding: 120px 40px 200px 60px;
-  /* bottom padding increased */
-  background-color: #f7f9fa;
-  min-height: 100vh;
-  max-width: 100;
-
-}
-
 .slider-container {
   width: calc(100vw - 600px);
   max-width: calc(100vw - 100px);
@@ -213,45 +204,6 @@ body.project-page {
   transform: scale(1.02);
   transition: transform 0.4s ease;
   color: #242222d7;
-}
-
-/* Thumbnails */
-.thumbnail {
-  text-decoration: none;
-  position: fixed;
-  bottom: 50px;
-  left: 50%;
-  width: max-content;
-  z-index: 100;
-  display: flex;
-  gap: 50px;
-  transform: translateX(-50%);
-}
-
-.thumbnail .item {
-  width: 150px;
-  height: 100px;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.thumbnail .item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-}
-
-.thumbnail .item:hover {
-  transform: scale(1.1);
-  transition: transform 0.6s ease;
-}
-
-/* Add spacing at the bottom of project pages */
-body.project-page {
-  padding-bottom: 80px;
-  /* Adjust this value as needed */
 }
 
 /* ================================================================
@@ -354,18 +306,6 @@ h3 {
   text-align: start;
 }
 
-.hero-img {
-  width: 100%;
-  height: auto;
-  margin: 40px 0;
-}
-
-.project-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
 .project-card img {
   width: 100%;
   height: auto;
@@ -373,25 +313,15 @@ h3 {
 }
 
 /* Back Buttons */
-.logo img,
-.bottom-logo img {
+.logo img {
   height: 35px;
   opacity: 0.3;
   transition: opacity 0.2s ease;
 }
 
-.logo img:hover,
-.bottom-logo img:hover {
+.logo img:hover {
   opacity: 0.6;
 }
-
-.bottom-logo {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
 
 /* Project Details */
 .project-intro .title h3 {
@@ -412,121 +342,6 @@ h3 {
   line-height: 1.6;
   margin-bottom: 30px;
 }
-
-/* Project Grid */
-.project-details-1 {
-  display: grid;
-  grid-template-columns: 1.8fr 0.8fr;
-  gap: 30px;
-  align-items: start;
-  margin: 30px 30px;
-  border: #000 1px solid; /* Keep this if you want the design outline */
-
-}
-
-.text-block-1 p {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 10px;
-  text-align: justify;
-  border: #000 1px solid;
-}
-
-.Image-card-1 {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  border: #000 1px solid;
-  
-}
-
-.Image-card-1 img {
-  width: 100%;       /* FILL THE GRID CELL: Scales automatically with the 0.8fr column */
-  max-width: 600px;  /* CAPS THE SIZE: Prevents the image from getting too massive on huge screens */
-  height: auto;
-  border-radius: 12px
-  object-fit: cover;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-
-/* ================================================================
-   LightBox Main Display Modifications (Configured for 1.3 Scale)
-   ================================================================ */
-
-#lightBox {
-  display: none; 
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.95); 
-  width: 100vw;
-  z-index: 999999; 
-  filter: none !important;
-  overflow: hidden; /* Prevents scrollbars if the image zooms out of bounds */
-}
-
-/* THE POPUP IMAGE */
-#lightBoxCon {
-  width: auto;
-  height: auto;
-  max-width: 70vw;    /* REDUCED: Lowered base width so 1.3 zoom doesn't overflow screen */
-  max-height: 65vh;   /* REDUCED: Lowered base height to guarantee room for text */
-  object-fit: contain;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
-  border-radius: 4px;
-  z-index: 10;        
-  
-  /* Smooth scale transition effect when popping open */
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: scale(0.95); 
-}
-
-/* CHANGED TO YOUR REQUESTED 1.3 SCALE FACTOR */
-#lightBox.active #lightBoxCon {
-  transform: scale(1.3); 
-}
-
-/* FIXED CAPTION POSITIONING */
-#lightBox #caption {
-  position: absolute; /* Lock it to the screen boundary */
-  bottom: 90px;       /* Pins it safely below the zoomed image zone */
-  left: 50%;
-  transform: translateX(-50%); /* Centers it horizontally */
-  color: #ffffff !important;       
-  font-size: 1.25em;              
-  letter-spacing: 0.5px;
-  text-align: center;
-  z-index: 20;                    
-  width: 90%;                     
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8); 
-}
-
-#lightBox .x-button {
-  position: absolute;
-  top: 30px; 
-  right: 40px;
-  z-index: 1000000;
-  cursor: pointer;
-}
-
-#lightBox .x-button img {
-  height: 35px;
-  filter: invert(1) brightness(200%) !important;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-
-#lightBox .x-button img:hover {
-  opacity: 1;
-}
-
-
-
 
 
 
@@ -555,33 +370,6 @@ footer {
 /* ================================================================
    RESPONSIVE MEDIA QUERIES (Cascading Desktop to Mobile)
    ================================================================ */
-
-/* --- TABLETS & LAPTOPS (Max Width: 1024px) --- */
-@media (max-width: 1024px) {
-  .project-details-1 {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .text-block-1 {
-    order: 2;
-  }
-
-  .text-block-1 p {
-    padding-left: 0;
-    text-align: left;
-  }
-
-  .Image-card-1 {
-    order: 1;
-    justify-content: center;
-  }
-
-  .Image-card-1 img {
-    max-width: 80%;
-    border-radius: 12px;
-  }
-}
 
 /* --- SMALL TABLETS (Max Width: 900px) --- */
 @media (max-width: 900px) {
@@ -633,9 +421,5 @@ footer {
 
   .project-card img {
     width: 100%;
-  }
-
-  .Image-card-1 img {
-    max-width: 100%;
   }
 }

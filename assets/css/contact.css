@@ -72,15 +72,6 @@ body {
     background: transparent;
 }
 
-.image-caption {
-    font-size: 13px;
-    font-weight: 300;
-    color: #b0bec5;
-    letter-spacing: 0.5px;
-    animation: highlightText 2s ease-out forwards;
-    animation-delay: 3.5s;
-}
-
 /* ===== BIO TEXT ===== */
 .bio-text {
     font-size: 15px;
@@ -637,10 +628,6 @@ footer#icons {
         height: 130px;
     }
 
-    .image-caption {
-        font-size: 12px;
-    }
-
     .left-line {
         height: 2px;
         width: 0;
@@ -864,10 +851,6 @@ footer#icons {
     .profile-image {
         width: 100px;
         height: 100px;
-    }
-
-    .image-caption {
-        font-size: 11px;
     }
 
     .left-line {

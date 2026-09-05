@@ -129,6 +129,7 @@
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
+            max-width: calc(100% - 32px);
             background: rgba(255, 255, 255, 0.95);
             padding: 8px 20px;
             border-radius: 20px;
@@ -139,6 +140,13 @@
             pointer-events: none;
             backdrop-filter: blur(8px);
             z-index: 10;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .map-overlay .overlay-short {
+            display: none;
         }
 
         /* ================================================================
@@ -370,6 +378,14 @@
                 top: 10px;
             }
 
+            .map-overlay .overlay-full {
+                display: none;
+            }
+
+            .map-overlay .overlay-short {
+                display: inline;
+            }
+
             .legend-item {
                 padding: 8px 12px;
             }
@@ -415,7 +431,7 @@
 
         <!-- ===== 3D ENVIRONMENT IFRAME ===== -->
         <div class="map-wrapper">
-            <div class="map-overlay">Live Spatial Telemetry • 1R1C Model Active</div>
+            <div class="map-overlay"><span class="overlay-full">Live Spatial Telemetry &bull; 1R1C Model Active</span><span class="overlay-short">Live Telemetry</span></div>
             <iframe src="/interactive-map/dist/index.html" title="Parenthesen Digital Twin 3D View" allow="fullscreen" loading="lazy"></iframe>
         </div>
 

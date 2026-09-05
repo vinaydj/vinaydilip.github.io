@@ -688,24 +688,19 @@ footer {
   }
 
   .footer {
-    flex-direction: column;
-    gap: 8px;
-    padding: 12px 16px;
+    padding: 8px 16px;
   }
 
-  .footer-left,
+  /* Mouse-control hint is meaningless on touch devices; dropping it
+     collapses the footer back to a single compact row instead of the
+     3-row stack, which was eating a big chunk of the mobile viewport. */
+  .footer-left {
+    display: none;
+  }
+
   .footer-center,
   .footer-right {
     flex: none;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .mouse-controls-text {
-    font-size: 10px;
-    padding: 10px 14px;
-    bottom: 38px;
-    min-width: 100px;
   }
 }
 
